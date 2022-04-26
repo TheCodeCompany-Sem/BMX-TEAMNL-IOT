@@ -4,9 +4,9 @@
 
 ### Day 1 (Monday)
 
-Today we did a brainstorming session. We discussed about the sensors we would buy or make. We also had quite a lengthy discussion with Bas about it. We came up with solutions for the DIY sensors.
-We started working the design of the webpage and the collaboration contract.
-We also planned the sprints.
+Today we did a brainstorming session. We discussed about the sensors we would buy or make. We also had quite a lengthy discussion with Bas about it. We came up with solutions for the DIY sensors.  
+We started working the design of the webpage and the collaboration contract.  
+We also planned the sprints.  
 
 ### Day 2 (Tuesday)
 
