@@ -21,6 +21,8 @@ We would use a rotary encoder, an electronic component used mainly in knobs and 
 to 3D print a specific shape and put it on top of the encoder.
 The wind would push the shape which would turn the "knob" until it reaches the position where   
 the resistance is minimal, therefore determining the direction.
+Another option that we might use is a hall effect sensor. It uses the same logic as the previous methods
+but this one uses a gravity field to measure the rotation of the object. 
 
 # Wind speed sensor (Anemometer)
 
@@ -29,6 +31,6 @@ That way the wind will push the wings and make them rotate.
 Then we would use an IR emitter and receiver. The wings would pass in between the two.  
 It would block the  signal.  
 We would count the amount of interruptions of the signal and guess the speed that way.   
-To calibrate the sensor we would use a car. We'd get the device out of the window and mesure the   
+To calibrate the sensor we would use a car. We'd get the device out of the window and measure the   
 amount of rotations the wings do at certain speeds,  
 that we can precisely identify using the car's speedometer.
