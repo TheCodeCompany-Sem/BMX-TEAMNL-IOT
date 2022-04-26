@@ -1,6 +1,6 @@
 # Sensors
 
-## Professionnal option
+## Professional option
 
 Davis is a reputable brand that produces weather station sensors.
 This is their wind speed and wind direction sensor combo. It is expensive but might be an option if we need more precise data.
