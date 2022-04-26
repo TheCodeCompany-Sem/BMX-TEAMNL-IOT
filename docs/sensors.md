@@ -13,12 +13,11 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 
 ## DIY option
 
-This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate  
-the device, and it will not look as good as the professional option. Waterproofing is also a concern.
+This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
 
 # Wind direction sensor
 
-We would use a rotary encoder, an electronic component used mainly in knobs and dials. The idea would be   
+We would use a rotary encoder, an electronic component used mainly in knobs and dials. The idea would be 
 to 3D print a specific shape and put it on top of the encoder.
 The wind would push the shape which would turn the "knob" until it reaches the position where   
 the resistance is minimal, therefore determining the direction.
