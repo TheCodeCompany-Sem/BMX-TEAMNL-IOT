@@ -4,6 +4,10 @@
 
 ### Day 1 (Monday)
 
+Today we did a brainstorming session. We discussed about the sensors we would buy or make. We also had quite a lengthy discussion with Bas about it. We came up with solutions for the DIY sensors.
+We started working the design of the webpage and the collaboration contract.
+We also planned the sprints.
+
 ### Day 2 (Tuesday)
 
 Today, we worked on making a webdesign, to iterate on and give the client an idea of what we want the website to look like. More info on this can be found [here](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Website-Design/).  
