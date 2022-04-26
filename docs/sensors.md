@@ -31,6 +31,4 @@ That way the wind will push the wings and make them rotate.
 Then we would use an IR emitter and receiver. The wings would pass in between the two.  
 It would block the  signal.  
 We would count the amount of interruptions of the signal and guess the speed that way.   
-To calibrate the sensor we would use a car. We'd get the device out of the window and measure the   
-amount of rotations the wings do at certain speeds,  
-that we can precisely identify using the car's speedometer.
+To calibrate the sensor we would use a car. We'd get the device out of the window and measure the amount of rotations the wings do at certain speeds, that we can precisely identify using the car's speedometer.
