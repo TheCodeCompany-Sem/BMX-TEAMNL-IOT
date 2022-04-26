@@ -8,7 +8,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 <center>
 [Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)   
 
-<img src="./pictures/6410.jpg" width="200" height="200" />
+<img src="https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/pictures/6410.jpg" width="500" height="500" />
 </center>
 
 ## DIY option
