@@ -1,4 +1,4 @@
-### Sensors
+# Sensors
 
 ## Professionnal option
 
@@ -15,7 +15,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 
 This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
 
-# Wind direction sensor
+### Wind direction sensor
 
 We would use a rotary encoder, an electronic component used mainly in knobs and dials. The idea would be 
 to 3D print a specific shape and put it on top of the encoder.
@@ -24,7 +24,7 @@ the resistance is minimal, therefore determining the direction.
 Another option that we might use is a hall effect sensor. It uses the same logic as the previous methods
 but this one uses a gravity field to measure the rotation of the object. 
 
-# Wind speed sensor (Anemometer)
+### Wind speed sensor (Anemometer)
 
 the idea here is to have wings on a frictionless axle.  
 That way the wind will push the wings and make them rotate.  
