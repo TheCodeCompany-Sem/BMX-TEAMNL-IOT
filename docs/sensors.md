@@ -5,9 +5,11 @@
 Davis is a reputable brand that produces weather station sensors.
 This is their wind speed and wind direction sensor combo. It is expensive but might be an option if we need more precise data.
 It also has the benefit of working out of the box. Therefore leaving us more time to work on the rest of the features.
+<center>
+[Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)
 
-[Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/).
-![Davis 6410](pictures/6410.jpg)
+<img src="pictures/6410.jpg" width="200" height="200" />
+</center>
 
 ## DIY option
 
