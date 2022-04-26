@@ -22,6 +22,8 @@ We would use a rotary encoder, an electronic component used mainly in knobs and 
 to 3D print a specific shape and put it on top of the encoder.
 The wind would push the shape which would turn the "knob" until it reaches the position where   
 the resistance is minimal, therefore determining the direction.
+Another option that we might use is a hall effect sensor. It uses the same logic as the previous methods
+but this one uses a gravity field to measure the rotation of the object. 
 
 # Wind speed sensor (Anemometer)
 
