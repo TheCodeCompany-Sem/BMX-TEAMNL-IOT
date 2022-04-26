@@ -1,6 +1,6 @@
 # Daily documentation
 
-## Week 1 (25-04-2022 - 01-04-2022)
+## Week 1 (25-04-2022 - 01-05-2022)
 
 ### Day 1 (Monday)
 
