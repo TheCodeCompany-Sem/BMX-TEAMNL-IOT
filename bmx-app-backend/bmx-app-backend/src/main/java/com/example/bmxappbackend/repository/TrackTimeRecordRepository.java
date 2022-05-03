@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface TrackTimeRecordRepository extends JpaRepository<TrackTimeRecord, Long> {
+public interface TrackTimeRecordRepository extends JpaRepository<TrackTimeRecord, Integer> {
 
     List<TrackTimeRecord> findAll();
 

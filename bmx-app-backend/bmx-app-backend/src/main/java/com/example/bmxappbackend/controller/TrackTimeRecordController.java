@@ -45,7 +45,6 @@ public class TrackTimeRecordController {
      * @param trackTimeRecord
      * @return a response status whether the operation to add a roll was succesfull
      */
-
     @PostMapping
     public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord){
         TrackTimeRecord toBeInsertedTimeTrackRecord = trackTimeRecordRepository.save(trackTimeRecord);
