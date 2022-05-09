@@ -17,7 +17,6 @@ public class TrackTimeRecord {
     @Column(name ="recorded_time", nullable = false)
     private Date recordedTime;
 
-
     @Column(name ="recorded_value", nullable = false)
     private double recordedValue;
 
