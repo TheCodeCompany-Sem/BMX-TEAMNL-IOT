@@ -24,6 +24,17 @@ We made the following pages:
 Today we prepared the presentation for our meeting with Aukje. 
 We did a retrospective of what we have done so far, and made sure the documentation was up to date.
 
-### Day 4 (Monday)
+## Week 2 (9-5-2022 - 15-5-2022)
 
-Today we prepared the performance reviews for our meeting with Bas in the afternoon.
+### Day 1 (Monday)
+
+Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms. 
+
+For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
+
+https://www.baeldung.com/hibernate-one-to-many
+
+
+
+
+
