@@ -10,6 +10,12 @@ We made a few design sketches for some of the different pages of the web applica
 
 ### Home page
 
+![frontpage](../pictures/Team-NL-frontpage.png)
+
 ### Information page
+![Mainpage1](../pictures/teamnl-mainpage1.png)
+
+![Mainpage2](../pictures/teamnl-mainpage2.png)
+
 
 ### Personal page

@@ -15,6 +15,10 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 
 This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
 
+<center>
+<img src="https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/pictures/sketch_sensor.jpg" width="1000" height="500" />
+</center>
+
 ### Wind direction sensor
 
 We would use a rotary encoder, an electronic component used mainly in knobs and dials. The idea would be 
