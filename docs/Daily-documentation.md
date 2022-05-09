@@ -32,7 +32,7 @@ Today we prepared the performance reviews for our meeting with Bas in the aftern
 
 For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
 
-https://www.baeldung.com/hibernate-one-to-many
+[Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
 ![img.png](img.png)
 
