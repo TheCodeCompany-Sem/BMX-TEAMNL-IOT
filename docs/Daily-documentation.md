@@ -18,3 +18,12 @@ We made the following pages:
 - [Sensors](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/sensors/)  
 - [Web application](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Web-Application/)  
 - [Web design](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Website-Design/)
+
+### Day 3 (Wednesday)
+
+Today we prepared the presentation for our meeting with Aukje. 
+We did a retrospective of what we have done so far, and made sure the documentation was up to date.
+
+### Day 4 (Monday)
+
+Today we prepared the performance reviews for our meeting with Bas in the afternoon.
