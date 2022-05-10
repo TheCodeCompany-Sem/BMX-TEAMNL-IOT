@@ -10,14 +10,14 @@ theme:
   name: material
   palette:
     # try other colors https://squidfunk.github.io/mkdocs-material/getting-started/#primary-colors
-    primary: orange
+    primary: deep orange
     accent: red
   font:
     # See available fonts at https://fonts.google.com/
     text: Open Sans
     code: Ubuntu Mono
   icon:
-    logo: material/bike-fast
+    logo: assets/TeamNL_BMX_Icon.png
   favicon: images/favicon.svg
   features:
     - navigation.tabs
