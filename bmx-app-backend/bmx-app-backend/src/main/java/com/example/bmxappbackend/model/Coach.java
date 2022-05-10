@@ -59,4 +59,12 @@ public class Coach {
     public void setId(int id) {
         this.id = id;
     }
+
+    public List<Athlete> getAthletes() {
+        return athletes;
+    }
+
+    public void setAthletes(List<Athlete> athletes) {
+        this.athletes = athletes;
+    }
 }

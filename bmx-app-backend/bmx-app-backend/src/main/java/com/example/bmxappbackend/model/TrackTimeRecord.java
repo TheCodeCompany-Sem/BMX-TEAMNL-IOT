@@ -1,5 +1,8 @@
 package com.example.bmxappbackend.model;
 
+import com.example.bmxappbackend.views.TrackTimeRecordView;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,14 +15,18 @@ import java.util.Date;
 public class TrackTimeRecord {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="recorded_time", nullable = false)
     private Date recordedTime;
 
+    @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="recorded_value", nullable = false)
     private double recordedValue;
 
+    @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="wind_speed", nullable = false)
     private int windSpeed;
 
