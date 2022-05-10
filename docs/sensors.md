@@ -8,7 +8,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 <center>
 [Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)   
 
-![Davis 6410](Davis6410.jpg)
+![Davis 6410](6410.jpg)
 </center>
 
 ## DIY option
