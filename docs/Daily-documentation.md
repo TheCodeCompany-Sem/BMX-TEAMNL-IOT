@@ -36,7 +36,50 @@ For the backend, we laid the foundation for our models, repositories and control
 
 ![img.png](img.png)
 
+### Day 2 (Tuesday)
 
+Today we made the documentation look better, added some orange accents and some TeamNL logos.
+A proper homepage was written.
+
+![Homepage_mkdocs.png](pictures/Homepage_mkdocs.png)
+
+Then got a temperature and humidity sensor.
+We were able to wire it properlu and get the first data.
+
+![Humidity_and_Temp_sensor.jpg](pictures/Humidity_and_Temp_sensor.jpg)
+
+```cpp
+#include "DHTesp.h"
+DHTesp dht;
+ 
+void setup() {
+    Serial.begin(115200);
+    dht.setup(D2, DHTesp::DHT22);
+}
+ 
+void loop() {
+    float h = dht.getHumidity();
+    float t = dht.getTemperature();
+ 
+    Serial.print("humidity: ");
+    Serial.println(h);
+    Serial.print("temp: ");
+    Serial.println(t);
+ 
+    delay(2000);
+}
+```
+
+
+This is the first prototype of the web application.
+
+![front_end_1st_prototype.png](pictures/front_end_1st_prototype.png)
+
+The basis of the back end is done.
+Models are filled in with variables and methods.
+Controllers and repositories are filled with methods as well.
+The backend is now connect to a remote database.
+Routes were checked.
 
 
 
