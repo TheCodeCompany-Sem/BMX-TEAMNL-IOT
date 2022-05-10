@@ -10,6 +10,7 @@ theme:
   name: material
   palette:
     # try other colors https://squidfunk.github.io/mkdocs-material/getting-started/#primary-colors
+    scheme: slate
     primary: deep orange
     accent: red
   font:
