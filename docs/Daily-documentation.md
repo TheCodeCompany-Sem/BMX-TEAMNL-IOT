@@ -41,12 +41,12 @@ For the backend, we laid the foundation for our models, repositories and control
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-![Homepage_mkdocs.png](pictures/Homepage_mkdocs.png)
+![Homepage_mkdocs.png](Homepage_mkdocs.png)
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-![Humidity_and_Temp_sensor.jpg](pictures/Humidity_and_Temp_sensor.jpg)
+![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)
 
 ```cpp
 #include "DHTesp.h"
@@ -73,7 +73,7 @@ void loop() {
 
 This is the first prototype of the web application.
 
-![front_end_1st_prototype.png](pictures/front_end_1st_prototype.png)
+![front_end_1st_prototype.png](front_end_1st_prototype.png)
 
 The basis of the back end is done.
 Models are filled in with variables and methods.

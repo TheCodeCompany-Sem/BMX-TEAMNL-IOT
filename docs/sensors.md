@@ -8,7 +8,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 <center>
 [Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)   
 
-<img src="https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/pictures/6410.jpg" width="500" height="500" />
+<img src="6410.jpg" width="500" height="500" />
 </center>
 
 ## DIY option
@@ -16,7 +16,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
 
 <center>
-<img src="https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/pictures/sketch_sensor.jpg" width="1000" height="500" />
+<img src="sketch_sensor.jpg" width="1000" height="500" />
 </center>
 
 ### Wind direction sensor
