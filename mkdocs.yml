@@ -1,5 +1,5 @@
 # Replace the text below to customize your site
-site_name: Internet of Things Documentation Page
+site_name: Team-NL BMX Environment Documentation
 site_description: Documentation for IoT Team-NL BMX
 site_author: Justin Witte, Sem Huits, Zakaria Mssaadi, Martin Brami, Abdelrahman El-Khenizy, Mortada M'Rabet
 copyright: Copyright 2022 IoT Team-NL BMX - Creative Commons Attribution Non Commercial
@@ -10,14 +10,13 @@ theme:
   name: material
   palette:
     # try other colors https://squidfunk.github.io/mkdocs-material/getting-started/#primary-colors
-    primary: deep
-    accent: indigo
+    primary: deep orange
+    accent: red
   font:
     # See available fonts at https://fonts.google.com/
     text: Open Sans
     code: Ubuntu Mono
-  icon:
-    logo: material/school
+  logo: assets/TeamNL_BMX_Icon.png
   favicon: images/favicon.svg
   features:
     - navigation.tabs
