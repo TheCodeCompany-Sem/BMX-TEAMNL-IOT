@@ -16,8 +16,7 @@ theme:
     # See available fonts at https://fonts.google.com/
     text: Open Sans
     code: Ubuntu Mono
-  icon:
-    logo: assets/TeamNL_BMX_Icon.png
+  logo: assets/TeamNL_BMX_Icon.png
   favicon: images/favicon.svg
   features:
     - navigation.tabs
