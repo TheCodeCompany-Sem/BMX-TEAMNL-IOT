@@ -63,11 +63,11 @@ void loop() {
 }
 
 ```
-It is wired this way:
+It is wired this way:  
 ![DHT22_sensor_wiring.png](DHT22_sensor_wiring.png)
 
 this is how the wiring looks in reality:
 ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)
 
-this is the data coming from the sensor:
+this is the data coming from the sensor:  
 ![data_from_dht22.png](data_from_dht22.png)
