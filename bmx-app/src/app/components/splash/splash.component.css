@@ -1,5 +1,4 @@
 .app-splash-screen {
-  background: #3a36d1;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,12 +11,20 @@
   height: 100%;
   z-index: 1;
   opacity: 1;
+  background-image: url("src/environments/TeamNL_background_RGB_2020.jpg");
 }
 .loading-text {
   position: relative;
   color: rgba(0, 0, 0, 0.3);
   font-size: 5em;
 }
+  .logo{
+
+    background-image: url("");
+
+  }
+
+
 .loading-text:before {
   content: attr(data-text);
   position: absolute;
