@@ -29,6 +29,28 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
+int httpGETRequest(const char* serverName, JsonObject& json) {
+  WiFiClient client;
+  HTTPClient http;
+  http.useHTTP10(true);
+  http.begin(client, serverName);
+  int errcode = http.GET();
+  if (errcode) {
+    String err = http.errorToString(errcode);
+    Serial.print("error get request for url: ");
+    Serial.println(serverName);
+    return -1;
+  } else {
+    // Parse response
+    DynamicJsonDocument doc(2048);
+    deserializeJson(doc, http.getStream());
+    json = doc["data"];
+    // Disconnect
+    http.end();
+  }
+
+}
+
 void setup() {
     Serial.begin(115200);
     setup_wifi();
