@@ -9,6 +9,12 @@ ul {
   li {
     float: right;
   }
+
+  .navbar-img{
+    width: 3%;
+    float: left;
+    padding: 6px 8px;
+  }
   
   li a {
     display: block;
@@ -16,6 +22,10 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+
+  .active {
+    background-color: #ff0000;
   }
   
   /* Change the link color to #c58000 (deep orange) on hover */
