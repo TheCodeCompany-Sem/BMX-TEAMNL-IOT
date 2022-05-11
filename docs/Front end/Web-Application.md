@@ -12,8 +12,3 @@ We will make sure the following functionalities will be implemented on the web-a
 - ability to export data into json-files
 - ability for the coach and athlete to see the performance of the athlete
 - ability to see improvement of the athlete and what might have affected his/her performance
-
-We will also make sure the website secure and that data is being sent in a secure manner
-###Front-end:
-
-###Back-end:
