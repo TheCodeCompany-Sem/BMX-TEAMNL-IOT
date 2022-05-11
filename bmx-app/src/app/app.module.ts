@@ -16,9 +16,9 @@ import { HeaderComponent } from './generic/header/header.component';
     AppComponent,
     MainComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
     HeaderComponent,
-    SplashComponent
+    SplashComponent,
     HomepageComponent,
   ],
   imports: [
