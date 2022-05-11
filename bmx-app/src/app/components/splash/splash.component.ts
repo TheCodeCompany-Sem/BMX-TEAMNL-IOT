@@ -33,7 +33,7 @@ export class SplashComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     // Somewhere the stop method has been invoked
-    this.splashScreenStateService.subscribe(res => {
+    this.splashScreenStateService.subscribe( () => {
       this.hideSplashAnimation();
     });
   }
