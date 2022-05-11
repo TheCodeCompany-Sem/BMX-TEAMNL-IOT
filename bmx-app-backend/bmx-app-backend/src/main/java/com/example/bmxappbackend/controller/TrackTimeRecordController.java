@@ -2,6 +2,8 @@ package com.example.bmxappbackend.controller;
 
 import com.example.bmxappbackend.model.TrackTimeRecord;
 import com.example.bmxappbackend.repository.TrackTimeRecordRepository;
+import com.example.bmxappbackend.views.TrackTimeRecordView;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,7 @@ public class TrackTimeRecordController {
     /**
      * @return an iterable list of rolls
      */
+    @JsonView({TrackTimeRecordView.base.class})
     @GetMapping
     public @ResponseBody Iterable<TrackTimeRecord> getAll(){
         return trackTimeRecordRepository.findAll();
