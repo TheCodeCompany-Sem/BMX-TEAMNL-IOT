@@ -78,7 +78,7 @@ This is the first prototype of the web application.
 The basis of the back end is done.
 Models are filled in with variables and methods.
 Controllers and repositories are filled with methods as well.
-The backend is now connect to a remote database.
+The backend is now connected to a remote database.
 Routes were checked.
 
 
