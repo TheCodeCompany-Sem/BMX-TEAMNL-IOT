@@ -10,12 +10,21 @@ We made a few design sketches for some of the different pages of the web applica
 
 ### Home page
 
-![frontpage](../pictures/Team-NL-frontpage.png)
+|![frontpage](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/Team-NL-frontpage.png)|
+| :-:|
+|Frontpage|
 
 ### Information page
-![Mainpage1](../pictures/teamnl-mainpage1.png)
 
-![Mainpage2](../pictures/teamnl-mainpage2.png)
+|![Mainpage1](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/teamnl-mainpage1.png)|
+| :-:|
+|Mainpage1|
+
+
+|![Mainpage2](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/teamnl-mainpage2.png)|
+| :-:|
+|Mainpage2|
+
 
 
 ### Personal page
