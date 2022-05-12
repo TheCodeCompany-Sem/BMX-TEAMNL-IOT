@@ -17,7 +17,7 @@ import java.net.URI;
  */
 
 @RestController
-@RequestMapping("/AthleteController")
+@RequestMapping("/athlete")
 public class AthleteController {
 
     private final AthleteRepository AthleteRepository;

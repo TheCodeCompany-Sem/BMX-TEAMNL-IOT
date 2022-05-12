@@ -1,5 +1,7 @@
 package com.example.bmxappbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,6 +25,7 @@ public class Coach {
     private String surname;
 
     @OneToMany(mappedBy = "coach")
+    @JsonManagedReference
     private List<Athlete> athletes;
 
     public Coach(int id, String firstName, String surname, List<Athlete> athletes) {

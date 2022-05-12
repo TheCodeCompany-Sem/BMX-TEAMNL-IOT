@@ -1,5 +1,8 @@
 package com.example.bmxappbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,9 +24,11 @@ public class Athlete {
 
     @ManyToOne
     @JoinColumn(name = "coach_id", nullable = false)
+    @JsonBackReference
     private Coach coach;
 
     @OneToMany(mappedBy = "athlete")
+    @JsonManagedReference
     private List<TrackTimeRecord> trackTimeRecords;
 
     public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords) {
@@ -59,5 +64,21 @@ public class Athlete {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Coach getCoach() {
+        return coach;
+    }
+
+    public void setCoach(Coach coach) {
+        this.coach = coach;
+    }
+
+    public List<TrackTimeRecord> getTrackTimeRecords() {
+        return trackTimeRecords;
+    }
+
+    public void setTrackTimeRecords(List<TrackTimeRecord> trackTimeRecords) {
+        this.trackTimeRecords = trackTimeRecords;
     }
 }

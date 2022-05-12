@@ -10,20 +10,14 @@
             <th>Winddirection</th>
             <th>Time</th>
         </tr>
-        <tr>
-            <td>#0001</td>
-            <td>Jan Stokpaard</td>
-            <td>25.8</td>
-            <td>NNO</td>
-            <td>1:03.209</td>
-        </tr>
-        <tr>
-            <td>#0314</td>
-            <td>Cor Leon</td>
-            <td>46.4</td>
-            <td>SE</td>
-            <td>59.101</td>
-        </tr>
+      //Work in progress
+      <tr *ngFor="let athlete of athletes; let i= index">
+        <th>{{athlete.id}}</th>
+        <th>{{athlete.firstName}} {{athlete.surname}}</th>
+        <th>{{athlete.trackTimeRecords}}</th>
+        <th></th>
+        <th></th>
+      </tr>
     </table>
 </body>
 <app-footer></app-footer>
