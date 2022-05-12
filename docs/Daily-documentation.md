@@ -145,3 +145,16 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 }
 
 ```
+
+Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
+The loading screen looks like this:  
+![]()  
+
+The table page looks as follows:
+![]()  
+
+The code for the table page looks like this:  
+
+```html
+
+```
