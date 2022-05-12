@@ -17,7 +17,7 @@ import java.net.URI;
  */
 
 @RestController
-@RequestMapping("/AthleteController")
+@RequestMapping("/Athlete")
 public class AthleteController {
 
     private final AthleteRepository AthleteRepository;
@@ -49,12 +49,12 @@ public class AthleteController {
      */
     @PostMapping
     public ResponseEntity<Athlete> createAthleteController(@RequestBody Athlete Athlete){
-        Athlete toBeinsertedAthlete= AthleteRepository.save(Athlete);
+        Athlete toBeInsertedAthlete= AthleteRepository.save(Athlete);
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(toBeinsertedAthlete.getId()).toUri();
+                .buildAndExpand(toBeInsertedAthlete.getId()).toUri();
 
         return ResponseEntity.created(location).build();
     }

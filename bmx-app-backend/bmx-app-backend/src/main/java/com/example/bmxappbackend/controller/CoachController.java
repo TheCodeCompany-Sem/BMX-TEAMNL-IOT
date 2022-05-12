@@ -12,12 +12,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 /**
- * @Author: Mortada M'Rabet & Sem H
+ * @Author: Mortada M'Rabet & Sem Huits
  * @Description: This class manages every mapping, which allows for data manipulation
  */
 
 @RestController
-@RequestMapping("/CoachController")
+@RequestMapping("/Coach")
 public class CoachController {
 
     private final CoachRepository coachRepository;
