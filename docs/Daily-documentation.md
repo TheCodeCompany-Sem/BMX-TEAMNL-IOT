@@ -156,5 +156,94 @@ The table page looks as follows:
 The code for the table page looks like this:  
 
 ```html
+<app-header></app-header>
+<app-navbar></app-navbar>
+<body>
+    <h1>Players</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Windspeed (km/h)</th>
+            <th>Winddirection</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>#0001</td>
+            <td>Jan Stokpaard</td>
+            <td>25.8</td>
+            <td>NNO</td>
+            <td>1:03.209</td>
+        </tr>
+        <tr>
+            <td>#0314</td>
+            <td>Cor Leon</td>
+            <td>46.4</td>
+            <td>SE</td>
+            <td>59.101</td>
+        </tr>
+    </table>
+</body>
+<app-footer></app-footer>
+```  
 
+The header, navbar and footer are also loaded onto the page. The header and footer are still empty, but the navbar was does contain something, which is the orange bar on the top of the page. The code looks like this:
+
+```html
+<ul>
+  <ol>BMX environment</ol>
+  <img class="navbar-img" src="../../../assets/images/cloud.png">
+  <ol>Windspeed: 55 km/h</ol>
+  <li><a class="active" href="default.asp">Home</a></li>
+</ul>
+```  
+
+```css
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffa600;
+  }
+  
+  li {
+    float: right;
+  }
+
+  .navbar-img{
+    width: 3%;
+    float: left;
+    padding: 6px 8px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .active {
+    background-color: #ff0000;
+  }
+  
+  /* Change the link color to #c58000 (deep orange) on hover */
+  li a:hover {
+    background-color: #c58000;
+  }
+
+  ol {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  ol a{
+    display: block;
+    text-decoration: none;
+  }
 ```
