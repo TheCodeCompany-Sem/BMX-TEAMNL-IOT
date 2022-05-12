@@ -1,6 +1,7 @@
 package com.example.bmxappbackend.model;
 
 import com.example.bmxappbackend.views.TrackTimeRecordView;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
@@ -32,6 +33,7 @@ public class TrackTimeRecord {
 
     @ManyToOne
     @JoinColumn(name = "athlete_id", nullable = false)
+    @JsonBackReference
     private Athlete athlete;
 
     public TrackTimeRecord(int id, Date recordedTime, double recordedValue, int windSpeed, Athlete athlete) {

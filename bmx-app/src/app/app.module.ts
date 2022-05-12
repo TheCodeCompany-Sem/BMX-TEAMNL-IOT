@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './generic/navbar/navbar.component';
 import { FooterComponent } from './generic/footer/footer.component';
 import { HeaderComponent } from './generic/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './generic/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [  SplashScreenStateService ],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AthleteService} from "../services/athlete.service";
+import {Athlete} from "../models/athlete";
 
 @Component({
   selector: 'app-main',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private athleteService: AthleteService) { }
+
+  get athletes(): Athlete[] {
+    return this.athleteService.findAll();
+  }
 
   ngOnInit(): void {
   }
