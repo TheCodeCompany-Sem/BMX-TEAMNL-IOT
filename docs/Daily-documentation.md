@@ -34,9 +34,9 @@ For the backend, we laid the foundation for our models, repositories and control
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
-|![img.png](img.png)|
-|:-:|
-|Backend foundation|
+| ![img.png](img.png) |
+| :-----------------: |
+| Backend foundation  |
 
 
 ### Day 2 (Tuesday)
@@ -44,18 +44,18 @@ For the backend, we laid the foundation for our models, repositories and control
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-|![Homepage_mkdocs.png](Homepage_mkdocs.png)|
-|:-:|
-|Homepage for documentation|
+| ![Homepage_mkdocs.png](Homepage_mkdocs.png) |
+| :-----------------------------------------: |
+|         Homepage for documentation          |
 
 
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
+| ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
+| :-----------------------------------------------------------: |
+|             DHT22 Humadity and Temperature sensor             |
 
 
 
@@ -85,9 +85,9 @@ void loop() {
 This is the first prototype of the web application.
 
 
-|![front_end_1st_prototype.png](front_end_1st_prototype.png)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
+| ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
+| :---------------------------------------------------------: |
+|            DHT22 Humadity and Temperature sensor            |
 
 The basis of the back end is done.
 Models are filled in with variables and methods.
@@ -250,12 +250,15 @@ ul {
 
 ### Day 4 (Thursday)
 
-Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can recieve data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. Getting this data looks as follows on the website:  
-
-![]()  
-
-The front-end code regarding this looks like this:  
+Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can recieve data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
 
 ```html
-
+//Work in progress
+      <tr *ngFor="let athlete of athletes; let i= index">
+        <th>{{athlete.id}}</th>
+        <th>{{athlete.firstName}} {{athlete.surname}}</th>
+        <th>{{athlete.trackTimeRecords}}</th>
+        <th></th>
+        <th></th>
+      </tr>
 ```
