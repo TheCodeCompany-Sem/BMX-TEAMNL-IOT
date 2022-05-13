@@ -247,3 +247,15 @@ ul {
     text-decoration: none;
   }
 ```
+
+### Day 4 (Thursday)
+
+Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can recieve data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. Getting this data looks as follows on the website:  
+
+![]()  
+
+The front-end code regarding this looks like this:  
+
+```html
+
+```
