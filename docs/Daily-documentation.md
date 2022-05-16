@@ -34,9 +34,9 @@ For the backend, we laid the foundation for our models, repositories and control
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
-| ![img.png](img.png) |
-| :-----------------: |
-| Backend foundation  |
+|![img.png](img.png)|
+|:-:|
+|Backend foundation|
 
 
 ### Day 2 (Tuesday)
@@ -44,18 +44,18 @@ For the backend, we laid the foundation for our models, repositories and control
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-| ![Homepage_mkdocs.png](Homepage_mkdocs.png) |
-| :-----------------------------------------: |
-|         Homepage for documentation          |
+|![Homepage_mkdocs.png](Homepage_mkdocs.png)|
+|:-:|
+|Homepage for documentation|
 
 
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-| ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
-| :-----------------------------------------------------------: |
-|             DHT22 Humadity and Temperature sensor             |
+|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
+|:-:|
+|DHT22 Humadity and Temperature sensor|
 
 
 
@@ -84,10 +84,9 @@ void loop() {
 
 This is the first prototype of the web application.
 
-
-| ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
-| :---------------------------------------------------------: |
-|            DHT22 Humadity and Temperature sensor            |
+|![front_end_1st_prototype.png](front_end_1st_prototype.png)|
+|:-:|
+|DHT22 Humadity and Temperature sensor|
 
 The basis of the back end is done.
 Models are filled in with variables and methods.
@@ -148,14 +147,17 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 
 Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
-|![loading screen](loadingpage.png)                           |
-| :---------------------------------------------------------: |
-|                   Loading screen Design                     |  
+
+|![loading screen](loadingpage.png)|
+|:-:|
+|Loading screen Design|  
+
 
 The table page looks as follows:
 |![main page](mainpage.png)|
-|:------------------------:|  
-|     Main page Design     |
+|:-:|  
+|Main page Design|
+
 The code for the table page looks like this:  
 
 ```html
