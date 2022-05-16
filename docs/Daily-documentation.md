@@ -268,3 +268,30 @@ Today, we made progress on the connection between the back-end and the front-end
         <th></th>
       </tr>
 ```
+## Week 3 (16-5-2022 - 22-5-2022)
+
+### Day 1 (Monday)
+
+Today we got the post request function done on the wemos.
+  
+```cpp
+  void httpPOSTRequest(const char* serverName, char[] httpRequestData){
+  WiFiClient client;
+  HTTPClient http;
+  http.useHTTP10(true);
+  http.begin(client, serverName);
+    // Specify content-type header
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // Data to send with HTTP POST
+  http.addHeader("Content-Type", "application/json");
+  int httpResponseCode = http.POST(httpRequestData);
+  //int httpResponseCode = http.POST("{\"api_key\":\"tPmAT5Ab3j7F9\",\"sensor\":\"BME280\",\"value1\":\"24.25\",\"value2\":\"49.54\",\"value3\":\"1005.14\"}");
+  
+  Serial.print("HTTP Response code: ");
+  Serial.println(httpResponseCode);
+  http.end();
+}
+```
+Then we fixed a problem on the webopage were we couldn't get the weather data to display properly.
+It would only appear as Object object and not access the actual data.
+We also worked on styling and added the fonts that Aukje sent us.
