@@ -49,3 +49,23 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 }
 
 ```
+This is the POST Request function:  
+ 
+```cpp
+void httpPOSTRequest(const char* serverName, char[] httpRequestData){
+  WiFiClient client;
+  HTTPClient http;
+  http.useHTTP10(true);
+  http.begin(client, serverName);
+    // Specify content-type header
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // Data to send with HTTP POST
+  http.addHeader("Content-Type", "application/json");
+  int httpResponseCode = http.POST(httpRequestData);
+  //int httpResponseCode = http.POST("{\"api_key\":\"tPmAT5Ab3j7F9\",\"sensor\":\"BME280\",\"value1\":\"24.25\",\"value2\":\"49.54\",\"value3\":\"1005.14\"}");
+  
+  Serial.print("HTTP Response code: ");
+  Serial.println(httpResponseCode);
+  http.end();
+}
+```
