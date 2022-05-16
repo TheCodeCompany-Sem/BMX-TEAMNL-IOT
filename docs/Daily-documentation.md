@@ -153,9 +153,11 @@ The loading screen looks like this:
 |                   Loading screen Design                     |  
 
 The table page looks as follows:
-|![main page](mainpage.png)|
-|:------------------------:|  
-|     Main page Design     |
+
+|![main page](mainpage.png)  |  
+| :------------------------: |  
+|     Main page Design       |  
+
 The code for the table page looks like this:  
 
 ```html
