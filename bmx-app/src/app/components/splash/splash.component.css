@@ -18,11 +18,12 @@
   color: rgba(0, 0, 0, 0.3);
   font-size: 5em;
 }
-  .logo{
 
+.logo{
     background-image: url("src/woordbeeld_TeamNL_Wit_RGB.png");
-
-  }
+  width: 10%;
+  height: 10%;
+}
 
 
 .loading-text:before {
