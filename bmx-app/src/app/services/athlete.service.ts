@@ -2,6 +2,7 @@ import {ErrorHandler, Injectable} from '@angular/core';
 import {Athlete} from "../models/athlete";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
+import {keyframes} from "@angular/animations";
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,10 @@ export class AthleteService {
         const athleteArray: Athlete[] = [];
         for(const key in responseData){
           //Need to work on this
-          responseData[key].trackTimeRecords = JSON.parse(JSON.stringify(responseData[key]["trackTimeRecords"]));
+          responseData[key].trackTimeRecords;
+          console.log(responseData[0].trackTimeRecords[0])
           athleteArray.push(responseData[key])
-          console.log(responseData[key].trackTimeRecords = JSON.parse(JSON.stringify(responseData[key]["trackTimeRecords"])))
+
         }
         //Need to work on this
         console.log("initial list", athleteArray)

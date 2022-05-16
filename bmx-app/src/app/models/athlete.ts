@@ -4,7 +4,7 @@ export class Athlete{
   private _id: number;
   private _firstName: string;
   private _surname: string;
-  private _trackTimeRecords: TrackTimeRecord;
+  private _trackTimeRecords?: TrackTimeRecord;
 
 
   constructor(id: number, firstName: string, surname: string, trackTimeRecords: TrackTimeRecord) {
@@ -37,7 +37,6 @@ export class Athlete{
   set surname(value: string) {
     this._surname = value;
   }
-
 
   get trackTimeRecords(): TrackTimeRecord {
     return this._trackTimeRecords;
