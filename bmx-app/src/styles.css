@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "HK nova";
+    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Medium.woff") format('woff');
+}
