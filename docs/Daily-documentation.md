@@ -148,11 +148,14 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 
 Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
-![loading screen](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/loadingpage.png)  
+|![loading screen](loadingpage.png)                           |
+| :---------------------------------------------------------: |
+|                   Loading screen Design                     |  
 
 The table page looks as follows:
-![main page](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/mainpage.png)  
-
+|![main page](mainpage.png)|
+|:------------------------:|  
+|     Main page Design     |
 The code for the table page looks like this:  
 
 ```html
