@@ -97,4 +97,11 @@ this is the data coming from the sensor:
 |Data coming form the DHT22 sensor|
 
 
+|![Weather Station](docs/weather_station_we_choosed_with_customer.png)|
+| :-:|
+|Weahter station we choosed with our customer|
+
+https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html
+
+
 
