@@ -1,14 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: "HK nova";
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Bold.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-ExtraBold.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-ExtraLight.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Heavy.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Light.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Medium.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Regular.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-SemiBold.woff") format('woff');
-    src: local("HK nova") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Thin.woff") format('woff');
-   
+    src: local("HK nova bold") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Bold.woff") format('woff');
+    src: local("HK nova extrabold") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-ExtraBold.woff") format('woff');
+    src: local("HK nova extralight") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-ExtraLight.woff") format('woff');
+    src: local("HK nova heavy") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Heavy.woff") format('woff');
+    src: local("HK nova light") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Light.woff") format('woff');
+    src: local("HK nova medium") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Medium.woff") format('woff');
+    src: local("HK nova regular") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Regular.woff") format('woff');
+    src: local("HK nova semibold") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-SemiBold.woff") format('woff');
+    src: local("HK nova thin") url("assets/Fonts/HKNovaFamilyWeb/WEB/HKNova-Thin.woff") format('woff');  
 }
