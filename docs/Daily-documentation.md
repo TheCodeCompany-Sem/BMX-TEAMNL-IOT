@@ -156,8 +156,8 @@ The loading screen looks like this:
 The table page looks as follows:
 
 |![main page](mainpage.png)  |  
-| :------------------------: |  
-|     Main page Design       |  
+|:-:|  
+|Main page Design|  
 
 The code for the table page looks like this:  
 
