@@ -1,7 +1,7 @@
 # Wemos configuration
 
 The wemos is now connected to the internet thanks to the following function:  
-````cpp
+```cpp
 void setup_wifi() {
   // Connect WiFi
   Serial.print("Connecting to ");
@@ -23,7 +23,7 @@ void setup_wifi() {
 }
 
 ```
-(the ssid and password are static variables)  
+(the ssid and password are static variables)    
 It can perform GET requests:  
 ```cpp
 int httpGETRequest(const char* serverName, JsonObject& json) {
