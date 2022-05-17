@@ -3,9 +3,9 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #ffa600;
+  background-image: url("src/assets/images/Schermafbeelding 2022-05-17 om 13.51.06.png");
   }
-  
+
   li {
     float: right;
   }
@@ -15,7 +15,7 @@ ul {
     float: left;
     padding: 6px 8px;
   }
-  
+
   li a {
     display: block;
     color: white;
@@ -27,7 +27,7 @@ ul {
   .active {
     background-color: #ff0000;
   }
-  
+
   /* Change the link color to #c58000 (deep orange) on hover */
   li a:hover {
     background-color: #c58000;
