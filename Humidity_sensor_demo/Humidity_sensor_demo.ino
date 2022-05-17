@@ -51,7 +51,7 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 
 }
 
-void httpPOSTRequest(const char* serverName, char[] httpRequestData){
+void httpPOSTRequest(const char* serverName, char* httpRequestData){
   WiFiClient client;
   HTTPClient http;
   http.useHTTP10(true);
