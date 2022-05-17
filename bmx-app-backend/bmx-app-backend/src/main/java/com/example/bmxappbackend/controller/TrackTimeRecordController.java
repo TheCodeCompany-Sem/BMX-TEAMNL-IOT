@@ -50,14 +50,14 @@ public class TrackTimeRecordController {
      */
     @PostMapping
     public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord){
-        TrackTimeRecord toBeInsertedTimeTrackRecord = trackTimeRecordRepository.save(trackTimeRecord);
+        trackTimeRecordRepository.save(trackTimeRecord);
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(toBeInsertedTimeTrackRecord.getId()).toUri();
+                .buildAndExpand(trackTimeRecord.getId()).toUri();
 
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.created(location).body(trackTimeRecord);
     }
 
     /**
