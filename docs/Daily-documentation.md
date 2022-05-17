@@ -292,25 +292,23 @@ Today we got the post request function done on the wemos.
   http.end();
 }
 ```
+
 Then we fixed a problem on the webopage were we couldn't get the weather data to display properly.
 It would only appear as Object object and not access the actual data.
 We also worked on styling and added the fonts that Aukje sent us.
 
 ### Day 2 (Tuesday)
 
-Today arrived the weahter station. 
+The weather station arrived today, so we decided to go test it out and make sure it is working.  
 
-
-|![weahter station Buidling](weather-station-building-2.jpg)|  
+|![weather station Buidling](weather-station-building-2.jpg)|  
 |:-:|  
 |Buidling the weather station|  
 
-
-|![weahter station Buidling](weahter-station-building.jpg)|  
+|![weather station Buidling](weahter-station-building.jpg)|  
 |:-:|  
 |Buidling the weather station|  
 
-
-|![weahter station Buidling done](weather-station-building-done.jpg)|  
+|![weather station Buidling done](weather-station-building-done.jpg)|  
 |:-:|  
 |Buidling weather station done|
