@@ -1,6 +1,7 @@
 # Web Application
 
 ## Introduction
+
 For this project there are 2 frameworks we are going to use for our web-application:
 
 - Spring boot (back-end framework)

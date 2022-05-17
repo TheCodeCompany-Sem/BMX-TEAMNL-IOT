@@ -28,7 +28,7 @@ We did a retrospective of what we have done so far, and made sure the documentat
 
 ### Day 1 (Monday)
 
-Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms. 
+Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms.
 
 For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
 
@@ -37,7 +37,6 @@ For the backend, we laid the foundation for our models, repositories and control
 |![img.png](img.png)|
 |:-:|
 |Backend foundation|
-
 
 ### Day 2 (Tuesday)
 
@@ -48,16 +47,12 @@ A proper homepage was written.
 |:-:|
 |Homepage for documentation|
 
-
-
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
 |![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
 |:-:|
 |DHT22 Humadity and Temperature sensor|
-
-
 
 ```cpp
 #include "DHTesp.h"
@@ -151,7 +146,6 @@ The loading screen looks like this:
 |![loading screen](loadingpage.png)|
 |:-:|
 |Loading screen Design|  
-
 
 The table page looks as follows:
 
@@ -268,6 +262,7 @@ Today, we made progress on the connection between the back-end and the front-end
         <th></th>
       </tr>
 ```
+
 ## Week 3 (16-5-2022 - 22-5-2022)
 
 ### Day 1 (Monday)
