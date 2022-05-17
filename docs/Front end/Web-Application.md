@@ -41,7 +41,7 @@ it gathers data from the back-end, to fill the table with data. It gather this d
 
 ```js
 restGetAthletes(): Observable<Athlete[]>{
-    return this.httpClient.get<Athlete[]>(http://localhost:80/athlete)
+    return this.httpClient.get<Athlete[]>("http://localhost:80/athlete")
       .pipe(
         map(responseData => {
         const athleteArray: Athlete[] = [];
