@@ -25,7 +25,7 @@ The front-end currently looks as follows:
 
 |![main page](../mainpage.png)|
 | :-:|
-|Loading page|  
+|front page|  
 
 it gathers data from the back-end, to fill the table with data. It gather this data through this code:  
 
