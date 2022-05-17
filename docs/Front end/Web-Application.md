@@ -19,7 +19,7 @@ We will make sure the following functionalities will be implemented on the web-a
 
 The front-end currently looks as follows:  
 
-|![loading page](../loadingpage.png)|
+|![loading page](loadingpage_1.png)|
 | :-:|
 |Loading page|  
 
