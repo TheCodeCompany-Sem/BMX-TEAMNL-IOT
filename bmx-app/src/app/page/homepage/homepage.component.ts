@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SplashScreenStateService } from "../../services/splash-screen.service";
-import { AthleteService } from "../services/athlete.service";
-import { Athlete } from "../models/athlete";
+import { AthleteService } from "../../services/athlete.service";
+import { Athlete } from "../../models/athlete";
 
 @Component({
   selector: 'app-homepage',
@@ -24,6 +24,6 @@ export class HomepageComponent implements OnInit {
       this.splashScreenStateService.stop();
     }, 5000);
   }
-    
+
 }
 
