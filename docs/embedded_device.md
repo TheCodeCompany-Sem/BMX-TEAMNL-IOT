@@ -1,6 +1,7 @@
 # Wemos configuration
 
 The wemos is now connected to the internet thanks to the following function:  
+
 ```cpp
 void setup_wifi() {
   // Connect WiFi
@@ -23,8 +24,10 @@ void setup_wifi() {
 }
 
 ```
-(the ssid and password are static variables)    
+
+(the ssid and password are static variables)  
 It can perform GET requests:  
+
 ```cpp
 int httpGETRequest(const char* serverName, JsonObject& json) {
   WiFiClient client;
@@ -49,8 +52,9 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 }
 
 ```
+
 This is the POST Request function:  
- 
+
 ```cpp
 void httpPOSTRequest(const char* serverName, char[] httpRequestData){
   WiFiClient client;
