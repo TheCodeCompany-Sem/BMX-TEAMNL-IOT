@@ -18,18 +18,14 @@ export class AthleteService {
 
   //Work in progress
   restGetAthletes(): Observable<Athlete[]>{
-    return this.httpClient.get<Athlete[]>(`http://localhost:80/athlete`)
+    return this.httpClient.get<Athlete[]>(`http://localhost:808/athlete`)
       .pipe(
         map(responseData => {
         const athleteArray: Athlete[] = [];
         for(const key in responseData){
-          //Need to work on this
           responseData[key].trackTimeRecords;
-          console.log(responseData[0].trackTimeRecords[0])
           athleteArray.push(responseData[key])
-
         }
-        //Need to work on this
         console.log("initial list", athleteArray)
         return athleteArray
       })

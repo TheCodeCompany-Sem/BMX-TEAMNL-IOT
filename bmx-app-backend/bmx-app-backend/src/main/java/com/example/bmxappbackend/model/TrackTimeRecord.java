@@ -20,7 +20,7 @@ public class TrackTimeRecord {
     private int id;
 
     @JsonView(TrackTimeRecordView.base.class)
-    @Column(name ="recorded_time", nullable = false)
+    @Column(name ="recorded_time")
     private Date recordedTime;
 
     @JsonView(TrackTimeRecordView.base.class)
@@ -31,8 +31,9 @@ public class TrackTimeRecord {
     @Column(name ="wind_speed", nullable = false)
     private int windSpeed;
 
+    @JsonView(TrackTimeRecordView.base.class)
     @ManyToOne
-    @JoinColumn(name = "athlete_id", nullable = false)
+    @JoinColumn(name = "athlete_id", referencedColumnName = "id")
     @JsonBackReference
     private Athlete athlete;
 

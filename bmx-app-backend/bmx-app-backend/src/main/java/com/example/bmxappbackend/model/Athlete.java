@@ -27,7 +27,7 @@ public class Athlete {
     @JsonBackReference
     private Coach coach;
 
-    @OneToMany(mappedBy = "athlete")
+    @OneToMany(mappedBy = "athlete", cascade = CascadeType.PERSIST)
     @JsonManagedReference
     private List<TrackTimeRecord> trackTimeRecords;
 
