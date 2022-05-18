@@ -101,5 +101,14 @@ this is the data coming from the sensor:
 | :-:|
 |[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
 
+|![Weather Station](weather_station_we_choosed_with_customer.png)|
+| :-:|
+|[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
+
+| ![](Weather_station_connector_rj11.jpg)|
+| :-------------------------------------------------------: |
+|RJ11 pinout weahter station wind direction and speed meter|
+
+
 
 
