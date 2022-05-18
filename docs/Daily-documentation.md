@@ -312,11 +312,14 @@ once we had it assembled we cut the wires and tried to make it work with the Wem
 
 | ![Trying the wires of the windspeed sensor](trywires.jpg) |
 | :-------------------------------------------------------: |
-|         Trying the wires of the windspeed sensor          |  
+|         Trying the wires of the windspeed sensor          |
 
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/rhg-blru4b8">
-</iframe>
+</iframe>  
+
+We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
 
 ### Day 3 (Wednesday)
 
+Today, we started by doing the sprint retrospective. Discussing what went well and what didn't go as well during this sprint. After that we decided to continue working where we left off yesterday, trying to figure out how to read the values from the windspeed sensor.
