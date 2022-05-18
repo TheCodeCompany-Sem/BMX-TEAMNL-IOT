@@ -20,11 +20,6 @@ We made a few design sketches for some of the different pages of the web applica
 | :-:|
 |Mainpage1|
 
-
 |![Mainpage2](teamnl-mainpage2.png)|
 | :-:|
 |Mainpage2|
-
-
-
-### Personal page

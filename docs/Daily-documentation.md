@@ -28,36 +28,31 @@ We did a retrospective of what we have done so far, and made sure the documentat
 
 ### Day 1 (Monday)
 
-Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms. 
+Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms.
 
 For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
-|![img.png](img.png)|
-|:-:|
-|Backend foundation|
-
+| ![img.png](img.png) |
+| :-----------------: |
+| Backend foundation  |
 
 ### Day 2 (Tuesday)
 
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-|![Homepage_mkdocs.png](Homepage_mkdocs.png)|
-|:-:|
-|Homepage for documentation|
-
-
+| ![Homepage_mkdocs.png](Homepage_mkdocs.png) |
+| :-----------------------------------------: |
+|         Homepage for documentation          |
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
-
-
+| ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
+| :-----------------------------------------------------------: |
+|             DHT22 Humadity and Temperature sensor             |
 
 ```cpp
 #include "DHTesp.h"
@@ -84,9 +79,9 @@ void loop() {
 
 This is the first prototype of the web application.
 
-|![front_end_1st_prototype.png](front_end_1st_prototype.png)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
+| ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
+| :---------------------------------------------------------: |
+|            DHT22 Humadity and Temperature sensor            |
 
 The basis of the back end is done.
 Models are filled in with variables and methods.
@@ -148,16 +143,15 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
 
-|![loading screen](loadingpage.png)|
-|:-:|
-|Loading screen Design|  
-
+| ![loading screen](loadingpage.png) |
+| :--------------------------------: |
+|       Loading screen Design        |
 
 The table page looks as follows:
 
-|![main page](mainpage.png)  |  
-|:-:|  
-|Main page Design|  
+| ![main page](mainpage.png) |
+| :------------------------: |
+|      Main page Design      |
 
 The code for the table page looks like this:  
 
@@ -254,7 +248,7 @@ ul {
   }
 ```
 
-### Day 4 (Thursday)
+### Day 4 (Tuesday)
 
 Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can recieve data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
 
@@ -268,6 +262,7 @@ Today, we made progress on the connection between the back-end and the front-end
         <th></th>
       </tr>
 ```
+
 ## Week 3 (16-5-2022 - 22-5-2022)
 
 ### Day 1 (Monday)
@@ -292,6 +287,114 @@ Today we got the post request function done on the wemos.
   http.end();
 }
 ```
+
 Then we fixed a problem on the webopage were we couldn't get the weather data to display properly.
 It would only appear as Object object and not access the actual data.
 We also worked on styling and added the fonts that Aukje sent us.
+
+### Day 2 (Tuesday)
+
+The weather station arrived today, so we decided to go test it out and make sure it is working.  
+
+| ![weather station Buidling](weather-station-building-2.jpg) |
+| :---------------------------------------------------------: |
+|                Building the weather station                 |
+
+| ![weather station Buidling](weahter-station-building.jpg) |
+| :-------------------------------------------------------: |
+|               Building the weather station                |
+
+| ![weather station Buidling done](weather-station-building-done.jpg) |
+| :-----------------------------------------------------------------: |
+|                    Building weather station done                    |
+
+once we had it assembled we cut the wires and tried to make it work with the Wemos device.
+
+| ![Trying the wires of the windspeed sensor](trywires.jpg) |
+| :-------------------------------------------------------: |
+|         Trying the wires of the windspeed sensor          |
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/rhg-blru4b8">
+</iframe>  
+
+
+We also figured out how the pin out was from the rj11 connector. 
+
+| ![](Weather_station_connector_rj11.jpg)|
+| :-------------------------------------------------------: |
+|RJ11 pinout weahter station wind direction and speed meter|
+
+We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
+
+### Day 3 (Wednesday)
+
+Today, we started by doing the sprint retrospective. Discussing what went well and what didn't go as well during this sprint. After that we decided to continue working where we left off yesterday, trying to figure out how to read the values from the windspeed sensor.
+
+With this turtorial we made the anemometer working with a Arduino Uno.
+
+[Arduino measure wind speed tutorial](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
+
+This is the schematic to connetect the anemometer to a Arduino Uno
+
+|![Windspeed meter connection arduino](Anemometer_connection_arduino.png)|
+|:-------------------------------------------------------:|
+|Schematic anemometer to arduino Uno|
+
+We have made de windspeeds sensor working!
+
+
+|![Windspeed meter complete](docs/IMG_20220518_121711.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter testing|
+
+
+|![Windspeed meter working](IMG_20220518_121700.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter working with the terminal|
+
+
+|![Windspeed meter connetion](IMG_20220518_121705.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter connection|
+
+
+The code we are using to contorl the windspeed meter
+```
+const int RecordTime = 3; //Define Measuring Time (Seconds)
+const int SensorPin = 3;  //Define Interrupt Pin (2 or 3 @ Arduino Uno)
+
+int InterruptCounter;
+float WindSpeed;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop() {
+  meassure();
+  Serial.print("Wind Speed: ");
+  Serial.print(WindSpeed);       //Speed in km/h
+  Serial.print(" km/h - ");
+  Serial.print(WindSpeed / 3.6); //Speed in m/s
+  Serial.println(" m/s");
+}
+
+void meassure() {
+  InterruptCounter = 0;
+  attachInterrupt(digitalPinToInterrupt(SensorPin), countup, RISING);
+  delay(1000 * RecordTime);
+  detachInterrupt(digitalPinToInterrupt(SensorPin));
+  WindSpeed = (float)InterruptCounter / (float)RecordTime * 2.4;
+}
+
+void countup() {
+  InterruptCounter++;
+}
+```
+
+
+
+
+
