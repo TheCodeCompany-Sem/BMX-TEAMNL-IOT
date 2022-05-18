@@ -25,12 +25,13 @@ void wind_direction(){
     float voltage = sensorValue*5/1023.0;
     int direction = map(sensorValue, 0, 1023, 0, 360);
     // print out the value you read:
-    Serial.print("ADC : ");
-    Serial.println(sensorValue);
-    Serial.print("Voltage : ");
-    Serial.println(voltage);
+    // Serial.print("ADC : ");
+    // Serial.println(sensorValue);
+    // Serial.print("Voltage : ");
+    // Serial.println(voltage);
     Serial.print("Direction : ");
-    Serial.println(direction);
+    Serial.print(direction);
+    Serial.println("°");
 }
 
 
