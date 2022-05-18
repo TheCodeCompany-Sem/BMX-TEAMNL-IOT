@@ -341,7 +341,58 @@ This is the schematic to connetect the anemometer to a Arduino Uno
 |:-------------------------------------------------------:|
 |Schematic anemometer to arduino Uno|
 
+We have made de windspeeds sensor working!
 
+
+|![Windspeed meter complete](docs/IMG_20220518_121711.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter testing|
+
+
+|![Windspeed meter working](IMG_20220518_121700.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter working with the terminal|
+
+
+|![Windspeed meter connetion](IMG_20220518_121705.jpg)|
+|:-------------------------------------------------------:|
+|Windspeed meter connection|
+
+
+The code we are using to contorl the windspeed meter
+```
+const int RecordTime = 3; //Define Measuring Time (Seconds)
+const int SensorPin = 3;  //Define Interrupt Pin (2 or 3 @ Arduino Uno)
+
+int InterruptCounter;
+float WindSpeed;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop() {
+  meassure();
+  Serial.print("Wind Speed: ");
+  Serial.print(WindSpeed);       //Speed in km/h
+  Serial.print(" km/h - ");
+  Serial.print(WindSpeed / 3.6); //Speed in m/s
+  Serial.println(" m/s");
+}
+
+void meassure() {
+  InterruptCounter = 0;
+  attachInterrupt(digitalPinToInterrupt(SensorPin), countup, RISING);
+  delay(1000 * RecordTime);
+  detachInterrupt(digitalPinToInterrupt(SensorPin));
+  WindSpeed = (float)InterruptCounter / (float)RecordTime * 2.4;
+}
+
+void countup() {
+  InterruptCounter++;
+}
+```
 
 
 
