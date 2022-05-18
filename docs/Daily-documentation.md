@@ -318,8 +318,32 @@ once we had it assembled we cut the wires and tried to make it work with the Wem
 src="https://www.youtube.com/embed/rhg-blru4b8">
 </iframe>  
 
+
+We also figured out how the pin out was from the rj11 connector. 
+
+| ![](Weather_station_connector_rj11.jpg)|
+| :-------------------------------------------------------: |
+|RJ11 pinout weahter station wind direction and speed meter|
+
 We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
 
 ### Day 3 (Wednesday)
 
 Today, we started by doing the sprint retrospective. Discussing what went well and what didn't go as well during this sprint. After that we decided to continue working where we left off yesterday, trying to figure out how to read the values from the windspeed sensor.
+
+With this turtorial we made the anemometer working with a Arduino Uno.
+
+[Arduino measure wind speed tutorial](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
+
+This is the schematic to connetect the anemometer to a Arduino Uno
+
+|![Windspeed meter connection arduino](Anemometer_connection_arduino.png)|
+|:-------------------------------------------------------:|
+|Schematic anemometer to arduino Uno|
+
+
+
+
+
+
+
