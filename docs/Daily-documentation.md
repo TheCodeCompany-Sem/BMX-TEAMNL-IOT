@@ -34,25 +34,25 @@ For the backend, we laid the foundation for our models, repositories and control
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
-|![img.png](img.png)|
-|:-:|
-|Backend foundation|
+| ![img.png](img.png) |
+| :-----------------: |
+| Backend foundation  |
 
 ### Day 2 (Tuesday)
 
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-|![Homepage_mkdocs.png](Homepage_mkdocs.png)|
-|:-:|
-|Homepage for documentation|
+| ![Homepage_mkdocs.png](Homepage_mkdocs.png) |
+| :-----------------------------------------: |
+|         Homepage for documentation          |
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
+| ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
+| :-----------------------------------------------------------: |
+|             DHT22 Humadity and Temperature sensor             |
 
 ```cpp
 #include "DHTesp.h"
@@ -79,9 +79,9 @@ void loop() {
 
 This is the first prototype of the web application.
 
-|![front_end_1st_prototype.png](front_end_1st_prototype.png)|
-|:-:|
-|DHT22 Humadity and Temperature sensor|
+| ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
+| :---------------------------------------------------------: |
+|            DHT22 Humadity and Temperature sensor            |
 
 The basis of the back end is done.
 Models are filled in with variables and methods.
@@ -143,15 +143,15 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
 
-|![loading screen](loadingpage.png)|
-|:-:|
-|Loading screen Design|  
+| ![loading screen](loadingpage.png) |
+| :--------------------------------: |
+|       Loading screen Design        |
 
 The table page looks as follows:
 
-|![main page](mainpage.png)  |  
-|:-:|  
-|Main page Design|  
+| ![main page](mainpage.png) |
+| :------------------------: |
+|      Main page Design      |
 
 The code for the table page looks like this:  
 
@@ -296,14 +296,27 @@ We also worked on styling and added the fonts that Aukje sent us.
 
 The weather station arrived today, so we decided to go test it out and make sure it is working.  
 
-|![weather station Buidling](weather-station-building-2.jpg)|  
-|:-:|  
-|Buidling the weather station|  
+| ![weather station Buidling](weather-station-building-2.jpg) |
+| :---------------------------------------------------------: |
+|                Building the weather station                 |
 
-|![weather station Buidling](weahter-station-building.jpg)|  
-|:-:|  
-|Buidling the weather station|  
+| ![weather station Buidling](weahter-station-building.jpg) |
+| :-------------------------------------------------------: |
+|               Building the weather station                |
 
-|![weather station Buidling done](weather-station-building-done.jpg)|  
-|:-:|  
-|Buidling weather station done|
+| ![weather station Buidling done](weather-station-building-done.jpg) |
+| :-----------------------------------------------------------------: |
+|                    Building weather station done                    |
+
+once we had it assembled we cut the wires and tried to make it work with the Wemos device.
+
+| ![Trying the wires of the windspeed sensor](trywires.jpg) |
+| :-------------------------------------------------------: |
+|         Trying the wires of the windspeed sensor          |  
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/rhg-blru4b8">
+</iframe>
+
+### Day 3 (Wednesday)
+
