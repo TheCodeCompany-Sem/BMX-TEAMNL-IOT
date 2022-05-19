@@ -344,7 +344,7 @@ This is the schematic to connetect the anemometer to a Arduino Uno
 We have made de windspeeds sensor working!
 
 
-|![Windspeed meter complete](docs/IMG_20220518_121711.jpg)|
+|![Windspeed meter complete](IMG_20220518_121711.jpg)|
 |:-------------------------------------------------------:|
 |Windspeed meter testing|
 
