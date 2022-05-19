@@ -359,8 +359,9 @@ We have made de windspeeds sensor working!
 |Windspeed meter connection|
 
 
-The code we are using to contorl the windspeed meter
-```
+The code we are using to control the windspeed meter
+
+```cpp
 const int RecordTime = 3; //Define Measuring Time (Seconds)
 const int SensorPin = 3;  //Define Interrupt Pin (2 or 3 @ Arduino Uno)
 
@@ -393,8 +394,28 @@ void countup() {
   InterruptCounter++;
 }
 ```
+Finally we got the wind direction sensor to work.
+The code used is the following:
+```cpp
 
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  float voltage = sensorValue*5/1023.0;
+  int direction = map(sensorValue, 0, 1023, 0, 360);
+  Serial.print("Direction : ");
+  Serial.println(direction);
+  delay(300); 
+}
 
+```
 
+This is how the sensor is wired, we're using a 10k resistor and 5V:
+
+|![Wind vane wiring](wind_vane_wiring.png)|
+|:-------------------------------------------------------:|
+|Wind vane wiring diagram|
+
+Then we tried to get all the sensors connected at the same time. We went outside for testing. Everything was working properly.
 
 
