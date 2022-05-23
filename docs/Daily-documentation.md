@@ -321,9 +321,9 @@ src="https://www.youtube.com/embed/rhg-blru4b8">
 
 We also figured out how the pin out was from the rj11 connector. 
 
-| ![](Weather_station_connector_rj11.jpg)|
-| :-------------------------------------------------------: |
-|RJ11 pinout weahter station wind direction and speed meter|
+|          ![](Weather_station_connector_rj11.jpg)           |
+| :--------------------------------------------------------: |
+| RJ11 pinout weahter station wind direction and speed meter |
 
 We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
 
@@ -337,26 +337,26 @@ With this turtorial we made the anemometer working with a Arduino Uno.
 
 This is the schematic to connetect the anemometer to a Arduino Uno
 
-|![Windspeed meter connection arduino](Anemometer_connection_arduino.png)|
-|:-------------------------------------------------------:|
-|Schematic anemometer to arduino Uno|
+| ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
+| :----------------------------------------------------------------------: |
+|                   Schematic anemometer to arduino Uno                    |
 
 We have made de windspeeds sensor working!
 
 
-|![Windspeed meter complete](IMG_20220518_121711.jpg)|
-|:-------------------------------------------------------:|
-|Windspeed meter testing|
+| ![Windspeed meter complete](IMG_20220518_121711.jpg) |
+| :--------------------------------------------------: |
+|               Windspeed meter testing                |
 
 
-|![Windspeed meter working](IMG_20220518_121700.jpg)|
-|:-------------------------------------------------------:|
-|Windspeed meter working with the terminal|
+| ![Windspeed meter working](IMG_20220518_121700.jpg) |
+| :-------------------------------------------------: |
+|      Windspeed meter working with the terminal      |
 
 
-|![Windspeed meter connetion](IMG_20220518_121705.jpg)|
-|:-------------------------------------------------------:|
-|Windspeed meter connection|
+| ![Windspeed meter connetion](IMG_20220518_121705.jpg) |
+| :---------------------------------------------------: |
+|              Windspeed meter connection               |
 
 
 The code we are using to control the windspeed meter
@@ -412,10 +412,18 @@ void loop() {
 
 This is how the sensor is wired, we're using a 10k resistor and 5V:
 
-|![Wind vane wiring](wind_vane_wiring.png)|
-|:-------------------------------------------------------:|
-|Wind vane wiring diagram|
+| ![Wind vane wiring](wind_vane_wiring.png) |
+| :---------------------------------------: |
+|         Wind vane wiring diagram          |
 
 Then we tried to get all the sensors connected at the same time. We went outside for testing. Everything was working properly.
 
+## Week 4 (23-5-2022 - 29-5-2022)
 
+### Day 1 (Monday)
+
+Today, we started to apply the feedback we got during the meeting with the client. So we went back to the drawing board to redesign the personal page, as it was too bland and needed to look cleaner and be more vibrant. So we added a background grayscaled of the orange background delivered to us by our client:  
+
+| ![Personal page redesign](personalpage_design.png) |
+| :------------------------------------------------: |
+|               Personal page redesign               |
