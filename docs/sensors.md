@@ -98,7 +98,7 @@ this is the data coming from the sensor:
 
 
 
-|![Weather Station](weather_station_we_choosed_with_customer.png)|
+|![Weather Station](weather_station_we_chose_with_customer.png)|
 | :-:|
 |[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
 
