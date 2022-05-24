@@ -89,7 +89,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialec
 
 ```
 
-##### Common issues:
+### Common issues:
 You will find the most common errors/issues we found developing the backend in this section.
 
 #####Cors policy error:
@@ -116,4 +116,40 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 ```
 3. Restart your backend, now you shouldn't be getting a cors policy error
+
+##### Infinite recursion 
+When working on your backend and testing the different paths inside your controllers you might come across a stackoverflow error
+when requesting an object which is related to another object.
+
+This is caused by infinite recursion when jackson (which is part of Jpa) tries to serialize both sides of this relationship.
+To solve this issue there are 2 primary ways of doing this.
+1. Adding an @JsonIgnore in the parent of the relationship
+```java
+Parent.class
+...
+@OneToMany(mappedBy = "athlete", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+@JsonIgnore
+private List<TrackTimeRecord> trackTimeRecords;
+```
+```java
+Child.class
+```
+2. Adding @JsonManagedReference in the parent and @JsonBackReference in the child class
+```java
+Parent.class
+...
+@OneToMany(mappedBy = "athlete", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+@JsonManagedReference(value = "trackTimeRecords")
+private List<TrackTimeRecord> trackTimeRecords;
+```
+```java
+Child.class
+...
+@ManyToOne(targetEntity = Athlete.class, fetch = FetchType.EAGER)
+@JoinColumn(name = "athlete_id")
+@JsonBackReference(value = "trackTimeRecords")
+private Athlete athlete;
+
+```
+
 
