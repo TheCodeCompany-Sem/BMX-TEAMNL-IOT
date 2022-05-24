@@ -19,11 +19,11 @@ We will make sure the following functionalities will be implemented on the web-a
 
 The front-end currently looks as follows:  
 
-|![loading page](loadingpage_1.png)|
+|![loading page](../assets/loadingpage_1.png)|
 | :-:|
 |Loading page|  
 
-|![main page](../mainpage.png)|
+|![main page](../assets/mainpage.png)|
 | :-:|
 |front page|  
 
@@ -95,7 +95,7 @@ You will find the most common errors/issues we found developing the backend in t
 #####Cors policy error:
 
 If you get this in your console, this means that you got a Cors policy error.
-![img.png](img.png)
+![img.png](../assets/img.png)
 
 Which basically indicates that the request your trying to make does not uphold Cors security standards.
 
