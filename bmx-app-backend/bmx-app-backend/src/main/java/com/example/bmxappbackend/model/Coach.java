@@ -1,11 +1,9 @@
 package com.example.bmxappbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -15,7 +13,7 @@ import java.util.List;
 @Entity
 public class Coach {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "first_name", nullable = false)
@@ -24,8 +22,9 @@ public class Coach {
     @Column(name = "surname", nullable = false)
     private String surname;
 
-    @OneToMany(mappedBy = "coach")
-    @JsonManagedReference
+    @JsonIgnore
+    @OneToMany(mappedBy = "coach", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonManagedReference(value = "athletes")
     private List<Athlete> athletes;
 
     public Coach(int id, String firstName, String surname, List<Athlete> athletes) {

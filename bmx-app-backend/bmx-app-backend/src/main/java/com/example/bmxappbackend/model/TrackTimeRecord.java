@@ -15,7 +15,6 @@ import java.util.Date;
 @Entity
 public class TrackTimeRecord {
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -32,9 +31,9 @@ public class TrackTimeRecord {
     private int windSpeed;
 
     @JsonView(TrackTimeRecordView.base.class)
-    @ManyToOne
-    @JoinColumn(name = "athlete_id", referencedColumnName = "id")
-    @JsonBackReference
+    @ManyToOne(targetEntity = Athlete.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "athlete_id")
+    @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
 
     public TrackTimeRecord(int id, Date recordedTime, double recordedValue, int windSpeed, Athlete athlete) {
@@ -88,4 +87,5 @@ public class TrackTimeRecord {
     public void setAthlete(Athlete athlete) {
         this.athlete = athlete;
     }
+
 }

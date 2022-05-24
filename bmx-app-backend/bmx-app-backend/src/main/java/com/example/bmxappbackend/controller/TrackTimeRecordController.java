@@ -30,7 +30,7 @@ public class TrackTimeRecordController {
     /**
      * @return an iterable list of rolls
      */
-    @JsonView({TrackTimeRecordView.base.class})
+//    @JsonView({TrackTimeRecordView.base.class})
     @GetMapping
     public @ResponseBody Iterable<TrackTimeRecord> getAll(){
         return trackTimeRecordRepository.findAll();
