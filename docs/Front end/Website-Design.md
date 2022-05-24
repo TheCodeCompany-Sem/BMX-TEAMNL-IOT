@@ -10,16 +10,22 @@ We made a few design sketches for some of the different pages of the web applica
 
 ### Home page
 
-|![frontpage](Team-NL-frontpage.png)|
-| :-:|
-|Frontpage|
+| ![frontpage](Team-NL-frontpage.png) |
+| :---------------------------------: |
+|              Frontpage              |
 
 ### Information page
 
-|![Mainpage1](teamnl-mainpage1.png)|
-| :-:|
-|Mainpage1|
+| ![Mainpage1](teamnl-mainpage1.png) |
+| :--------------------------------: |
+|             Mainpage1              |
 
-|![Mainpage2](teamnl-mainpage2.png)|
-| :-:|
-|Mainpage2|
+| ![Mainpage2](teamnl-mainpage2.png) |
+| :--------------------------------: |
+|             Mainpage2              |
+
+### Personal page
+
+| ![personal page](../personalpage_design.png) |
+| :------------------------------------------: |
+|                Personal page                 |
