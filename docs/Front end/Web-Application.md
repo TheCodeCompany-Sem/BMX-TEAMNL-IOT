@@ -70,3 +70,21 @@ Setup Spring Boot in Intellij Idea:
 2. Right click pom.xml file and scroll down till you find the "add as maven project" option and press add.
 3. At this point you should have no errors inside your backend folder, run backendApplication.java and see if it compiles
 4. If it compiles you should have a 
+
+
+Connect your oege database to the spring boot backend:
+1. Edit the application.properties file
+2. Copypaste the code below into the application.properties file
+```xml
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=<JDBC_connection_string>
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+spring.datasource.driver-class-name =com.mysql.cj.jdbc.Driver
+
+server.port=<can be everything, for example: 8080. This will return localhost:8080>
+
+spring.jpa.properties.hibernate.globally_quoted_identifiers=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+
+```
