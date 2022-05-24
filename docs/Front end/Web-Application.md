@@ -96,6 +96,7 @@ You will find the most common errors/issues we found developing the backend in t
 
 If you get this in your console, this means that you got a Cors policy error.
 ![img.png](img.png)
+
 Which basically indicates that the request your trying to make does not uphold Cors security standards.
 
 #####How to fix Cors policy error in Spring boot:
@@ -122,7 +123,8 @@ When working on your backend and testing the different paths inside your control
 when requesting an object which is related to another object.
 
 This is caused by infinite recursion when jackson (which is part of Jpa) tries to serialize both sides of this relationship.
-To solve this issue there are 2 primary ways of doing this.
+To solve this issue there are 2 primary ways of doing this:
+
 1. Adding an @JsonIgnore in the parent of the relationship
 ```java
 Parent.class
