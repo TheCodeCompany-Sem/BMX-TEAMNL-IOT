@@ -427,3 +427,18 @@ Today, we started to apply the feedback we got during the meeting with the clien
 | ![Personal page redesign](personalpage_design.png) |
 | :------------------------------------------------: |
 |               Personal page redesign               |
+
+### Day 2 (Tuesday)
+
+Today, we worked on the design of the personal page again, as it was still to bland, so we made a final version for the design of the personal page:  
+
+| ![Personal page final redesign](personalpage_design_final.png) |
+| :------------------------------------------------------------: |
+|                  Personal page final redesign                  |
+
+We also tested the 2nd windspeed and winddirection sensors to make sure those also work, which they do. We are now trying to figure out how to make them work with the Wemos as we need an internet connection, which is pretty unstable with the wifi module for the arduino.  
+
+After that we also worked on the other documentation files, for example:  
+
+- [Web application](Web%20application/Web-Application.md)
+- [Web design](Web%20application/Website-Design.md)
