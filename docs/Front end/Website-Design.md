@@ -28,4 +28,10 @@ We made a few design sketches for some of the different pages of the web applica
 
 | ![personal page](../personalpage_design.png) |
 | :------------------------------------------: |
-|                Personal page                 |
+|                Personal page                 |  
+
+We made a new version of the table as the sketch previously was not clear enough, this is the result.  
+
+| ![personal page version 2](../personalpage_design2.png) |
+| :------------------------------------------: |
+|                Personal page version 2                 |
