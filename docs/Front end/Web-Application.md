@@ -57,3 +57,16 @@ restGetAthletes(): Observable<Athlete[]>{
 ```
 
 ## Back-end
+
+Installation guide for Spring Boot:
+1. Go to https://start.spring.io
+2. Select which what type of project (maven or gradle) and in which code-language (java, kotlin or groovy) the package will include and what version of spring boot you want to include.
+3. Select what type of package (jar or war) you want it to be exported to and which version of the code language.
+4. Select dependencies if possible to be included in the package
+5. Press generate
+
+Setup Spring Boot in Intellij Idea:
+1. Now that you have a package make sure to make a folder called **backend** inside your project folder and drop your package inside this folder
+2. Right click pom.xml file and scroll down till you find the "add as maven project" option and press add.
+3. At this point you should have no errors inside your backend folder, run backendApplication.java and see if it compiles
+4. If it compiles you should have a 
