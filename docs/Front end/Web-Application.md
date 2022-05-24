@@ -58,21 +58,21 @@ restGetAthletes(): Observable<Athlete[]>{
 
 ## Back-end
 
-Installation guide for Spring Boot:
+#####Installation guide for Spring Boot:
 1. Go to https://start.spring.io
 2. Select which what type of project (maven or gradle) and in which code-language (java, kotlin or groovy) the package will include and what version of spring boot you want to include.
 3. Select what type of package (jar or war) you want it to be exported to and which version of the code language.
 4. Select dependencies if possible to be included in the package
 5. Press generate
 
-Setup Spring Boot in Intellij Idea:
+##### Setup Spring Boot in Intellij Idea:
 1. Now that you have a package make sure to make a folder called **backend** inside your project folder and drop your package inside this folder
 2. Right click pom.xml file and scroll down till you find the "add as maven project" option and press add.
 3. At this point you should have no errors inside your backend folder, run backendApplication.java and see if it compiles
 4. If it compiles you should have a 
 
 
-Connect your oege database to the spring boot backend:
+#####Connect your oege database to the spring boot backend:
 1. Edit the application.properties file
 2. Copypaste the code below into the application.properties file
 ```xml
@@ -88,3 +88,32 @@ spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 
 ```
+
+##### Common issues:
+You will find the most common errors/issues we found developing the backend in this section.
+
+#####Cors policy error:
+
+If you get this in your console, this means that you got a Cors policy error.
+![img.png](img.png)
+Which basically indicates that the request your trying to make does not uphold Cors security standards.
+
+#####How to fix Cors policy error in Spring boot:
+1. Create a class called WebMvcConfig
+2. Paste the following code in your WebMvcConfig
+```java
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry corsRegistry){
+        corsRegistry.addMapping("/**")
+                .allowedMethods("GET","POST","PUT","DELETE")
+                .allowedOriginPatterns("*")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
+}
+
+```
+3. Restart your backend, now you shouldn't be getting a cors policy error
+
