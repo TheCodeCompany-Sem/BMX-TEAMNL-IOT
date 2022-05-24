@@ -8,7 +8,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 <center>
 
 
-|![Davis 6410](assets/6410.jpg)|
+|![Davis 6410](6410.jpg)|
 | :-:|
 |[Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)|
 
@@ -22,7 +22,7 @@ This option is the cheapest one.  The drawbacks are accuracy, the time it will t
 <center>
 
 
-|![sketch_sensor.jpg](assets/sketch_sensor.jpg)|
+|![sketch_sensor.jpg](sketch_sensor.jpg)|
 | :-:|
 |Rotary sensor sketch|
 
@@ -75,7 +75,7 @@ void loop() {
 ```
 It is wired this way:  
 
-|![DHT22_sensor_wiring.png](assets/DHT22_sensor_wiring.png)|
+|![DHT22_sensor_wiring.png](DHT22_sensor_wiring.png)|
 | :-:|
 |DHT22 Humidity and Temperature sensor|
 
@@ -85,14 +85,14 @@ It is wired this way:
 this is how the wiring looks in reality:
 
 
-|![Humidity_and_Temp_sensor.jpg](assets/Humidity_and_Temp_sensor.jpg)|
+|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
 | :-:|
 |DHT22 Humidity and Temperature sensor|
 
 
 this is the data coming from the sensor: 
 
-|![data_from_dht22.png](assets/data_from_dht22.png)|
+|![data_from_dht22.png](data_from_dht22.png)|
 | :-:|
 |Data coming form the DHT22 sensor|
 
@@ -102,7 +102,7 @@ this is the data coming from the sensor:
 | :-:|
 |[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
 
-| ![](assets/Weather_station_connector_rj11.jpg)|
+| ![](Weather_station_connector_rj11.jpg)|
 | :-------------------------------------------------------: |
 |RJ11 pinout weahter station wind direction and speed meter|
 

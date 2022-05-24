@@ -34,7 +34,7 @@ For the backend, we laid the foundation for our models, repositories and control
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
-| ![img.png](img2.png) |
+| ![img.png](img.png) |
 | :-----------------: |
 | Backend foundation  |
 
@@ -43,14 +43,14 @@ For the backend, we laid the foundation for our models, repositories and control
 Today we made the documentation look better, added some orange accents and some TeamNL logos.
 A proper homepage was written.
 
-| ![Homepage_mkdocs.png](assets/Homepage_mkdocs.png) |
+| ![Homepage_mkdocs.png](Homepage_mkdocs.png) |
 | :-----------------------------------------: |
 |         Homepage for documentation          |
 
 Then got a temperature and humidity sensor.
 We were able to wire it properlu and get the first data.
 
-| ![Humidity_and_Temp_sensor.jpg](assets/Humidity_and_Temp_sensor.jpg) |
+| ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
 | :-----------------------------------------------------------: |
 |             DHT22 Humadity and Temperature sensor             |
 
@@ -79,7 +79,7 @@ void loop() {
 
 This is the first prototype of the web application.
 
-| ![front_end_1st_prototype.png](assets/front_end_1st_prototype.png) |
+| ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
 | :---------------------------------------------------------: |
 |            DHT22 Humadity and Temperature sensor            |
 
@@ -143,13 +143,13 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
 
-| ![loading screen](assets/loadingpage.png) |
+| ![loading screen](loadingpage.png) |
 | :--------------------------------: |
 |       Loading screen Design        |
 
 The table page looks as follows:
 
-| ![main page](assets/mainpage.png) |
+| ![main page](mainpage.png) |
 | :------------------------: |
 |      Main page Design      |
 
@@ -296,21 +296,21 @@ We also worked on styling and added the fonts that Aukje sent us.
 
 The weather station arrived today, so we decided to go test it out and make sure it is working.  
 
-| ![weather station Buidling](assets/weather-station-building-2.jpg) |
+| ![weather station Buidling](weather-station-building-2.jpg) |
 | :---------------------------------------------------------: |
 |                Building the weather station                 |
 
-| ![weather station Buidling](assets/weahter-station-building.jpg) |
+| ![weather station Buidling](weahter-station-building.jpg) |
 | :-------------------------------------------------------: |
 |               Building the weather station                |
 
-| ![weather station Buidling done](assets/weather-station-building-done.jpg) |
+| ![weather station Buidling done](weather-station-building-done.jpg) |
 | :-----------------------------------------------------------------: |
 |                    Building weather station done                    |
 
 once we had it assembled we cut the wires and tried to make it work with the Wemos device.
 
-| ![Trying the wires of the windspeed sensor](assets/trywires.jpg) |
+| ![Trying the wires of the windspeed sensor](trywires.jpg) |
 | :-------------------------------------------------------: |
 |         Trying the wires of the windspeed sensor          |
 
@@ -321,7 +321,7 @@ src="https://www.youtube.com/embed/rhg-blru4b8">
 
 We also figured out how the pin out was from the rj11 connector. 
 
-|          ![](assets/Weather_station_connector_rj11.jpg)           |
+|          ![](Weather_station_connector_rj11.jpg)           |
 | :--------------------------------------------------------: |
 | RJ11 pinout weahter station wind direction and speed meter |
 
@@ -337,24 +337,24 @@ With this turtorial we made the anemometer working with a Arduino Uno.
 
 This is the schematic to connetect the anemometer to a Arduino Uno
 
-| ![Windspeed meter connection arduino](assets/Anemometer_connection_arduino.png) |
+| ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
 | :----------------------------------------------------------------------: |
 |                   Schematic anemometer to arduino Uno                    |
 
 We have made de windspeeds sensor working!
 
 
-| ![Windspeed meter complete](assets/IMG_20220518_121711.jpg) |
+| ![Windspeed meter complete](IMG_20220518_121711.jpg) |
 | :--------------------------------------------------: |
 |               Windspeed meter testing                |
 
 
-| ![Windspeed meter working](assets/IMG_20220518_121700.jpg) |
+| ![Windspeed meter working](IMG_20220518_121700.jpg) |
 | :-------------------------------------------------: |
 |      Windspeed meter working with the terminal      |
 
 
-| ![Windspeed meter connetion](assets/IMG_20220518_121705.jpg) |
+| ![Windspeed meter connetion](IMG_20220518_121705.jpg) |
 | :---------------------------------------------------: |
 |              Windspeed meter connection               |
 
@@ -412,7 +412,7 @@ void loop() {
 
 This is how the sensor is wired, we're using a 10k resistor and 5V:
 
-| ![Wind vane wiring](assets/wind_vane_wiring.png) |
+| ![Wind vane wiring](wind_vane_wiring.png) |
 | :---------------------------------------: |
 |         Wind vane wiring diagram          |
 
@@ -424,6 +424,6 @@ Then we tried to get all the sensors connected at the same time. We went outside
 
 Today, we started to apply the feedback we got during the meeting with the client. So we went back to the drawing board to redesign the personal page, as it was too bland and needed to look cleaner and be more vibrant. So we added a background grayscaled of the orange background delivered to us by our client:  
 
-| ![Personal page redesign](assets/personalpage_design.png) |
+| ![Personal page redesign](personalpage_design.png) |
 | :------------------------------------------------: |
 |               Personal page redesign               |
