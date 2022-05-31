@@ -442,3 +442,67 @@ After that we also worked on the other documentation files, for example:
 
 - [Web application](Web%20application/Web-Application.md)
 - [Web design](Web%20application/Website-Design.md)
+
+### Day 3 (Wednesday)
+
+Today we tried to wire the sensors to the Wemos. We are getting an error that we haven't figured out yet.
+```
+ ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+
+load 0x4010f000, len 3460, room 16 
+tail 4
+chksum 0xcc
+load 0x3fff20b8, len 40, room 4 
+tail 4
+chksum 0xc9
+csum 0xc9
+v00042c50
+~ld
+ISR not in IRAM!
+
+User exception (panic/abort/assert)
+
+Abort called
+
+>>>stack>>>
+
+ctx: cont
+sp: 3ffffe90 end: 3fffffc0 offset: 0000
+3ffffe90:  feefeffe feefeffe feefeffe 3ffef46c  
+3ffffea0:  000000fe 00000000 00000000 00000000  
+3ffffeb0:  00000000 00000000 00000000 00ff0000  
+3ffffec0:  5ffffe00 5ffffe00 0001c200 3ffee67c  
+3ffffed0:  00000000 00000001 0000000d 4020278a  
+3ffffee0:  40100419 00000001 3ffee614 4020279c  
+3ffffef0:  00000000 00000001 0000000d 40202cd9  
+3fffff00:  00000000 feefeffe feefeffe feefeffe  
+3fffff10:  3fffdad0 00000000 3ffee614 40202d78  
+3fffff20:  3fffdad0 00000000 3ffee614 4020108f  
+3fffff30:  feefeffe feefeffe feefeffe feefeffe  
+3fffff40:  feefeffe feefeffe feefeffe feefeffe  
+3fffff50:  feefeffe feefeffe feefeffe feefeffe  
+3fffff60:  feefeffe feefeffe feefeffe feefeffe  
+3fffff70:  feefeffe feefeffe feefeffe feefeffe  
+3fffff80:  feefeffe feefeffe feefeffe feefeffe  
+3fffff90:  feefeffe feefeffe feefeffe feefeffe  
+3fffffa0:  feefeffe 00000000 3ffee668 402020a0  
+3fffffb0:  feefeffe feefeffe 3ffe85d8 40100cd5  
+<<<stack<<<
+
+
+```
+
+## Week 5 (30-5-2022 - 5-6-2022)
+
+### Day 1 (Monday)
+
+Today we worked on the different reports, and updated old ones to fit within what Bas expected. 
+We wrote user stories on the board.
+We had meetings with Bas in the afternoon.
+
+### Day 2 (Tuesday)
+
+We're still trying to fix the error we had on wednesday. 
+I tried to redo the wiring but it doesn't seem to be the problem.
+Googling the error doesn't help either.
+
