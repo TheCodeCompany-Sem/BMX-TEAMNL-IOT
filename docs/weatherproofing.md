@@ -4,11 +4,13 @@ As we need to make the device work outside, we need to make sure it is weatherpr
 
 - (heavy) rain
 - Strong winds and gusts
-- Possibly lightningbolts?
+- lightningbolts
 
 ## Rain
 
-Making the product waterproof is practically impossible, as you need to be able to connect the wires from the wemos to a device, however making it water-resistant is definitely possible. This makes it practically impossible for rain to get into the device. To do this we can use potting compound, like [this one](https://www.f4p-products.com/products/4319079-2-x-150ml-bottles-of-magic-gel). It will make it IP68 rated water resistant, which is the same as all high-end smartphones have nowadays, making it perfectly capable to resist the rain.
+Making the product waterproof is practically impossible, as you need to be able to connect the wires from the wemos to a device, however making it water-resistant is definitely possible. This makes it practically impossible for rain to get into the device. To do this, we could make a casing for the device, with **rubber rings** around the openings, this way the rubber can catch the water comming through the holes. However, this would give us a problem regarding heat, as if it gets warm weather the heat would then make the casing expand, which would allow water to find its way to the board anyway.
+Apart from that, we could also use some other methods, one of which is using **nailpolish**, which would could also make the board resistant to water, but it would not be able to protect the usb port, nor would it be able to protect the pins.  
+Another option would be to use **silicone** or **potting compound**. We can dip the board in there and make a brick of silicone with the board in there, which would actually make the device as waterresistant as possible and would even make it function completely underwater. The problem with this however, is that we need to be able to access the usb port of the board, which would be inaccessible. Modifying the board afterwards would also be impossible.
 
 ## Wind
 
