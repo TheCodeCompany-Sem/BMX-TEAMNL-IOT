@@ -496,13 +496,13 @@ sp: 3ffffe90 end: 3fffffc0 offset: 0000
 
 ### Day 1 (Monday)
 
-Today we worked on the different reports, and updated old ones to fit within what Bas expected. 
+Today we worked on the different reports, and updated old ones to fit within what Bas expected.
 We wrote user stories on the board.
 We had meetings with Bas in the afternoon.
 
 ### Day 2 (Tuesday)
 
-We're still trying to fix the error we had on wednesday. 
+We're still trying to fix the error we had on wednesday.
 I tried to redo the wiring but it doesn't seem to be the problem.
-Googling the error doesn't help either.
-
+Googling the error doesn't help either.  
+We also researched what the possibilities are to make the device weatherproof, as the device needs to function outside, also at times of bad weather. This documentation can be found [here](weatherproofing.md).
