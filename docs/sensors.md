@@ -115,6 +115,93 @@ this is the data coming from the sensor:
 | :-------------------------------------------------------: |
 |RJ11 pinout weahter station wind direction and speed meter|
 
+[Arduino measure wind speed tutorial](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
+
+This is the schematic to connetect the anemometer to a Arduino Uno
+
+| ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
+| :----------------------------------------------------------------------: |
+|                   Schematic anemometer to arduino Uno                    |
+
+We have made de windspeeds sensor working!
+
+
+| ![Windspeed meter complete](IMG_20220518_121711.jpg) |
+| :--------------------------------------------------: |
+|               Windspeed meter testing                |
+
+
+| ![Windspeed meter working](IMG_20220518_121700.jpg) |
+| :-------------------------------------------------: |
+|      Windspeed meter working with the terminal      |
+
+
+| ![Windspeed meter connetion](IMG_20220518_121705.jpg) |
+| :---------------------------------------------------: |
+|              Windspeed meter connection               |
+
+
+The code we are using to control the windspeed meter
+
+```cpp
+const int RecordTime = 3; //Define Measuring Time (Seconds)
+const int SensorPin = 3;  //Define Interrupt Pin (2 or 3 @ Arduino Uno)
+
+int InterruptCounter;
+float WindSpeed;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop() {
+  meassure();
+  Serial.print("Wind Speed: ");
+  Serial.print(WindSpeed);       //Speed in km/h
+  Serial.print(" km/h - ");
+  Serial.print(WindSpeed / 3.6); //Speed in m/s
+  Serial.println(" m/s");
+}
+
+void meassure() {
+  InterruptCounter = 0;
+  attachInterrupt(digitalPinToInterrupt(SensorPin), countup, RISING);
+  delay(1000 * RecordTime);
+  detachInterrupt(digitalPinToInterrupt(SensorPin));
+  WindSpeed = (float)InterruptCounter / (float)RecordTime * 2.4;
+}
+
+void countup() {
+  InterruptCounter++;
+}
+```
+
+The code used for the wind direction sensor is the following:
+```cpp
+
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  float voltage = sensorValue*5/1023.0;
+  int direction = map(sensorValue, 0, 1023, 0, 360);
+  Serial.print("Direction : ");
+  Serial.println(direction);
+  delay(300); 
+}
+
+```
+
+This is how the sensor is wired, we're using a 10k resistor and 5V:
+
+| ![Wind vane wiring](wind_vane_wiring.png) |
+| :---------------------------------------: |
+|         Wind vane wiring diagram          |
+
+Then we tried to get all the sensors connected at the same time. We went outside for testing. Everything was working properly.
+
+We're now figuring out how to get the data from the sensors to the internet. Using a wemos instead of the arduino has shown to be hard. We're facing a lot of errors.
+
 
 
 
