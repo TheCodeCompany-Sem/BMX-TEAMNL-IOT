@@ -506,3 +506,9 @@ We're still trying to fix the error we had on wednesday.
 I tried to redo the wiring but it doesn't seem to be the problem.
 Googling the error doesn't help either.  
 We also researched what the possibilities are to make the device weatherproof, as the device needs to function outside, also at times of bad weather. This documentation can be found [here](weatherproofing.md).
+
+### Day 3 (Wednesday)
+
+Today we continued to try to make the sensors work with the Wemos. We tried swapping the wemos for a different one, we replaced the cables, redid the wiring, tried the other set of sensors, tried an alternative to the wiring we had but still no luck.
+
+We're starting to consider using an arduino to receive the data and send it to the wemos which would then communicate with the internet. That solution would be less elegant and require some work. But it would get us unstuck.
