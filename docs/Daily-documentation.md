@@ -512,3 +512,12 @@ We also researched what the possibilities are to make the device weatherproof, a
 Today we continued to try to make the sensors work with the Wemos. We tried swapping the wemos for a different one, we replaced the cables, redid the wiring, tried the other set of sensors, tried an alternative to the wiring we had but still no luck.
 
 We're starting to consider using an arduino to receive the data and send it to the wemos which would then communicate with the internet. That solution would be less elegant and require some work. But it would get us unstuck.
+
+On the end of the day nearly everything worked except for the windsspeed sensor. \
+With this tutorials i have made it working exept for the windspeed:
+
+[ESP8266 Weather Station - with Wind and Rain Sensors](https://tysonpower.de/blog/esp8266-weather-station)
+[Arduino Measure Wind Speed](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
+[ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
+[ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
+
