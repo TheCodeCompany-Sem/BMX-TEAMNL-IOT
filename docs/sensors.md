@@ -193,11 +193,12 @@ void loop() {
 ```
 
 This is how the sensor is wired, we're using a 10k resistor and 5V:
+<center>
 
 | ![Wind vane wiring](wind_vane_wiring.png) |
 | :---------------------------------------: |
 |         Wind vane wiring diagram          |
-
+</center>
 Then we tried to get all the sensors connected at the same time. We went outside for testing. Everything was working properly.
 
 We're now figuring out how to get the data from the sensors to the internet. Using a wemos instead of the arduino has shown to be hard. We're facing a lot of errors.
