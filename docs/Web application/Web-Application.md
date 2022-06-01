@@ -154,4 +154,34 @@ private Athlete athlete;
 
 ```
 
+##### How to make a post request with parent and child
+
+While there are many ways to do this, I choose the easiest solution.
+Which was passing the id of the athlete (in this case the foreign key) in the route.
+Then using this foreign key I find the athlete related to the foreign key and then call the setter used to 
+get tracktimerecords with their athletes
+
+The primary reason why I did it this way is because you can't save a child without saving its entire parent in Spring Boot.
+
+
+```java
+Childcontroller.class
+...
+@PostMapping("/measurement/{athleteId}")
+   public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord, @PathVariable int athleteId){
+    
+        trackTimeRecord.setAthlete(athleteRepository.findById(athleteId));
+        trackTimeRecordRepository.save(trackTimeRecord);
+
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(trackTimeRecord.getId()).toUri();
+
+        return ResponseEntity.created(location).body(trackTimeRecord);
+   }
+```
+
+
 
