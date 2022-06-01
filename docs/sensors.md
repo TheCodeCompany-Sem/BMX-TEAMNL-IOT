@@ -117,13 +117,13 @@ this is the data coming from the sensor:
 
 [Arduino measure wind speed tutorial](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
 
-This is the schematic to connetect the anemometer to a Arduino Uno
+This is the schematic to connect the anemometer to a Arduino Uno
 
 | ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
 | :----------------------------------------------------------------------: |
 |                   Schematic anemometer to arduino Uno                    |
 
-We have made de windspeeds sensor working!
+We have made the windspeed sensor work!
 
 
 | ![Windspeed meter complete](IMG_20220518_121711.jpg) |
