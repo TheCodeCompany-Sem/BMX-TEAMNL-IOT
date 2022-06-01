@@ -2,6 +2,7 @@ package com.example.bmxappbackend.model;
 
 import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
@@ -31,10 +32,11 @@ public class TrackTimeRecord {
     private int windSpeed;
 
     @JsonView(TrackTimeRecordView.base.class)
-    @ManyToOne(targetEntity = Athlete.class, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "athlete_id")
     @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
+
 
     public TrackTimeRecord(int id, Date recordedTime, double recordedValue, int windSpeed, Athlete athlete) {
         this.id = id;

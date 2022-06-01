@@ -24,24 +24,21 @@ public class Athlete {
     @Column(name = "surname", nullable = false)
     private String surname;
 
-    @ManyToOne(targetEntity = Coach.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "coach_id", insertable = false, updatable = false)
+    @JsonIgnore
+    @ManyToOne(targetEntity = Coach.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "coach_id")
     @JsonBackReference(value = "athletes")
     private Coach coach;
 
-    @Column(name = "coach_id")
-    private int coachId;
-
-    @OneToMany(mappedBy = "athlete", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "athlete")
     @JsonManagedReference(value = "trackTimeRecords")
     private List<TrackTimeRecord> trackTimeRecords;
 
-    public Athlete(int id, String firstName, String surname, Coach coach, int coachId, List<TrackTimeRecord> trackTimeRecords) {
+    public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
         this.coach = coach;
-        this.coachId = coachId;
         this.trackTimeRecords = trackTimeRecords;
     }
 
@@ -86,13 +83,5 @@ public class Athlete {
 
     public void setTrackTimeRecords(List<TrackTimeRecord> trackTimeRecords) {
         this.trackTimeRecords = trackTimeRecords;
-    }
-
-    public int getCoachId() {
-        return coachId;
-    }
-
-    public void setCoachId(int coachId) {
-        this.coachId = coachId;
     }
 }

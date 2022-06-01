@@ -1,6 +1,8 @@
 package com.example.bmxappbackend.controller;
 
+import com.example.bmxappbackend.model.Athlete;
 import com.example.bmxappbackend.model.TrackTimeRecord;
+import com.example.bmxappbackend.repository.AthleteRepository;
 import com.example.bmxappbackend.repository.TrackTimeRecordRepository;
 import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonView;
@@ -22,10 +24,15 @@ public class TrackTimeRecordController {
 
     private final TrackTimeRecordRepository trackTimeRecordRepository;
 
+    private final AthleteRepository athleteRepository;
+
     @Autowired
-    public TrackTimeRecordController(TrackTimeRecordRepository trackTimeRecordRepository) {
+    public TrackTimeRecordController(TrackTimeRecordRepository trackTimeRecordRepository, AthleteRepository athleteRepository) {
         this.trackTimeRecordRepository = trackTimeRecordRepository;
+        this.athleteRepository = athleteRepository;
     }
+
+
 
     /**
      * @return an iterable list of rolls
@@ -46,11 +53,14 @@ public class TrackTimeRecordController {
 
     /**
      * @param trackTimeRecord
-     * @return a response status whether the operation to add a roll was succesfull
+     * @return a response status whether the operation to add a roll was succesful
      */
-    @PostMapping
-    public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord){
+    @PostMapping("/measurement/{athleteId}")
+    public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord, @PathVariable int athleteId){
+        trackTimeRecord.setAthlete(athleteRepository.findById(athleteId));
+
         trackTimeRecordRepository.save(trackTimeRecord);
+
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
