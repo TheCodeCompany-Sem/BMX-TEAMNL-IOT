@@ -10,6 +10,7 @@ import { NavbarComponent } from './generic/navbar/navbar.component';
 import { FooterComponent } from './generic/footer/footer.component';
 import { HeaderComponent } from './generic/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SplashComponent,
     HomepageComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
