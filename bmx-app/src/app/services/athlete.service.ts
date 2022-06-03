@@ -3,6 +3,7 @@ import {Athlete} from "../models/athlete";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {keyframes} from "@angular/animations";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AthleteService {
 
   //Work in progress
   restGetAthletes(): Observable<Athlete[]>{
-    return this.httpClient.get<Athlete[]>(`http://localhost:808/athlete`)
+    return this.httpClient.get<Athlete[]>(`${environment.apiUrl}/athlete`)
       .pipe(
         map(responseData => {
         const athleteArray: Athlete[] = [];
