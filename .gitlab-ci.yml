@@ -4,6 +4,10 @@ before_script:
   # Install mkdocs and theme
   - time pip install -r requirements.txt
 
+stages:
+  - test
+  - deploy
+  
 test:
   stage: test
   tags:
@@ -31,3 +35,37 @@ pages:
     - public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+deploy_be:
+    stage: deploy
+    image: node:latest
+    tags:
+        - hva
+    only:
+        refs:
+            - master
+        changes:
+          - "bmx-app-backend/**/*"  
+    script:
+        - git branch -D splitting-be
+        - git remote rm heroku-be-app || true
+        - git remote add heroku-be-app https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-be-staging.git || true
+        - git subtree split --prefix bmx-app-backend -b splitting-be
+        - git push --force heroku-be-app splitting-be:master
+
+deploy_fe:    
+    stage: deploy
+    image: node:latest
+    tags:
+        - hva
+    only:
+        refs:
+            - master
+        changes:
+          - "bmx-app/**/*"  
+    script:
+        - git branch -D splitting-fe
+        - git remote rm heroku-fe-app || true
+        - git remote add heroku-fe-app https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-staging.git || true
+        - git subtree split --prefix bmx-app -b splitting-fe
+        - git push --force heroku-fe-app splitting-fe:master
