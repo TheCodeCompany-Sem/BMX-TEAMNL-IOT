@@ -21,7 +21,7 @@ We made the following pages:
 
 ### Day 3 (Wednesday)
 
-Today we prepared the presentation for our meeting with Aukje. 
+Today we prepared the presentation for our meeting with Aukje.
 We did a retrospective of what we have done so far, and made sure the documentation was up to date.
 
 ## Week 2 (9-5-2022 - 15-5-2022)
@@ -75,7 +75,6 @@ void loop() {
     delay(2000);
 }
 ```
-
 
 This is the first prototype of the web application.
 
@@ -318,8 +317,7 @@ once we had it assembled we cut the wires and tried to make it work with the Wem
 src="https://www.youtube.com/embed/rhg-blru4b8">
 </iframe>  
 
-
-We also figured out how the pin out was from the rj11 connector. 
+We also figured out how the pin out was from the rj11 connector.
 
 |          ![](Weather_station_connector_rj11.jpg)           |
 | :--------------------------------------------------------: |
@@ -343,21 +341,17 @@ This is the schematic to connetect the anemometer to a Arduino Uno
 
 We have made de windspeeds sensor working!
 
-
 | ![Windspeed meter complete](IMG_20220518_121711.jpg) |
 | :--------------------------------------------------: |
 |               Windspeed meter testing                |
-
 
 | ![Windspeed meter working](IMG_20220518_121700.jpg) |
 | :-------------------------------------------------: |
 |      Windspeed meter working with the terminal      |
 
-
 | ![Windspeed meter connetion](IMG_20220518_121705.jpg) |
 | :---------------------------------------------------: |
 |              Windspeed meter connection               |
-
 
 The code we are using to control the windspeed meter
 
@@ -394,8 +388,10 @@ void countup() {
   InterruptCounter++;
 }
 ```
+
 Finally we got the wind direction sensor to work.
 The code used is the following:
+
 ```cpp
 
 void loop() {
@@ -446,6 +442,7 @@ After that we also worked on the other documentation files, for example:
 ### Day 3 (Wednesday)
 
 Today we tried to wire the sensors to the Wemos. We are getting an error that we haven't figured out yet.
+
 ```
  ets Jan  8 2013,rst cause:2, boot mode:(3,6)
 
@@ -523,13 +520,57 @@ With this tutorials i have made it working exept for the windspeed:
 
 ### Day 5 (Friday)
 
-Today we started with deploying our webpage to our "own" domain. 
-We followed [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/README.md) 
+Today we started with deploying our webpage to our "own" domain.
+We followed [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/README.md)
 to deploy our website using heroku, which we did successfully. A link to the website can be found [here](https://bmx-nl-app-staging.herokuapp.com).
 
 At this point, the only way to deploy something to our staging environment is by manually making a commit using heroku git.
-This is why we also started working on automating this part using a pipeline
+This is why we also started working on automating this part using a pipeline.
 
+### Day 6 (Saturday)
+
+Today, we started working on automating the committing through Heroku. We do this using the git pipeline on a different branch than the one we run the pages on. That way we can effectively have 2 pipelines running simultaneously without having problems of the pipelines intervening with eachother. We did this using [this tutorial](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/doc/general/gitlab-cicd/README.md). We personalised it to our usecase, and we got this result:  
+
+```yml
+stages:
+  - deploy
+
+deploy_be:
+    stage: deploy
+    image: node:latest
+    tags:
+        - hva
+    only:
+        refs:
+            - heroku-deployment
+        changes:
+          - "bmx-app-backend/**/*"  
+    script:
+        - git remote rm heroku-be-app || true
+        - git remote add heroku-be-app https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-be-staging.git || true
+        - git subtree split --prefix bmx-app-backend -b splitting-staging-be
+        - git push --force heroku-be-app splitting-staging-be:master
+        - git branch -D splitting-staging-be
+
+deploy_fe:    
+    stage: deploy
+    image: node:latest
+    tags:
+        - hva
+    only:
+        refs:
+            - heroku-deployment
+        changes:
+          - "bmx-app/**/*"  
+    script:
+        - git remote rm heroku-fe-app || true
+        - git remote add heroku-fe-app https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-staging.git || true
+        - git subtree split --prefix bmx-app -b splitting-staging-fe
+        - git push --force heroku-fe-app splitting-staging-fe:master
+        - git branch -D splitting-staging-fe
+```
+
+However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached it concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this on monday.
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
