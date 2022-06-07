@@ -521,3 +521,16 @@ With this tutorials i have made it working exept for the windspeed:
 [ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
 [ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
 
+### Day 5 (Friday)
+
+Today we started with deploying our webpage to our "own" domain. 
+We followed [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/README.md) 
+to deploy our website using heroku, which we did successfully. A link to the website can be found [here](https://bmx-nl-app-staging.herokuapp.com).
+
+At this point, the only way to deploy something to our staging environment is by manually making a commit using heroku git.
+This is why we also started working on automating this part using a pipeline
+
+
+## Week 6 (6-6-2022 - 12-6-2022)
+
+### Day 1 (Monday)

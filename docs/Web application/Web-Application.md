@@ -88,10 +88,22 @@ spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 
 ```
+## Deployment:
+While deploying sounds hard, in actuality it isn't. Here is how we can deploy the webpage using heroku.
 
-### Common issues:
-You will find the most common errors/issues we found developing the backend in this section.
+We also assume that you are using an angular front-end and a spring boot backend 
 
+We used [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/README.md), however down below will be a quick summary of this guide.
+
+1. Create an account at [heroku](https://signup.heroku.com/login)
+2. Create 2 new apps (1 for the backend and 1 for the front-end), make sure to give your domain a useful name/
+3. 
+
+## Common issues:
+You will find the most common errors/issues we found developing the backend/front-end in this section.
+### Front-end:
+..
+### Backend:
 #####Cors policy error:
 
 If you get this in your console, this means that you got a Cors policy error.
@@ -102,6 +114,7 @@ Which basically indicates that the request your trying to make does not uphold C
 #####How to fix Cors policy error in Spring boot:
 1. Create a class called WebMvcConfig
 2. Paste the following code in your WebMvcConfig
+
 ```java
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
