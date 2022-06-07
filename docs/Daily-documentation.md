@@ -533,4 +533,8 @@ This is why we also started working on automating this part using a pipeline
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
-### Day 1 (Monday)
+### Day 1 (Tuesday)
+
+Today the soldering on one of the wires on the weatherstation broke. I ended up resoldering every wire on that set. 
+Then I looked up some ways to go around the internet/wemos problem. I could be able to use a simple python script to read the data from the terminal and perform the post request.
+We'll try to put that in practice tomorrow.
