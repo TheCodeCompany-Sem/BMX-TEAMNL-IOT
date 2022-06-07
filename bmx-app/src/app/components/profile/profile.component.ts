@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TrackTimeRecord} from "../../models/tracktimerecord";
+import {Athlete} from "../../models/athlete";
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    private trackTimeService : TrackTimeRecord
+  ) { }
+
+
+  get time(): TrackTimeRecord[] {
+    return this.trackTimeService.findAll();
+  }
 
   ngOnInit(): void {
   }

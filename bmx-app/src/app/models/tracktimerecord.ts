@@ -1,14 +1,18 @@
+import {Athlete} from "./athlete";
+
 export class TrackTimeRecord{
   private _id: number;
   private _recordedTime: Date;
   private _recordedValue: number;
   private _windSpeed: number;
+  private _athlete?: Athlete;
 
-  constructor(id: number, recordedTime: Date, recordedValue: number, windSpeed: number) {
+  constructor(id: number, recordedTime: Date, recordedValue: number, windSpeed: number, athlete: Athlete) {
     this._id = id;
     this._recordedTime = recordedTime;
     this._recordedValue = recordedValue;
     this._windSpeed = windSpeed;
+    this._athlete = Athlete;
   }
 
   get id(): number {
