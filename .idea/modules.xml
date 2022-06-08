@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bmx-app-backend/bmx-app-backend/bmx-app-backend.iml" filepath="$PROJECT_DIR$/bmx-app-backend/bmx-app-backend/bmx-app-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/iot-bmx-team-nl-2.0.iml" filepath="$PROJECT_DIR$/.idea/iot-bmx-team-nl-2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/iot-bmx-team-nl.iml" filepath="$PROJECT_DIR$/.idea/iot-bmx-team-nl.iml" />
     </modules>
   </component>
 </project>
