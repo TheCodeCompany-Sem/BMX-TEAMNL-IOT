@@ -11,8 +11,7 @@ export class AthleteService {
   private athletes: Athlete[] = []
   constructor(private httpClient: HttpClient) {
     this.restGetAthletes().subscribe(
-      responseData => this.athletes = responseData,
-      error => ErrorHandler.apply(error)
+      responseData => this.athletes = responseData
     )
   }
 

@@ -3,14 +3,19 @@ import {Athlete} from "./athlete";
 export class TrackTimeRecord{
   private _id: number;
   private _recordedTime: Date;
-  private _recordedValue: number;
+  private _humidity: number;
   private _windSpeed: number;
+  private _windDirection: string;
+  private _temperature: number;
 
-  constructor(id: number, recordedTime: Date, recordedValue: number, windSpeed: number) {
+
+  constructor(id: number, recordedTime: Date, humidity: number, windSpeed: number, windDirection: string, temperature: number) {
     this._id = id;
     this._recordedTime = recordedTime;
-    this._recordedValue = recordedValue;
+    this._humidity = humidity;
     this._windSpeed = windSpeed;
+    this._windDirection = windDirection;
+    this._temperature = temperature;
   }
 
   get id(): number {
@@ -28,15 +33,6 @@ export class TrackTimeRecord{
   set recordedTime(value: Date) {
     this._recordedTime = value;
   }
-
-  get recordedValue(): number {
-    return this._recordedValue;
-  }
-
-  set recordedValue(value: number) {
-    this._recordedValue = value;
-  }
-
   get windSpeed(): number {
     return this._windSpeed;
   }
@@ -45,7 +41,30 @@ export class TrackTimeRecord{
     this._windSpeed = value;
   }
 
-  public toString = () : string =>{
-    return `id: ${this._id}, recordedTime: ${this._recordedTime}, recordedValue: ${this.recordedValue}, windSpeed : ${this.windSpeed}`
+
+  get humidity(): number {
+    return this._humidity;
   }
+
+  set humidity(value: number) {
+    this._humidity = value;
+  }
+
+  get windDirection(): string {
+    return this._windDirection;
+  }
+
+  set windDirection(value: string) {
+    this._windDirection = value;
+  }
+
+  get temperature(): number {
+    return this._temperature;
+  }
+
+  set temperature(value: number) {
+    this._temperature = value;
+  }
+
+
 }

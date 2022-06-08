@@ -16,11 +16,11 @@
   </tr>
   <tr *ngFor="let time of time; let i= index">
     <th>{{time.id}}</th>
-    <th>{{time.recordedValue}}</th>
+    <th>{{time.humidity}}</th>
     <th>{{time.recordedTime}}</th>
-    <th>{{time.trackTimeRecords[0].windSpeed}}</th>
-    <th>{{time.trackTimeRecords[0].recordedValue}}</th>
-    <th>{{time.trackTimeRecords[0].recordedTime}}</th>
+    <th>{{time.windSpeed}}</th>
+    <th>{{time.windDirection}}</th>
+    <th>{{time.temperature}}</th>
   </tr>
 
 

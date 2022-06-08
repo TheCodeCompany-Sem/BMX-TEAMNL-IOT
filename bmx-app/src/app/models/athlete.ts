@@ -5,8 +5,7 @@ export class Athlete{
   private _firstName: string;
   private _surname: string;
   private _trackTimeRecords?: TrackTimeRecord;
-
-
+  
   constructor(id: number, firstName: string, surname: string, trackTimeRecords: TrackTimeRecord) {
     this._id = id;
     this._firstName = firstName;
