@@ -580,3 +580,6 @@ Today the soldering on one of the wires on the weatherstation broke. I ended up 
 Then I looked up some ways to go around the internet/wemos problem. I could be able to use a simple python script to read the data from the terminal and perform the post request.
 We'll try to put that in practice tomorrow.
 
+### Day 2 (Wednesday)
+
+Sem managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the backend. Error handling remains to be done on the backend.
