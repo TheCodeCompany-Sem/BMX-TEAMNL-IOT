@@ -1,7 +1,10 @@
 #include "DHT.h"
 #include <PubSubClient.h>
 #include <ESP8266WiFi.h>
-
+#include <DNSServer.h>
+#include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
+#include <ArduinoJson.h>
 
 #define INTERVAL 30                                                 // Intervall of sending in seconds
 // DHT
@@ -24,6 +27,29 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
+const char* ssid = "Ziggo_ittdesk";
+const char* password = "dekey2017";
+
+void setup_wifi() {
+  // Connect WiFi
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.hostname("Name");
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print("-");
+    Serial.flush();
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+ 
+  // Print the IP address
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
 //////////////// SETUP //////////////////////////////////////////////
 void setup() {
   Serial.begin(115200);
@@ -38,12 +64,13 @@ void setup() {
   interrupts();
 
   dht.begin();
+  setup_wifi();
   delay(10);
 
   // send device attributes
 
   // Prepare a JSON payload string
-  String payload = "{";
+  //     String payload = "{";
   //     payload += "\"Device\":"; payload += device_model; payload += ",";
   //     payload += "\"Firmware\":"; payload += software_version; payload += ",";
   //     payload += "\"Sensors\":"; payload += "DHT22 - Wind Speed";
@@ -58,6 +85,44 @@ void loop() {
 }
 
 //////////////// Functions //////////////////////////////////////////
+
+
+void setup_wifi() {
+  // Connect WiFi
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.hostname("Name");
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print("-");
+    Serial.flush();
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+ 
+  // Print the IP address
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void httpPOSTRequest(const char* serverName, char* httpRequestData){
+  WiFiClient client;
+  HTTPClient http;
+  http.useHTTP10(true);
+  http.begin(client, serverName);
+    // Specify content-type header
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // Data to send with HTTP POST
+  http.addHeader("Content-Type", "application/json");
+  int httpResponseCode = http.POST(httpRequestData);
+  //int httpResponseCode = http.POST("{\"api_key\":\"tPmAT5Ab3j7F9\",\"sensor\":\"BME280\",\"value1\":\"24.25\",\"value2\":\"49.54\",\"value3\":\"1005.14\"}");
+  
+  Serial.print("HTTP Response code: ");
+  Serial.println(httpResponseCode);
+  http.end();
+}
 
 void getAndSendTemperatureAndHumidityData()
 {
@@ -144,11 +209,12 @@ void getAndSendTemperatureAndHumidityData()
   Serial.print( "]   -> " );
 
   // Prepare a JSON payload string
-  String payload = "{";
+  String payload = "{recordedTime: 0999-12-31T23:00:00.000:00";
+
   payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
-  payload += "\"windspeed\":"; payload += windspeed; payload += ",";
-  payload += "\"winddirection\":"; payload += winddir; payload += ",";
+  payload += "\"windSpeed\":"; payload += windspeed; payload += ",";
+  payload += "\"windDirection\":"; payload += winddir; payload += ",";
   payload += "}";
 
   // Send payload
@@ -156,7 +222,7 @@ void getAndSendTemperatureAndHumidityData()
   payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
-
+  httpPOSTRequest(localhost:808/TrackTimeRecord/measurement/1, attributes);
   lastSend = millis();
 }
 
