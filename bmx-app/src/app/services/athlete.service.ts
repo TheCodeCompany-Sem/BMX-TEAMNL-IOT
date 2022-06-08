@@ -29,7 +29,7 @@ export class AthleteService {
         console.log("initial list", athleteArray)
         return athleteArray
       })
-      );§
+      );
   }
 
   findAll(): Athlete[]{
