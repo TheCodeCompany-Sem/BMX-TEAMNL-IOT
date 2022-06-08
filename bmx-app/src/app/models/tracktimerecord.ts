@@ -5,14 +5,12 @@ export class TrackTimeRecord{
   private _recordedTime: Date;
   private _recordedValue: number;
   private _windSpeed: number;
-  private _athlete?: Athlete;
 
-  constructor(id: number, recordedTime: Date, recordedValue: number, windSpeed: number, athlete: Athlete) {
+  constructor(id: number, recordedTime: Date, recordedValue: number, windSpeed: number) {
     this._id = id;
     this._recordedTime = recordedTime;
     this._recordedValue = recordedValue;
     this._windSpeed = windSpeed;
-    this._athlete = Athlete;
   }
 
   get id(): number {

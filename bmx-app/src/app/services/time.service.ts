@@ -2,6 +2,7 @@ import {ErrorHandler, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {TrackTimeRecord} from "../models/tracktimerecord";
 import {map, Observable} from "rxjs";
+import {Athlete} from "../models/athlete";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,9 @@ export class TimeService {
           return trackArray
         })
       );
+  }
+  findAll(): TrackTimeRecord[]{
+    return this.tracktimerecord;
   }
 }
 
