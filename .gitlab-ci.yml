@@ -12,10 +12,10 @@ deploy_be:
         changes:
           - "bmx-app-backend/**/*"  
     script:
-        - git remote rm heroku-be-app || true
-        - git remote add heroku-be-app https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-be-staging.git || true
+        - git remote rm bmx-nl-app-be-staging || true
+        - git remote add bmx-nl-app-be-staging https://heroku:$HEROKU_API_KEY@git.heroku.com/bmx-nl-app-be-staging.git || true
         - git subtree split --prefix bmx-app-backend -b splitting-staging-be
-        - git push --force heroku-be-app splitting-staging-be:master
+        - git push --force bmx-nl-app-be-staging splitting-staging-be:master
         - git branch -D splitting-staging-be
 
 deploy_fe:    
