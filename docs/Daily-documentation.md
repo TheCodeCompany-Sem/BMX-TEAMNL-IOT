@@ -1,4 +1,4 @@
-# Daily documentation
+~~# Daily documentation
 
 ## Week 1 (25-04-2022 - 01-05-2022)
 
@@ -583,3 +583,12 @@ We'll try to put that in practice tomorrow.
 ### Day 2 (Wednesday)
 
 Sem managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the backend. Error handling remains to be done on the backend.
+Here you can see the code where we are reading al the data: \
+[Wemos reading weather data code](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/blob/main/Arduino-main/Weahter_station_data___dht22/Weahter_station_data___dht22.ino)
+
+
+Here is the wire scheme for reading the sensors:
+
+|           ![Wemos reading weather data code](Fritzing%20wemos.png)           |
+|:-------------------------------------------------------------------------:|
+| Connecting schema weather station + DHT22 temperature and humidity sensor |
