@@ -589,14 +589,6 @@ Here you can see the code where we are reading all the data: \
 
 Here is the wire scheme for reading the sensors:
 
-<<<<<<< HEAD
-|           ![Wemos reading weather data code](Fritzing%20wemos.png)           |
-|:-------------------------------------------------------------------------:|
-| Connecting schema weather station + DHT22 temperature and humidity sensor |
-
-Martin connected the wemos to the wifi and wrote the postrequest with some values hardcoded for now.
-This remains to be tested.
-=======
 |         ![Wemos reading weather data code](Fritzing%20wemos.png)          |
 | :-----------------------------------------------------------------------: |
 | Connecting schema weather station + DHT22 temperature and humidity sensor |
@@ -614,4 +606,3 @@ Today, we worked had a meeting with the client, discussing our recent progress. 
 |             Main part of the design              |  
 
 The roof is slanted because the water wil then just fall off on its own, creating less time for the water to get into the device.
->>>>>>> bcdc5a91e3754ef0a774c22f0676dde6fc99fba9
