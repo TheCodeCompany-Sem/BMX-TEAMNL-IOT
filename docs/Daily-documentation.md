@@ -397,8 +397,8 @@ The code used is the following:
 void loop() {
   // read the input on analog pin 0:
   int sensorValue = analogRead(A0);
-  float voltage = sensorValue*5/1023.0;
-  int direction = map(sensorValue, 0, 1023, 0, 360);
+  float voltage = sensorValue*5/1023.0; // multiply the value by the voltage(5 volts) and divide it by the range of values (1023)
+  int direction = map(sensorValue, 0, 1023, 0, 360); // we watch all the values possible with an angle 
   Serial.print("Direction : ");
   Serial.println(direction);
   delay(300); 
@@ -583,7 +583,7 @@ We'll try to put that in practice tomorrow.
 ### Day 2 (Wednesday)
 
 Sem managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the backend. Error handling remains to be done on the backend.
-Here you can see the code where we are reading al the data: \
+Here you can see the code where we are reading all the data: \
 [Wemos reading weather data code](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/blob/main/Arduino-main/Weahter_station_data___dht22/Weahter_station_data___dht22.ino)
 
 
@@ -592,3 +592,6 @@ Here is the wire scheme for reading the sensors:
 |           ![Wemos reading weather data code](Fritzing%20wemos.png)           |
 |:-------------------------------------------------------------------------:|
 | Connecting schema weather station + DHT22 temperature and humidity sensor |
+
+Martin connected the wemos to the wifi and wrote the postrequest with some values hardcoded for now.
+This remains to be tested.
