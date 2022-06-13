@@ -1,5 +1,4 @@
-#include "DHT.h"
-#include <PubSubClient.h>
+#include <DHT.h>
 #include <ESP8266WiFi.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
@@ -87,25 +86,6 @@ void loop() {
 //////////////// Functions //////////////////////////////////////////
 
 
-void setup_wifi() {
-  // Connect WiFi
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-  WiFi.hostname("Name");
-  WiFi.begin(ssid, password);
- 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print("-");
-    Serial.flush();
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
- 
-  // Print the IP address
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-}
 
 void httpPOSTRequest(const char* serverName, char* httpRequestData){
   WiFiClient client;
@@ -222,7 +202,7 @@ void getAndSendTemperatureAndHumidityData()
   payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
-  httpPOSTRequest(localhost:808/TrackTimeRecord/measurement/1, attributes);
+  httpPOSTRequest("localhost:808/TrackTimeRecord/measurement/1", attributes);
   lastSend = millis();
 }
 
