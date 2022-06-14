@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d83aad9-3faf-42dd-8487-cda5c3c08457" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmx-app-backend/bmx-app-backend/src/main/java/com/example/bmxappbackend/model/TrackTimeRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/bmx-app-backend/bmx-app-backend/src/main/java/com/example/bmxappbackend/model/TrackTimeRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="ts.external.directory.path" value="C:\Users\mmrab\Desktop\HvAprojects\iot-bmx-team-nl\bmx-app\node_modules\typescript\lib" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
