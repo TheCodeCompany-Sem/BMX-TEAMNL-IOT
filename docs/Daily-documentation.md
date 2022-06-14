@@ -625,3 +625,9 @@ A problem was fixed in the wemos code where we accidently copied some code twice
 
 ### Day 2 (Tuesday)
 
+Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.
+|![meeting picture](20220614_112032.jpg)|
+| :-----------------------------------: |
+|             Meeting Picture           |
+We also got a second try at the piece we tried to print yesterday. This time it worked!
+The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.
