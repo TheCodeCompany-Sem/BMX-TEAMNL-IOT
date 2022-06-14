@@ -623,3 +623,5 @@ We also resoldered the wires coming out ot the sensors, and made them a bit stro
 A problem was fixed in the wemos code where wr accidently copied some code twice.
 
 
+### Day 2 (Tuesday)
+
