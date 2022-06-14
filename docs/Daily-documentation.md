@@ -606,3 +606,21 @@ Today, we worked had a meeting with the client, discussing our recent progress. 
 |             Main part of the design              |  
 
 The roof is slanted because the water wil then just fall off on its own, creating less time for the water to get into the device.
+
+
+## Week 7 (13-6-2022 - 19-6-2022)
+
+### Day 1 (Monday)
+
+We did the first attempt at 3D printing the casing which failed.
+This is the result:
+
+|![3D print of the casing](casing3Dprintfail.png)|
+| :--------------------------------------------: |
+|         3D print of the casing failed          |
+
+We also resoldered the wires coming out ot the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
+
+A problem was fixed in the wemos code where wr accidently copied some code twice.
+
+

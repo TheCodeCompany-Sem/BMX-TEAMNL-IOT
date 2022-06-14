@@ -26,8 +26,8 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
-const char* ssid = "Ziggo_ittdesk";
-const char* password = "dekey2017";
+const char* ssid = "OnePlus 8";
+const char* password = "r5gc6x4d";
 
 void setup_wifi() {
   // Connect WiFi
