@@ -1,6 +1,6 @@
 import {ErrorHandler, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {TrackTimeRecord} from "../models/tracktimerecord";
+import {TrackTimeRecords} from "../models/trackTimeRecords";
 import {map, Observable} from "rxjs";
 import {Athlete} from "../models/athlete";
 
@@ -8,25 +8,20 @@ import {Athlete} from "../models/athlete";
   providedIn: 'root'
 })
 export class TimeService {
-
-  private tracktimerecord : TrackTimeRecord[] = []
-
+  private tracktimerecord : TrackTimeRecords[] = []
   constructor(private httpClient: HttpClient) {
-
     this.restGetTrackTime().subscribe(
       responseData => this.tracktimerecord = responseData,
       error => ErrorHandler.apply(error) )
 
   }
-
   //Work in progress
-  restGetTrackTime(): Observable<TrackTimeRecord[]>{
-    return this.httpClient.get<TrackTimeRecord[]>(`http://localhost:808/TrackTimeRecord`)
+  restGetTrackTime(): Observable<TrackTimeRecords[]>{
+    return this.httpClient.get<TrackTimeRecords[]>(`http://localhost:808/TrackTimeRecord`)
       .pipe(
         map(responseData => {
-          const trackArray: TrackTimeRecord[] = [];
+          const trackArray: TrackTimeRecords[] = [];
           for(const key in responseData){
-            responseData[key].recordedTime;
             trackArray.push(responseData[key])
           }
           console.log("initial list", trackArray)
@@ -34,7 +29,7 @@ export class TimeService {
         })
       );
   }
-  findAll(): TrackTimeRecord[]{
+  findAll(): TrackTimeRecords[]{
     return this.tracktimerecord;
   }
 }

@@ -22,7 +22,7 @@ export class AthleteService {
         map(responseData => {
         const athleteArray: Athlete[] = [];
         for(const key in responseData){
-          responseData[key].trackTimeRecords;
+          responseData[key].trackTimeRecords = responseData[key]["trackTimeRecords"];
           athleteArray.push(responseData[key])
         }
         console.log("initial list", athleteArray)

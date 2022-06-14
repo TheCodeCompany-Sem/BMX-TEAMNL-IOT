@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TrackTimeRecord} from "../../models/tracktimerecord";
+import {TrackTimeRecords} from "../../models/trackTimeRecords";
 import {Athlete} from "../../models/athlete";
 import {TimeService} from "../../services/time.service";
 import {AthleteService} from "../../services/athlete.service";
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   ) { }
 
 
-  get time(): TrackTimeRecord[] {
+  get time(): TrackTimeRecords[] {
     return this.trackTimeService.findAll();
   }
   ngOnInit(): void {

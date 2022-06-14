@@ -1,6 +1,6 @@
 import {Athlete} from "./athlete";
 
-export class TrackTimeRecord{
+export class TrackTimeRecords {
   private _id: number;
   private _recordedTime: Date;
   private _humidity: number;
@@ -66,5 +66,8 @@ export class TrackTimeRecord{
     this._temperature = value;
   }
 
-
+  public toString = () : string => {
+    return `id: ${this._id}, recordedTime: ${this._recordedTime}, humidity: ${this._humidity}, windSpeed: ${this._humidity},
+    windDirection: ${this._windDirection}, temperature: ${this._temperature}`;
+  }
 }

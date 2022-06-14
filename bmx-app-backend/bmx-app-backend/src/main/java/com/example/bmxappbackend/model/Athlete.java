@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.aspectj.apache.bcel.generic.TargetLostException;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author: Mortada M'Rabet
@@ -32,9 +34,9 @@ public class Athlete {
 
     @OneToMany(mappedBy = "athlete")
     @JsonManagedReference(value = "trackTimeRecords")
-    private List<TrackTimeRecord> trackTimeRecords;
+    private Set<TrackTimeRecord> trackTimeRecords = new HashSet<>();
 
-    public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords) {
+    public Athlete(int id, String firstName, String surname, Coach coach, Set<TrackTimeRecord> trackTimeRecords) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
@@ -77,11 +79,11 @@ public class Athlete {
         this.coach = coach;
     }
 
-    public List<TrackTimeRecord> getTrackTimeRecords() {
+    public Set<TrackTimeRecord> getTrackTimeRecords() {
         return trackTimeRecords;
     }
 
-    public void setTrackTimeRecords(List<TrackTimeRecord> trackTimeRecords) {
+    public void setTrackTimeRecords(Set<TrackTimeRecord> trackTimeRecords) {
         this.trackTimeRecords = trackTimeRecords;
     }
 }
