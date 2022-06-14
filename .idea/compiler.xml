@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bmx-app-backend" target="11" />
+      <module name="bmx-app-backend" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
