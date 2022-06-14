@@ -14,6 +14,17 @@ We will go to the location of the client and set the device up on top of the bmx
 
 ## Measurements
 
+We want to make sure it does not take too long for the data to arrive on the website, so the coaches and drivers can read it as soon as possible. That is why we are gonna measure the time between sending the data and it arriving on the website for the users to see.
+
 ## To learn
 
+If the time between sending and receiving the data on the webpage is less than 30 seconds, the test has passed.
+
 ## To do
+
+- Step 1: put up the sensors on the right place.
+- Step 2: connect the device to a power supply.
+- Step 3: Open the webpage.
+- Step 4: Let the drivers start their practice.
+- Step 5: Refresh the webpage and check whether data has been received.
+- Step 6: repeat step 4 and 5 until we have collected 60 minutes worth of data.
