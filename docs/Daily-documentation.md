@@ -338,7 +338,7 @@ This is the schematic to connetect the anemometer to a Arduino Uno
 | :----------------------------------------------------------------------: |
 |                   Schematic anemometer to arduino Uno                    |
 
-We have made de windspeeds sensor working!
+We have made the windspeed sensor work!
 
 | ![Windspeed meter complete](IMG_20220518_121711.jpg) |
 | :--------------------------------------------------: |
@@ -620,7 +620,7 @@ This is the result:
 
 We also resoldered the wires coming out ot the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
 
-A problem was fixed in the wemos code where wr accidently copied some code twice.
+A problem was fixed in the wemos code where we accidently copied some code twice.
 
 
 ### Day 2 (Tuesday)
