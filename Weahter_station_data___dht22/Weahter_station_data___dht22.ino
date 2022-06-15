@@ -29,6 +29,8 @@ unsigned long lastSend;
 const char* ssid = "OnePlus 8";
 const char* password = "r5gc6x4d";
 
+//////////////// Functions //////////////////////////////////////////
+
 void setup_wifi() {
   // Connect WiFi
   Serial.print("Connecting to ");
@@ -49,43 +51,6 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
-//////////////// SETUP //////////////////////////////////////////////
-void setup() {
-  Serial.begin(115200);
-  // pin for Wind speed
-  pinMode(windSpeedPin, INPUT_PULLUP);
-  noInterrupts();
-  attachInterrupt(digitalPinToInterrupt(windSpeedPin), cntWindSpeed, RISING);
-  timer0_isr_init();                             // Initialise Timer-0
-  timer0_attachInterrupt(Timer_ISR);             // Goto the Timer_ISR function when an interrupt occurs
-  timer0_write(ESP.getCycleCount() + 80000000L);
-  pinMode(windDirPin, INPUT);
-  interrupts();
-
-  dht.begin();
-  setup_wifi();
-  delay(10);
-
-  // send device attributes
-
-  // Prepare a JSON payload string
-  //     String payload = "{";
-  //     payload += "\"Device\":"; payload += device_model; payload += ",";
-  //     payload += "\"Firmware\":"; payload += software_version; payload += ",";
-  //     payload += "\"Sensors\":"; payload += "DHT22 - Wind Speed";
-  //     payload += "}";
-
-}
-
-//////////////// LOOP //////////////////////////////////////////////
-void loop() {
-  getAndSendTemperatureAndHumidityData();
-  delay(1000);
-}
-
-//////////////// Functions //////////////////////////////////////////
-
-
 
 void httpPOSTRequest(const char* serverName, char* httpRequestData){
   WiFiClient client;
@@ -97,7 +62,6 @@ void httpPOSTRequest(const char* serverName, char* httpRequestData){
   // Data to send with HTTP POST
   http.addHeader("Content-Type", "application/json");
   int httpResponseCode = http.POST(httpRequestData);
-  //int httpResponseCode = http.POST("{\"api_key\":\"tPmAT5Ab3j7F9\",\"sensor\":\"BME280\",\"value1\":\"24.25\",\"value2\":\"49.54\",\"value3\":\"1005.14\"}");
   
   Serial.print("HTTP Response code: ");
   Serial.println(httpResponseCode);
@@ -202,7 +166,7 @@ void getAndSendTemperatureAndHumidityData()
   payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
-  httpPOSTRequest("localhost:808/TrackTimeRecord/measurement/1", attributes);
+  httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
   lastSend = millis();
 }
 
@@ -224,3 +188,32 @@ void Timer_ISR (void) {                                                       //
 void cntRain() {
   raincnt++;
 }
+
+
+//////////////// SETUP //////////////////////////////////////////////
+void setup() {
+  Serial.begin(115200);
+  setup_wifi();
+  // pin for Wind speed
+  pinMode(windSpeedPin, INPUT_PULLUP);
+  noInterrupts();
+  attachInterrupt(digitalPinToInterrupt(windSpeedPin), cntWindSpeed, RISING);
+  timer0_isr_init();                             // Initialise Timer-0
+  timer0_attachInterrupt(Timer_ISR);             // Goto the Timer_ISR function when an interrupt occurs
+  timer0_write(ESP.getCycleCount() + 80000000L);
+  pinMode(windDirPin, INPUT);
+  interrupts();
+
+  dht.begin();
+  delay(10);
+
+}
+
+//////////////// LOOP //////////////////////////////////////////////
+void loop() {
+  getAndSendTemperatureAndHumidityData();
+  delay(1000);
+}
+
+
+
