@@ -29,7 +29,7 @@ public class TrackTimeRecord {
 
     @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="wind_speed", nullable = false)
-    private int windSpeed;
+    private double windSpeed;
 
     @JsonView(TrackTimeRecordView.base.class)
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
@@ -37,7 +37,7 @@ public class TrackTimeRecord {
     @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
 
-    public TrackTimeRecord(int id, Date recordedTime, double recordedValue, int windSpeed, Athlete athlete) {
+    public TrackTimeRecord(int id, Date recordedTime, double recordedValue, double windSpeed, Athlete athlete) {
         this.id = id;
         this.recordedTime = recordedTime;
         this.recordedValue = recordedValue;
@@ -73,7 +73,7 @@ public class TrackTimeRecord {
         this.recordedValue = recordedValue;
     }
 
-    public int getWindSpeed() {
+    public double getWindSpeed() {
         return windSpeed;
     }
 
