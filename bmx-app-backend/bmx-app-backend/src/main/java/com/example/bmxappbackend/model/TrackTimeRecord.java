@@ -2,7 +2,6 @@ package com.example.bmxappbackend.model;
 
 import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
@@ -24,8 +23,16 @@ public class TrackTimeRecord {
     private Date recordedTime;
 
     @JsonView(TrackTimeRecordView.base.class)
-    @Column(name ="recorded_value", nullable = false)
-    private double recordedValue;
+    @Column(name ="humidity", nullable = false)
+    private double humidity;
+
+    @JsonView(TrackTimeRecordView.base.class)
+    @Column(name ="temperature", nullable = false)
+    private double temperature;
+
+    @JsonView(TrackTimeRecordView.base.class)
+    @Column(name ="wind_direction", nullable = false)
+    private String windDirection;
 
     @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="wind_speed", nullable = false)
@@ -37,12 +44,14 @@ public class TrackTimeRecord {
     @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
 
-    public TrackTimeRecord(int id, Date recordedTime, double recordedValue, double windSpeed, Athlete athlete) {
+
+    public TrackTimeRecord(int id, Date recordedTime, double humidity, double temperature, String windDirection, double windSpeed, Athlete athlete) {
         this.id = id;
         this.recordedTime = recordedTime;
-        this.recordedValue = recordedValue;
+        this.humidity = humidity;
+        this.temperature = temperature;
+        this.windDirection = windDirection;
         this.windSpeed = windSpeed;
-        this.athlete = athlete;
     }
 
     public TrackTimeRecord() {
@@ -65,12 +74,12 @@ public class TrackTimeRecord {
         this.recordedTime = recordedTime;
     }
 
-    public double getRecordedValue() {
-        return recordedValue;
+    public double getHumidity() {
+        return humidity;
     }
 
-    public void setRecordedValue(double recordedValue) {
-        this.recordedValue = recordedValue;
+    public void setHumidity(double recordedValue) {
+        this.humidity = recordedValue;
     }
 
     public double getWindSpeed() {
@@ -89,4 +98,20 @@ public class TrackTimeRecord {
         this.athlete = athlete;
     }
 
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getWindDirection() {
+        return windDirection;
+    }
+
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
+    }
 }
+
