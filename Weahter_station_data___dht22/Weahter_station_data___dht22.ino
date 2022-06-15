@@ -61,7 +61,7 @@ void httpPOSTRequest(const char* serverName, char* httpRequestData){
   //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // Data to send with HTTP POST
   http.addHeader("Content-Type", "application/json");
-  http.addHeader("Content-Length", 1024);
+  http.addHeader("Content-Length", "1024");
   int httpResponseCode = http.POST(httpRequestData);
   
   Serial.print("HTTP Response code: ");
@@ -74,9 +74,9 @@ void getAndSendTemperatureAndHumidityData()
   Serial.println("Collecting Weather data.");
 
   // Reading temperature or humidity takes about 250 milliseconds!
-  float h = dht.readHumidity();
+  int h = dht.readHumidity();
   // Read temperature as Celsius (the default)
-  float t = dht.readTemperature();
+  int t = dht.readTemperature();
 
   // Check if any reads failed and exit early (to try again).
   if (false) {
@@ -87,10 +87,10 @@ void getAndSendTemperatureAndHumidityData()
   }
 
   //Calculate Wind Speed (klicks/interval * 2,4 kmh)
-  float ws = WindSpeed;
+  int ws = WindSpeed;
   windcnt = 0;
   //Calculate Rain
-  float r = (raincnt / 2) * 0.2794;
+  int r = (raincnt / 2) * 0.2794;
   raincnt = 0;
   // get wind direction
   float dirpin = analogRead(windDirPin) * (3.3 / 1023.0);
@@ -154,17 +154,17 @@ void getAndSendTemperatureAndHumidityData()
   // Serial.print( "]   -> " );
 
   // Prepare a JSON payload string
-  String payload = "{recordedTime: 0999-12-31T23:00:00.000:00";
+  String payload = "{\"recordedTime\": 0999-12-31T23:00:00.000:00,";
 
   payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
   payload += "\"windSpeed\":"; payload += windspeed; payload += ",";
-  payload += "\"windDirection\":"; payload += winddir; payload += ",";
+  payload += "\"windDirection\":"; payload += winddir;
   payload += "}";
 
   // Send payload
   char attributes[100];
-  payload.toCharArray( attributes, 100 );
+  payload.toCharArray( attributes, 1000 );
   Serial.println( attributes );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
@@ -216,6 +216,3 @@ void loop() {
   getAndSendTemperatureAndHumidityData();
   delay(1000);
 }
-
-
-
