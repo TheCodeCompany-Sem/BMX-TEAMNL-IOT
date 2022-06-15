@@ -37,7 +37,6 @@ public class TrackTimeRecord {
     @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
 
-
     public TrackTimeRecord(int id, Date recordedTime, double recordedValue, int windSpeed, Athlete athlete) {
         this.id = id;
         this.recordedTime = recordedTime;
