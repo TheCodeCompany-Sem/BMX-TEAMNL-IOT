@@ -602,7 +602,7 @@ Today, we worked had a meeting with the client, discussing our recent progress. 
 
 | ![main part of the design](middlePartCasing.png) |
 | :----------------------------------------------: |
-|             Main part of the design              |  
+|             Main part of the design              |
 
 The roof is slanted because the water wil then just fall off on its own, creating less time for the water to get into the device.
 
@@ -614,9 +614,9 @@ The roof is slanted because the water wil then just fall off on its own, creatin
 We did the first attempt at 3D printing the casing which failed.
 This is the result:
 
-|![3D print of the casing](casing3Dprintfail.png)|
-| :--------------------------------------------: |
-|         3D print of the casing failed          |
+| ![3D print of the casing](casing3Dprintfail.png) |
+| :----------------------------------------------: |
+|          3D print of the casing failed           |
 
 We also resoldered the wires coming out ot the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
 
@@ -625,9 +625,12 @@ A problem was fixed in the wemos code where we accidently copied some code twice
 
 ### Day 2 (Tuesday)
 
-Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.
-|![meeting picture](20220614_112032.jpg)|
-| :-----------------------------------: |
-|             Meeting Picture           |
+Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.  
+
+| ![meeting picture](20220614_112032.jpg) |
+| :-------------------------------------: |
+|             Meeting Picture             |
+
 We also got a second try at the piece we tried to print yesterday. This time it worked!
-The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.
+The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.  
+Next to that, we worked on a testing plan to follow on location on thursdays. This can be found [here](Testing-plan.md).
