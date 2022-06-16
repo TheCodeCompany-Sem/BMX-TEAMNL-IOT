@@ -1,3 +1,4 @@
+# Daily documentation
 
 ## Week 1 (25-04-2022 - 01-05-2022)
 
@@ -442,7 +443,7 @@ After that we also worked on the other documentation files, for example:
 
 Today we tried to wire the sensors to the Wemos. We are getting an error that we haven't figured out yet.
 
-```
+```cmd
  ets Jan  8 2013,rst cause:2, boot mode:(3,6)
 
 load 0x4010f000, len 3460, room 16 
@@ -484,8 +485,6 @@ sp: 3ffffe90 end: 3fffffc0 offset: 0000
 3fffffa0:  feefeffe 00000000 3ffee668 402020a0  
 3fffffb0:  feefeffe feefeffe 3ffe85d8 40100cd5  
 <<<stack<<<
-
-
 ```
 
 ## Week 5 (30-5-2022 - 5-6-2022)
@@ -505,17 +504,16 @@ We also researched what the possibilities are to make the device weatherproof, a
 
 ### Day 3 (Wednesday)
 
-Today we continued to try to make the sensors work with the Wemos. We tried swapping the wemos for a different one, we replaced the cables, redid the wiring, tried the other set of sensors, tried an alternative to the wiring we had but still no luck.
+Today we continued to try make the sensors work with the Wemos. We tried swapping the wemos for a different one, we replaced the cables, redid the wiring, tried the other set of sensors, tried an alternative to the wiring we had but still no luck.  
 
-We're starting to consider using an arduino to receive the data and send it to the wemos which would then communicate with the internet. That solution would be less elegant and require some work. But it would get us unstuck.
+We're starting to consider using an arduino to receive the data and send it to the wemos which would then communicate with the internet. That solution would be less elegant and require some work. But it would get us unstuck.  
 
-On the end of the day nearly everything worked except for the windsspeed sensor. \
-With this tutorials i have made it working exept for the windspeed:
+At the end of the day nearly everything worked except for the windsspeed sensor. I used these tutorials:  
 
-[ESP8266 Weather Station - with Wind and Rain Sensors](https://tysonpower.de/blog/esp8266-weather-station)
-[Arduino Measure Wind Speed](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
-[ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
-[ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
+- [ESP8266 Weather Station - with Wind and Rain Sensors](https://tysonpower.de/blog/esp8266-weather-station)
+- [Arduino Measure Wind Speed](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
+- [ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
+- [ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
 
 ### Day 5 (Friday)
 
@@ -569,22 +567,21 @@ deploy_fe:
         - git branch -D splitting-staging-fe
 ```
 
-However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached it concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this on monday.
+However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached it concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
 ### Day 1 (Tuesday)
 
-Today the soldering on one of the wires on the weatherstation broke. I ended up resoldering every wire on that set. 
+Today the soldering on one of the wires on the weatherstation broke. I ended up resoldering every wire on that set.
 Then I looked up some ways to go around the internet/wemos problem. I could be able to use a simple python script to read the data from the terminal and perform the post request.
 We'll try to put that in practice tomorrow.
 
 ### Day 2 (Wednesday)
 
 Sem managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the backend. Error handling remains to be done on the backend.
-Here you can see the code where we are reading all the data: \
+Here you can see the code where we are reading all the data:
 [Wemos reading weather data code](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/blob/main/Arduino-main/Weahter_station_data___dht22/Weahter_station_data___dht22.ino)
-
 
 Here is the wire scheme for reading the sensors:
 
@@ -594,7 +591,7 @@ Here is the wire scheme for reading the sensors:
 
 ### Day 3 (Thursday)
 
-Today, we worked had a meeting with the client, discussing our recent progress. Luckily, the client was very happy with our progress and we arranged that we as a team are gonna go to the location of our client next week to test our product! Next to that, we also worked on a design for the 3d print for our product. This now looks as follows:  
+Today, we had a meeting with the client, discussing our recent progress. Luckily, the client was very happy with our progress and we arranged that we as a team are gonna go to the location of our client next week to test our product! Next to that, we also worked on a design for the 3d print for our product. This now looks as follows:  
 
 | ![Top part of the design](topPartCasing.png) |
 | :------------------------------------------: |
@@ -602,10 +599,9 @@ Today, we worked had a meeting with the client, discussing our recent progress. 
 
 | ![main part of the design](middlePartCasing.png) |
 | :----------------------------------------------: |
-|             Main part of the design              |  
+|             Main part of the design              |
 
 The roof is slanted because the water wil then just fall off on its own, creating less time for the water to get into the device.
-
 
 ## Week 7 (13-6-2022 - 19-6-2022)
 
@@ -614,20 +610,32 @@ The roof is slanted because the water wil then just fall off on its own, creatin
 We did the first attempt at 3D printing the casing which failed.
 This is the result:
 
-|![3D print of the casing](casing3Dprintfail.png)|
-| :--------------------------------------------: |
-|         3D print of the casing failed          |
+| ![3D print of the casing](casing3Dprintfail.png) |
+| :----------------------------------------------: |
+|          3D print of the casing failed           |
 
-We also resoldered the wires coming out ot the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
+We also resoldered the wires coming out of the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
 
 A problem was fixed in the wemos code where we accidently copied some code twice.
 
-
 ### Day 2 (Tuesday)
 
-Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.
-|![meeting picture](20220614_112032.jpg)|
-| :-----------------------------------: |
-|             Meeting Picture           |
+Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.  
+
+| ![meeting picture](20220614_112032.jpg) |
+| :-------------------------------------: |
+|             Meeting Picture             |
+
 We also got a second try at the piece we tried to print yesterday. This time it worked!
-The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.
+The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.  
+Next to that, we worked on a testing plan to follow on location on thursdays. This can be found [here](Testing-plan.md).
+
+### Day 3 (Wednesday)
+
+Today, we worked hard to try and fix the problem with receiving data from the MyLaps system, we got our back-end fully live and functional. However, we sadly did not see any data coming in from our client. Next to that, we also got problems again with the Wemos, we couldn't update its software, as we got a weird error. However, after just waiting a while and trying it again, we removed the wire on the 5V pin and everything was working again, with this we could succesfully send data to the back-end, which was not in the correct formatting, so we changed that to make it fully work. Finally we also worked on the final part of our casing. We went to the makerslab to get it printed there, as it is a really long print, thus we cannot do it at our usual location. However, the 3d printers at the makerslab were all occupied. So we decided to use the [UPrinter](https://support.stratasys.com/en/printers/fdm-legacy/uprint), which is way different than regular 3d printing, but still works fine for us. But due to it taking so long we could not get the 3d print yet, so we will retrieve it tomorrow.
+
+
+### Day 4 (Thursday)
+
+Today we finally got the 201 HTTP response from the backend. The problem was that we were accessing the backend through HTTPS, removing the S solved the issue.
+
