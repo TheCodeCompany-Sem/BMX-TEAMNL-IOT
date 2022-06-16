@@ -187,10 +187,9 @@ private Athlete athlete;
 
 ##### How to make a post request with parent and child
 
-While there are many ways to do this, I choose the easiest solution.
+While there are many ways to do this, I chose the easiest solution.
 Which was passing the id of the athlete (in this case the foreign key) in the route.
-Then using this foreign key I find the athlete related to the foreign key and then call the setter used to 
-get tracktimerecords with their athletes
+Then using this foreign key I find the athlete related to the foreign key and then call the setter used to get tracktimerecords with their athletes
 
 The primary reason why I did it this way is because you can't save a child without saving its entire parent in Spring Boot.
 
