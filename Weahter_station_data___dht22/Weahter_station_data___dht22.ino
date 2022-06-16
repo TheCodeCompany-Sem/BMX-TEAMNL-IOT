@@ -1,9 +1,13 @@
 #include <DHT.h>
-#include <ESP8266WiFi.h>
+//#include <ESP8266WiFi.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
+
+#include <WiFiClient.h>
+
+WiFiClient client;
 
 #define INTERVAL 30                                                 // Intervall of sending in seconds
 // DHT
@@ -26,9 +30,8 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
-const char* ssid = "OnePlus 8";
-const char* password = "r5gc6x4d";
-
+const char* ssid = "AFBLIJVEN";
+const char* password = "Kaas012!!";
 //////////////// Functions //////////////////////////////////////////
 
 void setup_wifi() {
@@ -55,13 +58,12 @@ void setup_wifi() {
 void httpPOSTRequest(const char* serverName, char* httpRequestData){
   WiFiClient client;
   HTTPClient http;
-  //http.useHTTP10(true);
+  http.useHTTP10(true);
   http.begin(client, serverName);
     // Specify content-type header
   //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // Data to send with HTTP POST
-  http.addHeader("Content-Type", "application/json");
-  http.addHeader("Content-Length", String(strlen(httpRequestData)).c_str());
+ // http.addHeader("Content-Type", "application/json");
   int httpResponseCode = http.POST(httpRequestData);
   
   Serial.print("HTTP Response code: ");
@@ -94,49 +96,48 @@ void getAndSendTemperatureAndHumidityData()
   raincnt = 0;
   // get wind direction
   float dirpin = analogRead(windDirPin) * (3.3 / 1023.0);
-  Serial.println(dirpin);
-  String wd = "E";
+  String wd = "other";
 
   if (dirpin > 2.60 &&  dirpin < 2.70 ) {
     wd = "N";
-  };
+  }
   if (dirpin > 1.60 &&  dirpin < 1.70 ) {
     wd = "NE";
-  };
+  }
   if (dirpin > 0.30 &&  dirpin < 0.40 ) {
     wd = "E";
-  };
+  }
   if (dirpin > 0.60 &&  dirpin < 0.70 ) {
     wd = "SE";
-  };
+  }
   if (dirpin > 0.96 &&  dirpin < 1.06 ) {
     wd = "S";
-  };
+  }
   if (dirpin > 2.10 &&  dirpin < 2.20 ) {
     wd = "SW";
-  };
+  }
   if (dirpin > 3.15 &&  dirpin < 3.25 ) {
     wd = "W";
-  };
+  }
   if (dirpin > 2.95 &&  dirpin < 3.05 ) {
     wd = "NW";
-  };
+  }
 
-  // Serial.print("Humidity: ");
-  // Serial.print(h);
-  // Serial.print(" %\t");
-  // Serial.print("Temperature: ");
-  // Serial.print(t);
-  // Serial.print(" *C ");
-  // Serial.print("Windspeed: ");
-  // Serial.print(ws);
-  // Serial.print(" km/h ");
-  // Serial.print("Wind Direction: ");
-  // Serial.print(wd);
-  // Serial.print(" ");
-  // Serial.print("Rain: ");
-  // Serial.print(r);
-  // Serial.print(" mm ");
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print(" %\t");
+  Serial.print("Temperature: ");
+  Serial.print(t);
+  Serial.print(" *C ");
+  Serial.print("Windspeed: ");
+  Serial.print(ws);
+  Serial.print(" km/h ");
+  Serial.print("Wind Direction: ");
+  Serial.print(wd);
+  Serial.print(" ");
+  Serial.print("Rain: ");
+  Serial.print(r);
+  Serial.print(" mm ");
 
 
   String temperature = String(t);
@@ -145,32 +146,30 @@ void getAndSendTemperatureAndHumidityData()
   String winddir = String(wd);
   String rain = String(r);
 
-  // // Just debug messages
-  // Serial.print( "Sending Data : [" );
-  // Serial.print( temperature ); Serial.print( "," );
-  // Serial.print( humidity ); Serial.print( "," );
-  // Serial.print( windspeed ); Serial.print( "," );
-  // Serial.print( winddir ); Serial.print( "," );
-  // Serial.print( rain );
-  // Serial.print( "]   -> " );
+  // Just debug messages
+  Serial.print( "Sending Data : [" );
+  Serial.print( temperature ); Serial.print( "," );
+  Serial.print( humidity ); Serial.print( "," );
+  Serial.print( windspeed ); Serial.print( "," );
+  Serial.print( winddir ); Serial.print( "," );
+  Serial.print( rain );
+  Serial.print( "]   -> " );
 
   // Prepare a JSON payload string
-  String payload = "{\"recordedTime\": \"0999-12-31T23:00:00.000+00:00\",";
+  String payload = "{recordedTime: 0999-12-31T23:00:00.000:00";
 
-  payload += "\"humidity\":"; payload += humidity; payload += ",";
   payload += "\"temperature\":"; payload += temperature; payload += ",";
-  payload += "\"windDirection\": \""; payload += winddir; payload += "\",";
-  payload += "\"windSpeed\":"; payload += windspeed;
+  payload += "\"humidity\":"; payload += humidity; payload += ",";
+  payload += "\"windSpeed\":"; payload += windspeed; payload += ",";
+  payload += "\"windDirection\":"; payload += winddir; payload += ",";
   payload += "}";
 
   // Send payload
-  char attributes[payload.length()+1];
-  payload.toCharArray( attributes, payload.length()+1 );
-  Serial.println( attributes );
+  char attributes[100];
+  payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
-  httpPOSTRequest("http://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
-  Serial.println("Request sent.");
+  httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
   lastSend = millis();
 }
 
