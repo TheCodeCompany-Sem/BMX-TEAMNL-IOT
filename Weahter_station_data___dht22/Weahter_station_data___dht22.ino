@@ -55,13 +55,13 @@ void setup_wifi() {
 void httpPOSTRequest(const char* serverName, char* httpRequestData){
   WiFiClient client;
   HTTPClient http;
-  http.useHTTP10(true);
+  //http.useHTTP10(true);
   http.begin(client, serverName);
     // Specify content-type header
   //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // Data to send with HTTP POST
   http.addHeader("Content-Type", "application/json");
-  http.addHeader("Content-Length", "1024");
+  http.addHeader("Content-Length", String(strlen(httpRequestData)).c_str());
   int httpResponseCode = http.POST(httpRequestData);
   
   Serial.print("HTTP Response code: ");
@@ -98,29 +98,29 @@ void getAndSendTemperatureAndHumidityData()
   String wd = "E";
 
   if (dirpin > 2.60 &&  dirpin < 2.70 ) {
-    wd = "N"
-  }
+    wd = "N";
+  };
   if (dirpin > 1.60 &&  dirpin < 1.70 ) {
     wd = "NE";
-  }
+  };
   if (dirpin > 0.30 &&  dirpin < 0.40 ) {
     wd = "E";
-  }
+  };
   if (dirpin > 0.60 &&  dirpin < 0.70 ) {
     wd = "SE";
-  }
+  };
   if (dirpin > 0.96 &&  dirpin < 1.06 ) {
     wd = "S";
-  }
+  };
   if (dirpin > 2.10 &&  dirpin < 2.20 ) {
     wd = "SW";
-  }
+  };
   if (dirpin > 3.15 &&  dirpin < 3.25 ) {
     wd = "W";
-  }
+  };
   if (dirpin > 2.95 &&  dirpin < 3.05 ) {
     wd = "NW";
-  }
+  };
 
   // Serial.print("Humidity: ");
   // Serial.print(h);
@@ -155,21 +155,21 @@ void getAndSendTemperatureAndHumidityData()
   // Serial.print( "]   -> " );
 
   // Prepare a JSON payload string
-  String payload = "{\"recordedTime\": 0999-12-31T23:00:00.000:00,";
+  String payload = "{\"recordedTime\": \"0999-12-31T23:00:00.000+00:00\",";
 
-  payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
-  payload += "\"windSpeed\":"; payload += windspeed; payload += ",";
-  payload += "\"windDirection\":"; payload += winddir;
+  payload += "\"temperature\":"; payload += temperature; payload += ",";
+  payload += "\"windDirection\": \""; payload += winddir; payload += "\",";
+  payload += "\"windSpeed\":"; payload += windspeed;
   payload += "}";
 
   // Send payload
-  char attributes[100];
-  payload.toCharArray( attributes, 1000 );
+  char attributes[payload.length()+1];
+  payload.toCharArray( attributes, payload.length()+1 );
   Serial.println( attributes );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
-  httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
+  httpPOSTRequest("http://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
   Serial.println("Request sent.");
   lastSend = millis();
 }
