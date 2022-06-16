@@ -58,7 +58,8 @@ restGetAthletes(): Observable<Athlete[]>{
 
 ## Back-end
 
-#####Installation guide for Spring Boot:
+##### Installation guide for Spring Boot:
+
 1. Go to https://start.spring.io
 2. Select which what type of project (maven or gradle) and in which code-language (java, kotlin or groovy) the package will include and what version of spring boot you want to include.
 3. Select what type of package (jar or war) you want it to be exported to and which version of the code language.
@@ -66,15 +67,17 @@ restGetAthletes(): Observable<Athlete[]>{
 5. Press generate
 
 ##### Setup Spring Boot in Intellij Idea:
+
 1. Now that you have a package make sure to make a folder called **backend** inside your project folder and drop your package inside this folder
 2. Right click pom.xml file and scroll down till you find the "add as maven project" option and press add.
 3. At this point you should have no errors inside your backend folder, run backendApplication.java and see if it compiles
 4. If it compiles you should have a 
 
+##### Connect your oege database to the spring boot backend:
 
-#####Connect your oege database to the spring boot backend:
 1. Edit the application.properties file
 2. Copypaste the code below into the application.properties file
+
 ```xml
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=<JDBC_connection_string>
@@ -88,7 +91,9 @@ spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 
 ```
+
 ## Deployment:
+
 While deploying sounds hard, in actuality it isn't. Here is how we can deploy the webpage using heroku.
 
 We also assume that you are using an angular front-end and a spring boot backend 
@@ -100,18 +105,24 @@ We used [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/bl
 3. 
 
 ## Common issues:
+
 You will find the most common errors/issues we found developing the backend/front-end in this section.
+
 ### Front-end:
+
 ..
+
 ### Backend:
-#####Cors policy error:
+
+##### Cors policy error:
 
 If you get this in your console, this means that you got a Cors policy error.
 ![img.png](img.png)
 
 Which basically indicates that the request your trying to make does not uphold Cors security standards.
 
-#####How to fix Cors policy error in Spring boot:
+##### How to fix Cors policy error in Spring boot:
+
 1. Create a class called WebMvcConfig
 2. Paste the following code in your WebMvcConfig
 
@@ -129,9 +140,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 }
 
 ```
+
 3. Restart your backend, now you shouldn't be getting a cors policy error
 
-##### Infinite recursion 
+##### Infinite recursion
+
 When working on your backend and testing the different paths inside your controllers you might come across a stackoverflow error
 when requesting an object which is related to another object.
 
@@ -139,6 +152,7 @@ This is caused by infinite recursion when jackson (which is part of Jpa) tries t
 To solve this issue there are 2 primary ways of doing this:
 
 1. Adding an @JsonIgnore in the parent of the relationship
+
 ```java
 Parent.class
 ...
@@ -146,10 +160,13 @@ Parent.class
 @JsonIgnore
 private List<TrackTimeRecord> trackTimeRecords;
 ```
+
 ```java
 Child.class
 ```
+
 2. Adding @JsonManagedReference in the parent and @JsonBackReference in the child class
+
 ```java
 Parent.class
 ...
@@ -157,6 +174,7 @@ Parent.class
 @JsonManagedReference(value = "trackTimeRecords")
 private List<TrackTimeRecord> trackTimeRecords;
 ```
+
 ```java
 Child.class
 ...
@@ -176,7 +194,6 @@ get tracktimerecords with their athletes
 
 The primary reason why I did it this way is because you can't save a child without saving its entire parent in Spring Boot.
 
-
 ```java
 Childcontroller.class
 ...
@@ -195,6 +212,3 @@ Childcontroller.class
         return ResponseEntity.created(location).body(trackTimeRecord);
    }
 ```
-
-
-

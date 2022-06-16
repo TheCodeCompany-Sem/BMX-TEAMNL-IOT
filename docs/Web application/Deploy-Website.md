@@ -47,12 +47,13 @@ deploy_fe:
         - git branch -D splitting-staging-fe
 ```
 
-However, the pipeline still failed, giving us the following error: 'Your account has reached its concurrent builds limit.' This meant that we had too many builds running on our heroku webdeployment. So we had 'restart all dynos' on heroku, after that the front-end fully worked. However the back-end was still a problem, giving us this error: 'Branch 'splitting-staging-be' is not an ancestor of commit '5065e2353eaa04260c8f34a178ee9138fd402d6b'.' The front-end gave us the same problem a couple of commits later. We still haven't found a way to solve this issue. 
+However, the pipeline still failed, giving us the following error: 'Your account has reached its concurrent builds limit.' This meant that we had too many builds running on our heroku webdeployment. So we had 'restart all dynos' on heroku, after that the front-end fully worked. However the back-end was still a problem, giving us this error: 'Branch 'splitting-staging-be' is not an ancestor of commit '5065e2353eaa04260c8f34a178ee9138fd402d6b'.' The front-end gave us the same problem a couple of commits later. We still haven't found a way to solve this issue.
 
+## Common Issues
 
-##Common Issues
 These were issues/errors that occurred when working on the pipeline/deploying to heroku
-####Branch 'splitting-staging-X' is not an ancestor of commit 'X'
+
+### Branch 'splitting-staging-X' is not an ancestor of commit 'X'
 
 This is an issue that occurs when you don't have you remote branch set correctly, the error above basically means can't find commit in branch X to trace back to.
 
@@ -62,13 +63,8 @@ If this isn't the case make sure to run this command on your terminal: heroku gi
 
 And run this command to see if it created a remote: git remote -v
 
-#### Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project bmx-app-backend:Fatal error compiling: invalid target release: 11 -> [Help 1]
+### Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project bmx-app-backend:Fatal error compiling: invalid target release: 11 -> [Help 1]
+
 This is an error you get when you didn't set your SDK properly in your IDE
 
 Fix: make sure to check whether you have the correct SDK set in your IDE and in your pom.xml
-
-
-
-
-
-
