@@ -1,9 +1,13 @@
 #include <DHT.h>
-#include <ESP8266WiFi.h>
+//#include <ESP8266WiFi.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
+
+#include <WiFiClient.h>
+
+WiFiClient client;
 
 #define INTERVAL 30                                                 // Intervall of sending in seconds
 // DHT
@@ -26,9 +30,8 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
-const char* ssid = "OnePlus 8";
-const char* password = "r5gc6x4d";
-
+const char* ssid = "AFBLIJVEN";
+const char* password = "Kaas012!!";
 //////////////// Functions //////////////////////////////////////////
 
 void setup_wifi() {
@@ -58,9 +61,9 @@ void httpPOSTRequest(const char* serverName, char* httpRequestData){
   http.useHTTP10(true);
   http.begin(client, serverName);
     // Specify content-type header
-  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // Data to send with HTTP POST
-  http.addHeader("Content-Type", "application/json");
+ // http.addHeader("Content-Type", "application/json");
   int httpResponseCode = http.POST(httpRequestData);
   
   Serial.print("HTTP Response code: ");
@@ -214,6 +217,3 @@ void loop() {
   getAndSendTemperatureAndHumidityData();
   delay(1000);
 }
-
-
-
