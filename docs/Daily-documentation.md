@@ -629,3 +629,7 @@ Today we did the sprint review and retrospective meeting. We discussed our progr
 We also got a second try at the piece we tried to print yesterday. This time it worked!
 The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.  
 Next to that, we worked on a testing plan to follow on location on thursdays. This can be found [here](Testing-plan.md).
+
+### Day 3 (Wednesday)
+
+Today, we worked hard to try and fix the problem with receiving data from the MyLaps system, we got our back-end fully live and functional. However, we sadly did not see any data coming in from our client. Next to that, we also got problems again with the Wemos, we couldn't update its software, as we got a weird error. However, after just waiting a while and trying it again, it magically worked again, with this we could succesfully send data to the back-end, which was not in the correct formatting, so we changed that to make it fully work. Finally we also worked on the final part of our casing. We went to the makerslab to get it printed there, as it is a really long print, thus we cannot do it at our usual location. However, the 3d printers at the makerslab were all occupied. So we decided to use the [UPrinter](https://support.stratasys.com/en/printers/fdm-legacy/uprint), which is way different than regular 3d printing, but still works fine for us. But due to it taking so long we could not get the 3d print yet, so we will retrieve it tomorrow.
