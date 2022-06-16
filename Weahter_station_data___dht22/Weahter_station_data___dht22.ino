@@ -74,9 +74,9 @@ void getAndSendTemperatureAndHumidityData()
   Serial.println("Collecting Weather data.");
 
   // Reading temperature or humidity takes about 250 milliseconds!
-  int h = dht.readHumidity();
+  float h = dht.readHumidity();
   // Read temperature as Celsius (the default)
-  int t = dht.readTemperature();
+  float t = dht.readTemperature();
 
   // Check if any reads failed and exit early (to try again).
   if (false) {
@@ -87,17 +87,18 @@ void getAndSendTemperatureAndHumidityData()
   }
 
   //Calculate Wind Speed (klicks/interval * 2,4 kmh)
-  int ws = WindSpeed;
+  float ws = WindSpeed;
   windcnt = 0;
   //Calculate Rain
-  int r = (raincnt / 2) * 0.2794;
+  float r = (raincnt / 2) * 0.2794;
   raincnt = 0;
   // get wind direction
   float dirpin = analogRead(windDirPin) * (3.3 / 1023.0);
-  String wd = "other";
+  Serial.println(dirpin);
+  String wd = "E";
 
   if (dirpin > 2.60 &&  dirpin < 2.70 ) {
-    wd = "N";
+    wd = "N"
   }
   if (dirpin > 1.60 &&  dirpin < 1.70 ) {
     wd = "NE";
@@ -121,21 +122,21 @@ void getAndSendTemperatureAndHumidityData()
     wd = "NW";
   }
 
-  Serial.print("Humidity: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.print(" *C ");
-  Serial.print("Windspeed: ");
-  Serial.print(ws);
-  Serial.print(" km/h ");
-  Serial.print("Wind Direction: ");
-  Serial.print(wd);
-  Serial.print(" ");
-  Serial.print("Rain: ");
-  Serial.print(r);
-  Serial.print(" mm ");
+  // Serial.print("Humidity: ");
+  // Serial.print(h);
+  // Serial.print(" %\t");
+  // Serial.print("Temperature: ");
+  // Serial.print(t);
+  // Serial.print(" *C ");
+  // Serial.print("Windspeed: ");
+  // Serial.print(ws);
+  // Serial.print(" km/h ");
+  // Serial.print("Wind Direction: ");
+  // Serial.print(wd);
+  // Serial.print(" ");
+  // Serial.print("Rain: ");
+  // Serial.print(r);
+  // Serial.print(" mm ");
 
 
   String temperature = String(t);
@@ -169,6 +170,7 @@ void getAndSendTemperatureAndHumidityData()
   //  client.publish( "v1/devices/me/telemetry", attributes );
   //  Serial.println( attributes );
   httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
+  Serial.println("Request sent.");
   lastSend = millis();
 }
 
