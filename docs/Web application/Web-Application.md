@@ -214,3 +214,8 @@ Childcontroller.class
 ```
 
 
+#### How to make a post request from the Wemos
+
+We were constantly getting http response code -11 when trying to make a post request from the Wemos. At first we added a content length header to the request. The issue was still there so we made sure that the format of the request and the type of the variables were correct. Then we added a content type header to the request. None of those worked.
+Then we changed the url we were trying to make a post request to, we turned https to http.
+This fixed the issue.
