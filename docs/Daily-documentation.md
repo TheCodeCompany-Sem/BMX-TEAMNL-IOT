@@ -637,3 +637,11 @@ Today, we worked hard to try and fix the problem with receiving data from the My
 ### Day 4 (Thursday)
 
 Today we finally got the 201 HTTP response from the backend. The problem was that we were accessing the backend through HTTPS, removing the S solved the issue.
+We also worked on the documentation, as some of the documentation was still not finished, so we finished the following pages:  
+
+- [Testing plan](Testing-plan.md)
+- [Weatherproofing](weatherproofing.md)  
+
+Next to that we also had another meeting with our client. We were planning to go to the location of our client, but due to connection issues between their software and our software we decided to delay that. Because of this we had an extra meeting to plan ahead and think of solutions for the problem. We decided came to the conclusion of using teamviewer to remotely use their computer, that way we can fix the issue while not needing to go all the way there, as we need to make sure the data they receive will also be send to our database. We planned to do this tomorrow, so hopefully we can fix it tomorrow. If we fix it we will go to their location the next tuesday.
+
+### Day 5 (Friday)
