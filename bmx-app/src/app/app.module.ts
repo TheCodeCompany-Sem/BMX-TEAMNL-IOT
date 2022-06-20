@@ -11,6 +11,7 @@ import { FooterComponent } from './generic/footer/footer.component';
 import { HeaderComponent } from './generic/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,13 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
+    RouterModule.forRoot([
+
+      {path: '', component: HomepageComponent},
+      {path: 'user:/userId', component: ProfileComponent}
+
+    ])
   ],
   providers: [  SplashScreenStateService ],
   bootstrap: [AppComponent]
