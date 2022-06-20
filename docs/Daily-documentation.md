@@ -651,8 +651,9 @@ Next to that we also had another meeting with our client. We were planning to go
 
 ### Day 1 (Monday)
 
-Today, we decided to take a step back and look at the current situation and what we plan to do, now that another meeting at Papendal is cancelled.
-Today we made a diagram of the software part of the product:
+Today, we decided to take a step back and look at the current situation and what we plan to do, now that another meeting at the clients location to test or device is cancelled and we do not have enough time to arrange another meeting there. We talked with Bas about the situation. We came to the conclusion that we should design different possible solutions and then pick one to replace the data being received from the client's system. We are gonna work on this tomorrow.  
+Next to that, we worked a lot on documentation, making mini-manuals.  
+We also made a diagram of the software part of the product:
 ![Software diagram](application_diagram.png)
 We also started importing the CSV file from Mylaps into our database as we can't get the data directly as the program is running locally to avoid any tempering on the times.
 This means adding new columns and finding a smart way to add all the data without having to do it by hand.
