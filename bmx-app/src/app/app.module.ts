@@ -12,6 +12,7 @@ import { HeaderComponent } from './generic/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import {RouterModule} from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import {RouterModule} from "@angular/router";
     ProfileComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
 
     RouterModule.forRoot([

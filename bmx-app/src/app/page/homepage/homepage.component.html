@@ -10,9 +10,11 @@
     <th>More Info</th>
   </tr>
   <tr *ngFor="let athlete of athletes; let i= index">
-    <th>{{athlete.id}}</th>
+    <th> {{athlete.id}}</th>
     <th>{{athlete.firstName}} {{athlete.surname}}</th>
-    <button type="button" class="btn btn-outline-primary">Primary</button>
+<!--    <button type="button" class="btn btn-outline-primary">Primary</button>-->
+    <th><a [routerLink]= "'user:/userId'" >Profile</a></th>
+
   </tr>
 </table>
 
