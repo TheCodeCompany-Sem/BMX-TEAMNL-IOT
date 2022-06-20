@@ -14,6 +14,7 @@ export class HomepageComponent implements OnInit {
     private splashScreenStateService: SplashScreenStateService,
     private athleteService: AthleteService
   ) {
+
   }
     get athletes(): Athlete[] {
       // let trackTimeRecords = this.athleteService.findAll().map(obj => ({humidity: obj.trackTimeRecords.humidity}));
