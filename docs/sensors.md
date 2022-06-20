@@ -69,7 +69,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 
 ### DIY option
 
-This option is the cheapest one.  The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
+This option is the cheapest one. The drawbacks are accuracy, the time it will take to build / calibrate the device, and it will not look as good as the professional option. Waterproofing is also a concern.
 
 <center>
 

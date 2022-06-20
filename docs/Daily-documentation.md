@@ -634,8 +634,14 @@ Next to that, we worked on a testing plan to follow on location on thursdays. Th
 
 Today, we worked hard to try and fix the problem with receiving data from the MyLaps system, we got our back-end fully live and functional. However, we sadly did not see any data coming in from our client. Next to that, we also got problems again with the Wemos, we couldn't update its software, as we got a weird error. However, after just waiting a while and trying it again, we removed the wire on the 5V pin and everything was working again, with this we could succesfully send data to the back-end, which was not in the correct formatting, so we changed that to make it fully work. Finally we also worked on the final part of our casing. We went to the makerslab to get it printed there, as it is a really long print, thus we cannot do it at our usual location. However, the 3d printers at the makerslab were all occupied. So we decided to use the [UPrinter](https://support.stratasys.com/en/printers/fdm-legacy/uprint), which is way different than regular 3d printing, but still works fine for us. But due to it taking so long we could not get the 3d print yet, so we will retrieve it tomorrow.
 
-
 ### Day 4 (Thursday)
 
 Today we finally got the 201 HTTP response from the backend. The problem was that we were accessing the backend through HTTPS, removing the S solved the issue.
+We also worked on the documentation, as some of the documentation was still not finished, so we finished the following pages:  
 
+- [Testing plan](Testing-plan.md)
+- [Weatherproofing](weatherproofing.md)  
+
+Next to that we also had another meeting with our client. We were planning to go to the location of our client, but due to connection issues between their software and our software we decided to delay that. Because of this we had an extra meeting to plan ahead and think of solutions for the problem. We decided came to the conclusion of using teamviewer to remotely use their computer, that way we can fix the issue while not needing to go all the way there, as we need to make sure the data they receive will also be send to our database. We planned to do this tomorrow, so hopefully we can fix it tomorrow. If we fix it we will go to their location the next tuesday.
+
+### Day 5 (Friday)
