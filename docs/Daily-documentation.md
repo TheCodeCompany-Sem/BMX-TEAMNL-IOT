@@ -502,8 +502,7 @@ We had meetings with Bas in the afternoon about our current progress as a group 
 ### Day 2 (Tuesday)
 
 We're still trying to fix the error we had on wednesday.
-I tried to redo the wiring but it doesn't seem to be the problem.
-Googling the error doesn't help either.  
+We tried to redo the wiring but it doesn't seem to be the problem. So we tried googling the error, but sadly that hasn't help either.  
 We also researched what the possibilities are to make the device weatherproof, as the device needs to function outside, also at times of bad weather. This documentation can be found [here](weatherproofing.md).
 
 ### Day 3 (Wednesday)
@@ -512,7 +511,7 @@ Today we continued to try make the sensors work with the Wemos. We tried swappin
 
 We're starting to consider using an arduino to receive the data and send it to the wemos which would then communicate with the internet. That solution would be less elegant and require some work. But it would get us unstuck.  
 
-At the end of the day nearly everything worked except for the windsspeed sensor. I used these tutorials:  
+At the end of the day nearly everything worked except for the windsspeed sensor. We used these tutorials today to try and fix the sensors:  
 
 - [ESP8266 Weather Station - with Wind and Rain Sensors](https://tysonpower.de/blog/esp8266-weather-station)
 - [Arduino Measure Wind Speed](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
@@ -525,8 +524,7 @@ Today we started with deploying our webpage to our "own" domain.
 We followed [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/-/blob/master/README.md)
 to deploy our website using heroku, which we did successfully. A link to the website can be found [here](https://bmx-nl-app-staging.herokuapp.com).
 
-At this point, the only way to deploy something to our staging environment is by manually making a commit using heroku git.
-This is why we also started working on automating this part using a pipeline.
+At this point, the only way to deploy something to our staging environment is by manually making a commit using heroku git. Which is really annoying, as it would take way longer to test and make us spend a lot of time waiting for it. This is why we also started working on automating this part using a pipeline, that way we don't have to wait that long to test the website.
 
 ### Day 6 (Saturday)
 
@@ -571,19 +569,19 @@ deploy_fe:
         - git branch -D splitting-staging-fe
 ```
 
-However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached it concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.
+However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached its concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
 ### Day 1 (Tuesday)
 
-Today the soldering on one of the wires on the weatherstation broke. I ended up resoldering every wire on that set.
-Then I looked up some ways to go around the internet/wemos problem. I could be able to use a simple python script to read the data from the terminal and perform the post request.
+Today, the soldering on one of the wires on the weatherstation broke. We ended up resoldering every wire on that set.
+Then We looked up some ways to go around the internet/wemos problem. We could be able to use a simple python script to read the data from the terminal and perform the post request.
 We'll try to put that in practice tomorrow.
 
 ### Day 2 (Wednesday)
 
-Sem managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the backend. Error handling remains to be done on the backend.
+Finally, we managed to get all the sensors work on the wemos. The goal for this afternoon is to connect the wemos to the back-end of the webapplication, so the data can actually be used. Error handling remains to be done on the back-end.
 Here you can see the code where we are reading all the data:
 [Wemos reading weather data code](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/blob/main/Arduino-main/Weahter_station_data___dht22/Weahter_station_data___dht22.ino)
 
@@ -605,14 +603,13 @@ Today, we had a meeting with the client, discussing our recent progress. Luckily
 | :----------------------------------------------: |
 |             Main part of the design              |
 
-The roof is slanted because the water wil then just fall off on its own, creating less time for the water to get into the device.
+The roof is slanted because the water will then just fall off on its own, creating less time for the water to get into the device.
 
 ## Week 7 (13-6-2022 - 19-6-2022)
 
 ### Day 1 (Monday)
 
-We did the first attempt at 3D printing the casing which failed.
-This is the result:
+We did the first attempt at 3D printing the casing, which sadly failed. This is the result:
 
 | ![3D print of the casing](casing3Dprintfail.png) |
 | :----------------------------------------------: |
@@ -620,19 +617,20 @@ This is the result:
 
 We also resoldered the wires coming out of the sensors, and made them a bit stronger hoping that we won't need to do that ever again.
 
-A problem was fixed in the wemos code where we accidently copied some code twice.
+A problem was fixed in the wemos code where we accidently copied some code twice.  
+Lastly, we also fixed the design for the top part of the 3d print, making the fill bigger. This way, there won't be a gap in there once we print it again.
 
 ### Day 2 (Tuesday)
 
-Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. The issue board was updated.  
+Today we did the sprint review and retrospective meeting. We discussed our progress and the problems we encountered. We also discussed the next steps we are going to take. Because of this.yhe issue board was also updated with new tasks for the next sprint.  
 
 | ![meeting picture](20220614_112032.jpg) |
 | :-------------------------------------: |
 |             Meeting Picture             |
 
 We also got a second try at the piece we tried to print yesterday. This time it worked!
-The rest of the casing takes too long to print so We'll need to find an alternative as Miguel is not here long enough.  
-Next to that, we worked on a testing plan to follow on location on thursdays. This can be found [here](Testing-plan.md).
+The rest of the casing takes too long to print so we'll need to find an alternative as we can only print at Miguel if it can be printed within the workday he is here, which is too short for our print sadly.  
+Next to that, we worked on a testing plan to follow on location on thursdays during the testing. This can be found [here](Testing-plan.md).
 
 ### Day 3 (Wednesday)
 
@@ -640,13 +638,13 @@ Today, we worked hard to try and fix the problem with receiving data from the My
 
 ### Day 4 (Thursday)
 
-Today we finally got the 201 HTTP response from the backend. The problem was that we were accessing the backend through HTTPS, removing the S solved the issue.
+Today we finally got the 201 HTTP response from the back-end. The problem was that we were accessing the back-end through HTTPS, removing the S solved the issue.
 We also worked on the documentation, as some of the documentation was still not finished, so we finished the following pages:  
 
 - [Testing plan](Testing-plan.md)
 - [Weatherproofing](weatherproofing.md)  
 
-Next to that we also had another meeting with our client. We were planning to go to the location of our client, but due to connection issues between their software and our software we decided to delay that. Because of this we had an extra meeting to plan ahead and think of solutions for the problem. We decided came to the conclusion of using teamviewer to remotely use their computer, that way we can fix the issue while not needing to go all the way there, as we need to make sure the data they receive will also be send to our database. We planned to do this tomorrow, so hopefully we can fix it tomorrow. If we fix it we will go to their location the next tuesday.
+Next to that we also had another meeting with our client. We were planning to go to the location of our client, but due to connection issues between their software and our software we decided to delay that. Because of this we had an extra meeting to plan ahead and think of solutions for the problem. We came to the conclusion of using teamviewer to remotely use their computer, that way we can fix the issue while not needing to go all the way there, as we need to make sure the data they receive will also be send to our database. We plan to do this tomorrow, so hopefully we can fix it then. If we fix it we will go to their location next tuesday.
 
 ### Day 5 (Friday)
 
@@ -654,24 +652,26 @@ Next to that we also had another meeting with our client. We were planning to go
 
 ### Day 1 (Monday)
 
-Today, we decided to take a step back and look at the current situation and what we plan to do, now that another meeting at the clients location to test or device is cancelled and we do not have enough time to arrange another meeting there. We talked with Bas about the situation. We came to the conclusion that we should design different possible solutions and then pick one to replace the data being received from the client's system. We are gonna work on this tomorrow.  
+Today, we decided to take a step back and look at the current situation and what we plan to do, now that another meeting at the clients location to test our device is cancelled and we do not have enough time to arrange another meeting there. We talked with Bas about the situation. We came to the conclusion that we should design different possible solutions and then pick one to replace the data being received from the client's system. We are gonna work on this tomorrow.  
 Next to that, we worked a lot on documentation, making mini-manuals.  
 We also made a diagram of the software part of the product:
 ![Software diagram](application_diagram.png)
-We also started importing the CSV file from Mylaps into our database as we can't get the data directly as the program is running locally to avoid any tempering on the times.
+Lastly, we also started importing the CSV file from Mylaps into our database as we can't get the data directly, as the program is running locally to avoid any tempering on the times.
 This means adding new columns and finding a smart way to add all the data without having to do it by hand.
 
 ### Day 2 (Tuesday)
 
-We received the main part of the casing for the device today from the 3d printer. It took such a long time due to the supports needing to be removerd through a special method. It needed to sit in a special bath with citric acid, which automatically removed the supports. However, this takes a long time.  
+We received the main part of the casing for the device today from the 3d printer. It took such a long time due to the supports needing to be removed through a special method. It needed to sit in a special bath with citric acid, which automatically removed the supports. However, this takes a long time, which is why we only got it now.  
 
 | ![Main casing of the device](main-casing.png) |
 | :-------------------------------------: |
 |             Main casing of the device             |  
 
-As we are mostly meeting online due to personal reasons, we will set up the device into the casing tomorrow and make sure everything still works.  
+As we are mostly meeting online today due to personal reasons, we will set up the device into the casing and make sure everything still works tomorrow.  
 
 We also worked more on properly documenting everything, as we want to make sure all of the documentation is great when the project is finished. These are some of the pages we have been working on today:  
 
 - [Website design](Website-Design.md)
 - [Mini manuals](Mini-manuals.md)
+
+Next to that, we read through this entire document to find missing information or grammar and spelling mistakes, we fixed all of those.
