@@ -4,10 +4,17 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
-
+#include <NTPClient.h>
 #include <WiFiClient.h>
+#include "WiFiUdp.h"
 
 WiFiClient client;
+WiFiUDP ntpUDP;
+
+const long utcOffsetInSeconds = 7200; // +02:00 UTC
+NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
+
+
 
 #define INTERVAL 30                                                 // Intervall of sending in seconds
 // DHT
@@ -30,8 +37,8 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
-const char* ssid = "AFBLIJVEN";
-const char* password = "Kaas012!!";
+const char* ssid = "OnePlus 8";
+const char* password = "r5gc6x4d";
 //////////////// Functions //////////////////////////////////////////
 
 void setup_wifi() {
@@ -123,21 +130,21 @@ void getAndSendTemperatureAndHumidityData()
     wd = "NW";
   }
 
-  Serial.print("Humidity: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.print(" *C ");
-  Serial.print("Windspeed: ");
-  Serial.print(ws);
-  Serial.print(" km/h ");
-  Serial.print("Wind Direction: ");
-  Serial.print(wd);
-  Serial.print(" ");
-  Serial.print("Rain: ");
-  Serial.print(r);
-  Serial.print(" mm ");
+  // Serial.print("Humidity: ");
+  // Serial.print(h);
+  // Serial.print(" %\t");
+  // Serial.print("Temperature: ");
+  // Serial.print(t);
+  // Serial.print(" *C ");
+  // Serial.print("Windspeed: ");
+  // Serial.print(ws);
+  // Serial.print(" km/h ");
+  // Serial.print("Wind Direction: ");
+  // Serial.print(wd);
+  // Serial.print(" ");
+  // Serial.print("Rain: ");
+  // Serial.print(r);
+  // Serial.print(" mm ");
 
 
   String temperature = String(t);
@@ -147,16 +154,19 @@ void getAndSendTemperatureAndHumidityData()
   String rain = String(r);
 
   // Just debug messages
-  Serial.print( "Sending Data : [" );
-  Serial.print( temperature ); Serial.print( "," );
-  Serial.print( humidity ); Serial.print( "," );
-  Serial.print( windspeed ); Serial.print( "," );
-  Serial.print( winddir ); Serial.print( "," );
-  Serial.print( rain );
-  Serial.print( "]   -> " );
+  // Serial.print( "Sending Data : [" );
+  // Serial.print( temperature ); Serial.print( "," );
+  // Serial.print( humidity ); Serial.print( "," );
+  // Serial.print( windspeed ); Serial.print( "," );
+  // Serial.print( winddir ); Serial.print( "," );
+  // Serial.print( rain );
+  // Serial.print( "]   -> " );
 
+  //update time
+  timeClient.update();
+  //Serial.println(timeClient.getFormattedTime());
   // Prepare a JSON payload string
-  String payload = "{recordedTime: 0999-12-31T23:00:00.000:00";
+  String payload = "{recordedTime: 0999-12-31T"+timeClient.getFormattedTime()+".000+00:00,";
 
   payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
@@ -168,7 +178,7 @@ void getAndSendTemperatureAndHumidityData()
   char attributes[100];
   payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
-  //  Serial.println( attributes );
+  Serial.println( attributes );
   httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
   lastSend = millis();
 }
@@ -214,6 +224,7 @@ void setup() {
 
 //////////////// LOOP //////////////////////////////////////////////
 void loop() {
+  
   getAndSendTemperatureAndHumidityData();
   delay(1000);
 }
