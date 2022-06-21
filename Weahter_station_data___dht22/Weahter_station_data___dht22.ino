@@ -70,7 +70,7 @@ void httpPOSTRequest(const char* serverName, char* httpRequestData){
     // Specify content-type header
   //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // Data to send with HTTP POST
- // http.addHeader("Content-Type", "application/json");
+  http.addHeader("Content-Type", "application/json");
   int httpResponseCode = http.POST(httpRequestData);
   
   Serial.print("HTTP Response code: ");
@@ -166,17 +166,17 @@ void getAndSendTemperatureAndHumidityData()
   timeClient.update();
   //Serial.println(timeClient.getFormattedTime());
   // Prepare a JSON payload string
-  String payload = "{recordedTime: 0999-12-31T"+timeClient.getFormattedTime()+".000+00:00,";
+  String payload = "{\"recordedTime\": \"0999-12-31T"+timeClient.getFormattedTime()+".000+00:00\",";
 
   payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
   payload += "\"windSpeed\":"; payload += windspeed; payload += ",";
-  payload += "\"windDirection\":"; payload += winddir; payload += ",";
+  payload += "\"windDirection\":\""; payload += winddir; payload += "\"";
   payload += "}";
 
   // Send payload
-  char attributes[100];
-  payload.toCharArray( attributes, 100 );
+  char attributes[payload.length() + 1];
+  payload.toCharArray( attributes, payload.length() + 1 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   Serial.println( attributes );
   httpPOSTRequest("http://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
