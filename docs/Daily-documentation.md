@@ -646,7 +646,6 @@ Next to that we also had another meeting with our client. We were planning to go
 
 ### Day 5 (Friday)
 
-
 ## Week 8 (20-6-2022 - 24-6-2022)
 
 ### Day 1 (Monday)
@@ -657,3 +656,18 @@ We also made a diagram of the software part of the product:
 ![Software diagram](application_diagram.png)
 We also started importing the CSV file from Mylaps into our database as we can't get the data directly as the program is running locally to avoid any tempering on the times.
 This means adding new columns and finding a smart way to add all the data without having to do it by hand.
+
+### Day 2 (Tuesday)
+
+We received the main part of the casing for the device today from the 3d printer. It took such a long time due to the supports needing to be removerd through a special method. It needed to sit in a special bath with citric acid, which automatically removed the supports. However, this takes a long time.  
+
+| ![Main casing of the device](main-casing.png) |
+| :-------------------------------------: |
+|             Main casing of the device             |  
+
+As we are mostly meeting online due to personal reasons, we will set up the device into the casing tomorrow and make sure everything still works.  
+
+We also worked more on properly documenting everything, as we want to make sure all of the documentation is great when the project is finished. These are some of the pages we have been working on today:  
+
+- [Website design](Website-Design.md)
+- [Mini manuals](Mini-manuals.md)
