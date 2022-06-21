@@ -179,7 +179,7 @@ void getAndSendTemperatureAndHumidityData()
   payload.toCharArray( attributes, 100 );
   //  client.publish( "v1/devices/me/telemetry", attributes );
   Serial.println( attributes );
-  httpPOSTRequest("https://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
+  httpPOSTRequest("http://bmx-nl-app-be-staging.herokuapp.com/TrackTimeRecord/measurement/1", attributes);
   lastSend = millis();
 }
 
