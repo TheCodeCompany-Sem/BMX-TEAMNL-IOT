@@ -48,11 +48,11 @@ A proper homepage was written.
 |         Homepage for documentation          |
 
 Then got a temperature and humidity sensor.
-We were able to wire it properlu and get the first data.
+We were able to wire it properly and get the first data.
 
 | ![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg) |
 | :-----------------------------------------------------------: |
-|             DHT22 Humadity and Temperature sensor             |
+|             DHT22 Humidity and Temperature sensor             |
 
 ```cpp
 #include "DHTesp.h"
@@ -80,17 +80,17 @@ This is the first prototype of the web application.
 
 | ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
 | :---------------------------------------------------------: |
-|            DHT22 Humadity and Temperature sensor            |
+|            First prototype of the web application            |
 
-The basis of the back end is done.
-Models are filled in with variables and methods.
-Controllers and repositories are filled with methods as well.
+The base of the back end is done.
+All of the current models now have their required variables and methods.
+Controllers and repositories also have their required methods.
 The backend is now connected to a remote database.
 Routes were checked.
 
 ### Day 3 (Wednesday)
 
-The wemos can now be connected to the internet and perform get requests.  
+We connected the wemos to the internet and we made sure it can perform get requests when we want it to. You can find the code example here below:  
 
 ```cpp
 void setup_wifi() {
@@ -139,20 +139,20 @@ int httpGETRequest(const char* serverName, JsonObject& json) {
 
 ```
 
-Also, the website now has a loading screen, and it had a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
+Also, the website now has a loading screen, and it has a page where the player table can be shown, which is hardcoded for now, but will be connected with the backend tomorrow.  
 The loading screen looks like this:  
 
 | ![loading screen](loadingpage.png) |
 | :--------------------------------: |
-|       Loading screen Design        |
+|       Current loading screen        |
 
 The table page looks as follows:
 
 | ![main page](mainpage.png) |
 | :------------------------: |
-|      Main page Design      |
+|      Current main page     |
 
-The code for the table page looks like this:  
+The code for the table page looks as follows:  
 
 ```html
 <app-header></app-header>
@@ -186,7 +186,7 @@ The code for the table page looks like this:
 <app-footer></app-footer>
 ```  
 
-The header, navbar and footer are also loaded onto the page. The header and footer are still empty, but the navbar was does contain something, which is the orange bar on the top of the page. The code looks like this:
+The header, navbar and footer are also loaded onto the page. The header and footer are still empty, but the navbar does contain something, which is the orange bar on the top of the page. The code for it looks like this:
 
 ```html
 <ul>
@@ -196,6 +196,8 @@ The header, navbar and footer are also loaded onto the page. The header and foot
   <li><a class="active" href="default.asp">Home</a></li>
 </ul>
 ```  
+
+The styling for the navbar looks as follows:  
 
 ```css
 ul {
@@ -249,7 +251,7 @@ ul {
 
 ### Day 4 (Tuesday)
 
-Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can recieve data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
+Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can receive data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
 
 ```html
 //Work in progress
@@ -287,9 +289,9 @@ Today we got the post request function done on the wemos.
 }
 ```
 
-Then we fixed a problem on the webopage were we couldn't get the weather data to display properly.
+After tha, we fixed a problem on the webpage due to which we couldn't get the weather data to display properly.
 It would only appear as Object object and not access the actual data.
-We also worked on styling and added the fonts that Aukje sent us.
+We also worked on styling and added the fonts that our client sent us.
 
 ### Day 2 (Tuesday)
 
@@ -307,7 +309,7 @@ The weather station arrived today, so we decided to go test it out and make sure
 | :-----------------------------------------------------------------: |
 |                    Building weather station done                    |
 
-once we had it assembled we cut the wires and tried to make it work with the Wemos device.
+Once we had it assembled we cut the wires and tried to make it work with the Wemos device.
 
 | ![Trying the wires of the windspeed sensor](trywires.jpg) |
 | :-------------------------------------------------------: |
@@ -317,9 +319,9 @@ once we had it assembled we cut the wires and tried to make it work with the Wem
 src="https://www.youtube.com/embed/rhg-blru4b8">
 </iframe>  
 
-We also figured out how the pin out was from the rj11 connector.
+We also figured out how the pinout from the rj11 connector works.
 
-|          ![](Weather_station_connector_rj11.jpg)           |
+|          ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg)           |
 | :--------------------------------------------------------: |
 | RJ11 pinout weahter station wind direction and speed meter |
 
@@ -329,11 +331,11 @@ We also talked to our client, discussing the current progress. She was pretty po
 
 Today, we started by doing the sprint retrospective. Discussing what went well and what didn't go as well during this sprint. After that we decided to continue working where we left off yesterday, trying to figure out how to read the values from the windspeed sensor.
 
-With this turtorial we made the anemometer working with a Arduino Uno.
+With this tutorial we made the anemometer working with a Arduino Uno.
 
 [Arduino measure wind speed tutorial](https://www.aeq-web.com/arduino-anemometer-wind-sensor/?lang=en)
 
-This is the schematic to connetect the anemometer to a Arduino Uno
+This is the schematic to connect the anemometer to an Arduino Uno
 
 | ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
 | :----------------------------------------------------------------------: |
@@ -389,7 +391,7 @@ void countup() {
 }
 ```
 
-Finally we got the wind direction sensor to work.
+Finally we also got the wind direction sensor to work.
 The code used is the following:
 
 ```cpp
@@ -406,19 +408,19 @@ void loop() {
 
 ```
 
-This is how the sensor is wired, we're using a 10k resistor and 5V:
+This is how the sensor is wired, we're using a 10k resistor and 5V power:
 
 | ![Wind vane wiring](wind_vane_wiring.png) |
 | :---------------------------------------: |
 |         Wind vane wiring diagram          |
 
-Then we tried to get all the sensors connected at the same time. We went outside for testing. Everything was working properly.
+Lastly, we tried to get all the sensors connected and working at the same time. We went outside to test this. Luckily everything was working properly.
 
 ## Week 4 (23-5-2022 - 29-5-2022)
 
 ### Day 1 (Monday)
 
-Today, we started to apply the feedback we got during the meeting with the client. So we went back to the drawing board to redesign the personal page, as it was too bland and needed to look cleaner and be more vibrant. So we added a background grayscaled of the orange background delivered to us by our client:  
+Today, we started with applying the feedback we got during the meeting with the client. She was not very happy about our current design for the webpages. So we went back to the drawing board to redesign the personal page, as it was too bland, needed to look cleaner and be more vibrant. So we added a background grayscaled of the orange background delivered to us by our client:  
 
 | ![Personal page redesign](personalpage_design.png) |
 | :------------------------------------------------: |
@@ -441,7 +443,7 @@ After that we also worked on the other documentation files, for example:
 
 ### Day 3 (Wednesday)
 
-Today we tried to wire the sensors to the Wemos. We are getting an error that we haven't figured out yet.
+Today, we tried to wire the sensors to the Wemos. We are getting an error.
 
 ```cmd
  ets Jan  8 2013,rst cause:2, boot mode:(3,6)
@@ -487,13 +489,15 @@ sp: 3ffffe90 end: 3fffffc0 offset: 0000
 <<<stack<<<
 ```
 
+We will try to fix it as soon as possible, but no success for now. So we will try again during the next workday.
+
 ## Week 5 (30-5-2022 - 5-6-2022)
 
 ### Day 1 (Monday)
 
-Today we worked on the different reports, and updated old ones to fit within what Bas expected.
-We wrote user stories on the board.
-We had meetings with Bas in the afternoon.
+Today we worked on the different reports and updated old ones to fit within what Bas expected.
+We also wrote user stories on our issue board in gitlab, you can find a link to that [here](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/boards/5331).
+We had meetings with Bas in the afternoon about our current progress as a group and individually, due to this we didn't really have as much time to work on the device as we wanted to.
 
 ### Day 2 (Tuesday)
 
