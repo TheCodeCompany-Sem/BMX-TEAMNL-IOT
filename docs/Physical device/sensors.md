@@ -35,19 +35,19 @@ void loop() {
 
 It is wired this way:  
 
-|![DHT22_sensor_wiring.png](DHT22_sensor_wiring.png)|
+|![DHT22_sensor_wiring.png](../DHT22_sensor_wiring.png)|
 | :-:|
 |DHT22 Humidity and Temperature sensor|  
 
 this is how the wiring looks in reality:  
 
-|![Humidity_and_Temp_sensor.jpg](Humidity_and_Temp_sensor.jpg)|
+|![Humidity_and_Temp_sensor.jpg](../Humidity_and_Temp_sensor.jpg)|
 | :-:|
 |DHT22 Humidity and Temperature sensor|  
 
 this is the data coming from the sensor:  
 
-|![data_from_dht22.png](data_from_dht22.png)|
+|![data_from_dht22.png](../data_from_dht22.png)|
 | :-:|
 |Data coming form the DHT22 sensor|  
 
@@ -61,7 +61,7 @@ It also has the benefit of working out of the box. Therefore leaving us more tim
 
 <center>
 
-|![Davis 6410](6410.jpg)|
+|![Davis 6410](../6410.jpg)|
 | :-:|
 |[Davis 6410](https://www.davis-europe.nl/product/davis-6410-anemometer-for-vantage-pro2-vantage-pro/)|
 
@@ -73,7 +73,7 @@ This option is the cheapest one. The drawbacks are accuracy, the time it will ta
 
 <center>
 
-|![sketch_sensor.jpg](sketch_sensor.jpg)|
+|![sketch_sensor.jpg](../sketch_sensor.jpg)|
 | :-:|
 |Rotary sensor sketch|
 
@@ -101,11 +101,11 @@ To calibrate the sensor we would use a car. We'd get the device out of the windo
 
 ### Weather station
 
-|![Weather Station](weather_station_we_choosed_with_customer.png)|
+|![Weather Station](../weather_station_we_choosed_with_customer.png)|
 | :-:|
 |[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
 
-| ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg)|
+| ![RJ11 pinout weahter station wind direction and speed meter](../Weather_station_connector_rj11.jpg)|
 | :-------------------------------------------------------: |
 |RJ11 pinout weahter station wind direction and speed meter|
 
@@ -113,21 +113,21 @@ To calibrate the sensor we would use a car. We'd get the device out of the windo
 
 This is the schematic to connect the anemometer to a Arduino Uno
 
-| ![Windspeed meter connection arduino](Anemometer_connection_arduino.png) |
+| ![Windspeed meter connection arduino](../Anemometer_connection_arduino.png) |
 | :----------------------------------------------------------------------: |
 |                   Schematic anemometer to arduino Uno                    |
 
 We have made the windspeed sensor work!
 
-| ![Windspeed meter complete](IMG_20220518_121711.jpg) |
+| ![Windspeed meter complete](../IMG_20220518_121711.jpg) |
 | :--------------------------------------------------: |
 |               Windspeed meter testing                |
 
-| ![Windspeed meter working](IMG_20220518_121700.jpg) |
+| ![Windspeed meter working](../IMG_20220518_121700.jpg) |
 | :-------------------------------------------------: |
 |      Windspeed meter working with the terminal      |
 
-| ![Windspeed meter connetion](IMG_20220518_121705.jpg) |
+| ![Windspeed meter connetion](../IMG_20220518_121705.jpg) |
 | :---------------------------------------------------: |
 |              Windspeed meter connection               |
 
@@ -190,7 +190,7 @@ void loop() {
 
 This is how the sensor is wired, we're using a 10k resistor and 5V:
 
-| ![Wind vane wiring](wind_vane_wiring.png) |
+| ![Wind vane wiring](../wind_vane_wiring.png) |
 | :---------------------------------------: |
 |         Wind vane wiring diagram          |
 
@@ -200,7 +200,7 @@ We're now figuring out how to get the data from the sensors to the internet. Usi
 
 Here is the wire scheme for reading the sensors:
 
-|           ![Wemos reading weather data code](Fritzing%20wemos.png)           |
+|           ![Wemos reading weather data code](../Fritzing%20wemos.png)           |
 |:-------------------------------------------------------------------------:|
 | Connecting schema weather station + DHT22 temperature and humidity sensor |
 
