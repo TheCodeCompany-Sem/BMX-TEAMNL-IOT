@@ -16,6 +16,14 @@ The physical device also consists of multiple parts, which can be explained indi
 
 ### Casing
 
+The casing is designed to be weatherproof, due to this, a couple of measurements have been taken in designing the casing. This is how the casing looks:  
+
+| ![Full casing for the device](casingfull.png) |
+| :-------------------------------------------: |
+|          Full casing for the device           |  
+
+The roof is slanted, so the water that can rain on top of it automatically falls off and has a low chance of actually getting into the device. The device has these 'legs' to let the wires go to the wemos savely without encountering water. Lastly, there is the hole in the middle of the device. This is to connect the wemos to a power supply with a usb wire, which sits in the middle of the device.
+
 ### Wiring
 
 ### Wemos configuration
