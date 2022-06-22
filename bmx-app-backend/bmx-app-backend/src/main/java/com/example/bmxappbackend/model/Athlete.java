@@ -34,12 +34,17 @@ public class Athlete {
     @JsonManagedReference(value = "trackTimeRecords")
     private List<TrackTimeRecord> trackTimeRecords;
 
-    public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords) {
+    @OneToMany(mappedBy = "athlete")
+    @JsonManagedReference(value = "transponderMeasurements")
+    private List<TransponderMeasurement> transponderMeasurements;
+
+    public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords, List<TransponderMeasurement> transponderMeasurements) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
         this.coach = coach;
         this.trackTimeRecords = trackTimeRecords;
+        this.transponderMeasurements = transponderMeasurements;
     }
 
     public Athlete() {
@@ -83,5 +88,13 @@ public class Athlete {
 
     public void setTrackTimeRecords(List<TrackTimeRecord> trackTimeRecords) {
         this.trackTimeRecords = trackTimeRecords;
+    }
+
+    public List<TransponderMeasurement> getTransponderMeasurements() {
+        return transponderMeasurements;
+    }
+
+    public void setTransponderMeasurements(List<TransponderMeasurement> transponderMeasurements) {
+        this.transponderMeasurements = transponderMeasurements;
     }
 }

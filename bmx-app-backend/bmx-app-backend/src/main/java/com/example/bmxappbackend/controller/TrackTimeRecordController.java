@@ -2,8 +2,10 @@ package com.example.bmxappbackend.controller;
 
 import com.example.bmxappbackend.model.Athlete;
 import com.example.bmxappbackend.model.TrackTimeRecord;
+import com.example.bmxappbackend.model.TransponderMeasurement;
 import com.example.bmxappbackend.repository.AthleteRepository;
 import com.example.bmxappbackend.repository.TrackTimeRecordRepository;
+import com.example.bmxappbackend.repository.TransponderMeasurementRepository;
 import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 /**
  * @Author: Mortada M'Rabet
@@ -23,14 +27,17 @@ import java.net.URI;
 public class TrackTimeRecordController {
 
     private final TrackTimeRecordRepository trackTimeRecordRepository;
-
+    private final TransponderMeasurementRepository transponderMeasurementRepository;
     private final AthleteRepository athleteRepository;
 
-    @Autowired
-    public TrackTimeRecordController(TrackTimeRecordRepository trackTimeRecordRepository, AthleteRepository athleteRepository) {
+    public TrackTimeRecordController(TrackTimeRecordRepository trackTimeRecordRepository, TransponderMeasurementRepository transponderMeasurementRepository, AthleteRepository athleteRepository) {
         this.trackTimeRecordRepository = trackTimeRecordRepository;
+        this.transponderMeasurementRepository = transponderMeasurementRepository;
         this.athleteRepository = athleteRepository;
     }
+
+    @Autowired
+
 
 
 
@@ -57,17 +64,31 @@ public class TrackTimeRecordController {
      */
     @PostMapping("/measurement/{athleteId}")
     public ResponseEntity<TrackTimeRecord> createTrackTimeRecord(@RequestBody TrackTimeRecord trackTimeRecord, @PathVariable int athleteId){
-        trackTimeRecord.setAthlete(athleteRepository.findById(athleteId));
+        //Get a list of transponder measurements
+        //Get them with specific transponder code
+        List<TransponderMeasurement> transponderMeasurementList = transponderMeasurementRepository.getAllByTransponderCode("0009992");
 
-        trackTimeRecordRepository.save(trackTimeRecord);
+        System.out.println(transponderMeasurementList.toString());
 
+        for (TransponderMeasurement transponderMeasurement : transponderMeasurementList){
+            System.out.println((trackTimeRecord.getRecordedTime().until(transponderMeasurement.getTime(), ChronoUnit.SECONDS)));
 
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(trackTimeRecord.getId()).toUri();
+            long timeDisparity = transponderMeasurement.getTime().until(trackTimeRecord.getRecordedTime(), ChronoUnit.SECONDS);
 
-        return ResponseEntity.created(location).body(trackTimeRecord);
+            if (timeDisparity > -7 && timeDisparity < 7 && athleteRepository.findById(athleteId).equals(transponderMeasurement.getAthlete())){
+                System.out.println("yes it passes thru");
+                trackTimeRecord.setAthlete(athleteRepository.findById(athleteId));
+                trackTimeRecordRepository.save(trackTimeRecord);
+
+                URI location = ServletUriComponentsBuilder
+                        .fromCurrentRequest()
+                        .path("/{id}")
+                        .buildAndExpand(trackTimeRecord.getId()).toUri();
+
+                return ResponseEntity.created(location).body(trackTimeRecord);
+            }
+        }
+        return null;
     }
 
     /**

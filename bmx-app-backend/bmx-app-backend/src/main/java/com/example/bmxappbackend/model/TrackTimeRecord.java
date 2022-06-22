@@ -4,7 +4,9 @@ import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
+
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -20,7 +22,7 @@ public class TrackTimeRecord {
 
     @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="recorded_time")
-    private Date recordedTime;
+    private LocalTime recordedTime;
 
     @JsonView(TrackTimeRecordView.base.class)
     @Column(name ="humidity", nullable = false)
@@ -44,8 +46,7 @@ public class TrackTimeRecord {
     @JsonBackReference(value = "trackTimeRecords")
     private Athlete athlete;
 
-
-    public TrackTimeRecord(int id, Date recordedTime, double humidity, double temperature, String windDirection, double windSpeed, Athlete athlete) {
+    public TrackTimeRecord(int id, LocalTime recordedTime, double humidity, double temperature, String windDirection, double windSpeed, Athlete athlete) {
         this.id = id;
         this.recordedTime = recordedTime;
         this.humidity = humidity;
@@ -66,11 +67,11 @@ public class TrackTimeRecord {
         this.id = id;
     }
 
-    public Date getRecordedTime() {
+    public LocalTime getRecordedTime() {
         return recordedTime;
     }
 
-    public void setRecordedTime(Date recordedTime) {
+    public void setRecordedTime(LocalTime recordedTime) {
         this.recordedTime = recordedTime;
     }
 

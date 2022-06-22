@@ -1,10 +1,9 @@
 package com.example.bmxappbackend.controller;
 
+import com.example.bmxappbackend.exceptions.PreConditionFailedException;
+import com.example.bmxappbackend.exceptions.ResourceNotFoundException;
 import com.example.bmxappbackend.model.Athlete;
-import com.example.bmxappbackend.model.TrackTimeRecord;
 import com.example.bmxappbackend.repository.AthleteRepository;
-import com.example.bmxappbackend.repository.TrackTimeRecordRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,7 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 /**
- * @Author: Mortada M'Rabet & Sem H
+ * @Author: Mortada M'Rabet & Sem Huits
  * @Description: This class manages every mapping, which allows for data manipulation
  */
 
@@ -20,10 +19,10 @@ import java.net.URI;
 @RequestMapping("/athlete")
 public class AthleteController {
 
-    private final AthleteRepository AthleteRepository;
+    private final AthleteRepository athleteRepository;
 
     public AthleteController(AthleteRepository AthleteRepository) {
-        this.AthleteRepository = AthleteRepository;
+        this.athleteRepository = AthleteRepository;
     }
 
     /**
@@ -32,15 +31,19 @@ public class AthleteController {
     @GetMapping
     public @ResponseBody
     Iterable<Athlete> getAll(){
-        return AthleteRepository.findAll();
+        return athleteRepository.findAll();
     }
     /**
      * @param id
      * @return a roll by its ID
      */
     @GetMapping(path = "/{id}")
-    public Athlete getAthleteController(@PathVariable int id){
-        return AthleteRepository.findById(id);
+    public Athlete getAthlete(@PathVariable int id){
+        Athlete foundAthlete = athleteRepository.findById(id);
+
+        if(foundAthlete == null) throw new ResourceNotFoundException("Could not find athlete with id:" + id);
+
+        return foundAthlete;
     }
 
     /**
@@ -48,8 +51,8 @@ public class AthleteController {
      * @return a response status whether the operation to add a roll was succesfull
      */
     @PostMapping
-    public ResponseEntity<Athlete> createAthleteController(@RequestBody Athlete Athlete){
-        Athlete toBeinsertedAthlete= AthleteRepository.save(Athlete);
+    public ResponseEntity<Athlete> createAthlete(@RequestBody Athlete Athlete){
+        Athlete toBeinsertedAthlete= athleteRepository.save(Athlete);
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -64,8 +67,8 @@ public class AthleteController {
      * @return a response status whether the delete operation was succesfull
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Athlete> deleteRoll(@PathVariable int id){
-        Athlete toBeDeletedAthlete = AthleteRepository.deleteById(id);
+    public ResponseEntity<Athlete> deleteAthlete(@PathVariable int id){
+        Athlete toBeDeletedAthlete = athleteRepository.deleteById(id);
 
         return ResponseEntity.ok(toBeDeletedAthlete);
     }
