@@ -80,7 +80,7 @@ This is the first prototype of the web application.
 
 | ![front_end_1st_prototype.png](front_end_1st_prototype.png) |
 | :---------------------------------------------------------: |
-|            First prototype of the web application            |
+|           First prototype of the web application            |
 
 The base of the back end is done.
 All of the current models now have their required variables and methods.
@@ -144,13 +144,13 @@ The loading screen looks like this:
 
 | ![loading screen](loadingpage.png) |
 | :--------------------------------: |
-|       Current loading screen        |
+|       Current loading screen       |
 
 The table page looks as follows:
 
 | ![main page](mainpage.png) |
 | :------------------------: |
-|      Current main page     |
+|     Current main page      |
 
 The code for the table page looks as follows:  
 
@@ -321,9 +321,9 @@ src="https://www.youtube.com/embed/rhg-blru4b8">
 
 We also figured out how the pinout from the rj11 connector works.
 
-|          ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg)           |
-| :--------------------------------------------------------: |
-| RJ11 pinout weahter station wind direction and speed meter |
+| ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg) |
+| :-----------------------------------------------------------------------------------------------: |
+|                    RJ11 pinout weahter station wind direction and speed meter                     |
 
 We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
 
@@ -664,8 +664,8 @@ This means adding new columns and finding a smart way to add all the data withou
 We received the main part of the casing for the device today from the 3d printer. It took such a long time due to the supports needing to be removed through a special method. It needed to sit in a special bath with citric acid, which automatically removed the supports. However, this takes a long time, which is why we only got it now.  
 
 | ![Main casing of the device](main-casing.png) |
-| :-------------------------------------: |
-|             Main casing of the device             |  
+| :-------------------------------------------: |
+|           Main casing of the device           |
 
 As we are mostly meeting online today due to personal reasons, we will set up the device into the casing and make sure everything still works tomorrow.  
 
@@ -675,3 +675,12 @@ We also worked more on properly documenting everything, as we want to make sure 
 - [Mini manuals](Mini-manuals.md)
 
 Next to that, we read through this entire document to find missing information or grammar and spelling mistakes, we fixed all of those.
+
+### Day 3 (Wednesday)
+
+Today, was a great day! We fixed the back-end completely, meaning we can go test the device. We planned to go to the clients location for testing next monday. Next to that, we did a lot more documentation. First we reordered how the documents are shown on the documentation website, as the navbar was completely full with tabs, so we put some tabs together. Due to this there now is a ["Physical device"](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Physical%20device/embedded_device/) tab, this holds the embedded device, sensors and weatherproofing documents. Next to that, we also started worked on a to fully document what we will be delivering to the client next week. This way everything will be compact and easy to find. You can find this documentation [here](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Final_Delivery/).  
+We also made sure the casing of the device fits, as the top part didn't fit first due to the edges on the main part being too big and the usb cable didn't fit through the designated hole. So we used a vile to slim the edges down and make the hole for the usb bigger. Now everything fits in there.  
+
+| ![Full casing of the device](casingfull.png) |
+| :------------------------------------------: |
+|          Full casing of the device           |
