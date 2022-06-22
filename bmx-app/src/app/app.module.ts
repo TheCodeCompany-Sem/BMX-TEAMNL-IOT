@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomepageComponent } from './page/homepage/homepage.component';
+import { AppRoutingModule, routingComponent } from './app-routing.module';
+import { AppComponent} from './app.component';
 import { SplashComponent } from './components/splash/splash.component';
 import {SplashScreenStateService} from "./services/splash-screen.service";
 import { NavbarComponent } from './generic/navbar/navbar.component';
 import { FooterComponent } from './generic/footer/footer.component';
 import { HeaderComponent } from './generic/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileComponent } from './components/profile/profile.component';
-import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -21,8 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     HeaderComponent,
     SplashComponent,
-    HomepageComponent,
-    ProfileComponent,
+    routingComponent
+
   ],
   imports: [
     AppRoutingModule,
@@ -30,12 +27,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     HttpClientModule,
 
-    RouterModule.forRoot([
 
-      {path: '', component: HomepageComponent},
-      {path: 'user:/userId', component: ProfileComponent}
-
-    ])
   ],
   providers: [  SplashScreenStateService ],
   bootstrap: [AppComponent]
