@@ -166,7 +166,7 @@ void getAndSendTemperatureAndHumidityData()
   timeClient.update();
   //Serial.println(timeClient.getFormattedTime());
   // Prepare a JSON payload string
-  String payload = "{\"recordedTime\": \"0999-12-31T"+timeClient.getFormattedTime()+".000+00:00\",";
+  String payload = "{\"recordedTime\": \""+timeClient.getFormattedTime()+"\",";
 
   payload += "\"temperature\":"; payload += temperature; payload += ",";
   payload += "\"humidity\":"; payload += humidity; payload += ",";
@@ -226,5 +226,5 @@ void setup() {
 void loop() {
   
   getAndSendTemperatureAndHumidityData();
-  delay(1000);
+  delay(3000);
 }
