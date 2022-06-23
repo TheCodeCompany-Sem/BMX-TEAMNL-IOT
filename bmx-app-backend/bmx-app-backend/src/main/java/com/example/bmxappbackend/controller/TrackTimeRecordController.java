@@ -9,6 +9,7 @@ import com.example.bmxappbackend.repository.TransponderMeasurementRepository;
 import com.example.bmxappbackend.views.TrackTimeRecordView;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -88,7 +89,7 @@ public class TrackTimeRecordController {
                 return ResponseEntity.created(location).body(trackTimeRecord);
             }
         }
-        return null;
+        return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     /**
