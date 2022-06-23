@@ -12,6 +12,8 @@ const routes: Routes = [
 
   { path: 'profile' , component: ProfileComponent},
 
+  {path: 'profile/id', component: ProfileComponent}
+
 
 
 ];

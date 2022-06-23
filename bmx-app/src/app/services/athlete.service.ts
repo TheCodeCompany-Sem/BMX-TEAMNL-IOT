@@ -35,5 +35,9 @@ export class AthleteService {
     return this.athletes;
   }
 
+  findById(id: number): Athlete {
+    console.log(id)
+    return this.athletes.find(athlete => athlete.id == id)
+  }
 
 }

@@ -3,6 +3,7 @@ import { SplashScreenStateService } from "../../services/splash-screen.service";
 import { AthleteService } from "../../services/athlete.service";
 import { Athlete } from "../../models/athlete";
 import {Router} from "@angular/router";
+import {getLocaleId} from "@angular/common";
 
 @Component({
   selector: 'app-homepage',
@@ -29,6 +30,11 @@ export class HomepageComponent implements OnInit {
       setTimeout(() => {
         this.splashScreenStateService.stop();
       }, 5000);
+    }
+
+    get athletesId(): Athlete{
+
+    return this.athleteService.findById(1);
     }
 
 
