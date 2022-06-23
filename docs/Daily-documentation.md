@@ -10,14 +10,14 @@ We also planned the sprints.
 
 ### Day 2 (Tuesday)
 
-Today, we worked on making a webdesign, to iterate on and give the client an idea of what we want the website to look like. More info on this can be found [here](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Website-Design/).  
+Today, we worked on making a webdesign, to iterate on and give the client an idea of what we want the website to look like. More info on this can be found [here](Web%20Application/Website-Design.md).  
 Secondly, we researched the MyLaps device manual, to check how we can use this device with our product.  
 Lastly, we made sure the gitlab pages were setup correctly and documented everything we have done so far.  
 We made the following pages:  
 
-- [Sensors](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/sensors/)  
-- [Web application](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Web-Application/)  
-- [Web design](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Front%20end/Website-Design/)
+- [Sensors](Physical%20device/sensors.md)  
+- [Web application](Web%20Application/Web-Application.md)  
+- [Web design](Web%20Application/Website-Design.md)
 
 ### Day 3 (Wednesday)
 
@@ -503,7 +503,7 @@ We had meetings with Bas in the afternoon about our current progress as a group 
 
 We're still trying to fix the error we had on wednesday.
 We tried to redo the wiring but it doesn't seem to be the problem. So we tried googling the error, but sadly that hasn't help either.  
-We also researched what the possibilities are to make the device weatherproof, as the device needs to function outside, also at times of bad weather. This documentation can be found [here](weatherproofing.md).
+We also researched what the possibilities are to make the device weatherproof, as the device needs to function outside, also at times of bad weather. This documentation can be found [here](Physical%20device/weatherproofing.md).
 
 ### Day 3 (Wednesday)
 
@@ -642,7 +642,7 @@ Today we finally got the 201 HTTP response from the back-end. The problem was th
 We also worked on the documentation, as some of the documentation was still not finished, so we finished the following pages:  
 
 - [Testing plan](Testing-plan.md)
-- [Weatherproofing](weatherproofing.md)  
+- [Weatherproofing](Physical%20device/weatherproofing.md)  
 
 Next to that we also had another meeting with our client. We were planning to go to the location of our client, but due to connection issues between their software and our software we decided to delay that. Because of this we had an extra meeting to plan ahead and think of solutions for the problem. We came to the conclusion of using teamviewer to remotely use their computer, that way we can fix the issue while not needing to go all the way there, as we need to make sure the data they receive will also be send to our database. We plan to do this tomorrow, so hopefully we can fix it then. If we fix it we will go to their location next tuesday.
 
@@ -671,7 +671,7 @@ As we are mostly meeting online today due to personal reasons, we will set up th
 
 We also worked more on properly documenting everything, as we want to make sure all of the documentation is great when the project is finished. These are some of the pages we have been working on today:  
 
-- [Website design](Website-Design.md)
+- [Website design](Web%20Application/Website-Design.md)
 - [Mini manuals](Mini-manuals.md)
 
 Next to that, we read through this entire document to find missing information or grammar and spelling mistakes, we fixed all of those.
