@@ -687,4 +687,4 @@ We also made sure the casing of the device fits, as the top part didn't fit firs
 
 ### Day 4 (Thursday)
 
-Today, we continued working on the documentation, as that needs to be great when the project is finished. We mostly worked on the [Final delivery document](Final_Delivery.md). Next to that, we also had a meeting with Aukje.
+Today, we continued working on the documentation, as that needs to be great when the project is finished. We mostly worked on the [Final delivery document](Final_Delivery.md). Next to that, we also had a meeting with our client. We talked about the current situation and decided that we would definitely meet her at her location this monday, to test our product and so they know how our product works.
