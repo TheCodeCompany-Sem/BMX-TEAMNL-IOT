@@ -26,6 +26,18 @@ The roof is slanted, so the water that can rain on top of it automatically falls
 
 ### Sensors
 
+We are using multiple sensors on our device to read data on multiple things regarding the weather. We have a humidity sensor, a temperature sensor, a windspeed sensor and a winddirection sensor. For the humidity and the temperature, we are using a [combined sensor module](https://elektronicavoorjou.nl/product/dht22-temp-vocht-sensor/?utm_campaign=organic_shopping&utm_content=&utm_source=google&utm_medium=organic&utm_term=&gclid=Cj0KCQjwntCVBhDdARIsAMEwACkGb2X-jlnPqTqaltdO49JmOLQFREfF94tp1S9dRzX6pyGRSkC0wYUaAm8hEALw_wcB). It looks like this in real life:  
+
+| ![Temperature and humidity sensors](Humidity_and_Temp_sensor.jpg) |
+| :-------------------------------------------: |
+|                    Temperature and humidity sensors |  
+
+We are also using a combined sensor module for the windspeed and winddirection sensors, you can buy these [here](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html). These look as follows in real life:  
+
+| ![Windspeed and winddirection sensors](weather-station-building-done.jpg) |
+| :-------------------------------------------: |
+|                    Windspeed and winddirection sensors |  
+
 ### Wiring
 
 ### Wemos configuration
