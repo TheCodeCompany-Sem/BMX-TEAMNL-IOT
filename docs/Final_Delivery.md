@@ -8,6 +8,15 @@ The software is split into a couple of parts, the front-end and the back-end. Th
 
 ### Front-end
 
+The front-end consists of a few pages; the loading screen, the main page and the personal page. The loading screen is just a screentransition in which the website has time to load all the correct data. It looks like this:  
+
+| ![Loading screen](Loadingpage_Final.png) |
+| :-------------------------------------------: |
+|          Loading screen           |  
+
+The main page is the page shown after the loading screen. This screen shows the most recent data collected by the database. This looks as follows: ADD SCREENSHOT MAIN PAGE FINAL VERSION  
+The personal page is a page which can be navigated to through the main page. Every run is connected to a driver, clicking on these drivers will take them to their own page, showing the data connected to them through their runs. This looks as follows: ADD SCREENSHOT PERSONAL PAGE FINAL VERSION
+
 ### Back-end
 
 ## Physical device
@@ -26,7 +35,8 @@ The roof is slanted, so the water that can rain on top of it automatically falls
 
 ### Sensors
 
-We are using multiple sensors on our device to read data on multiple things regarding the weather. We have a humidity sensor, a temperature sensor, a windspeed sensor and a winddirection sensor. For the humidity and the temperature, we are using a [combined sensor module](https://elektronicavoorjou.nl/product/dht22-temp-vocht-sensor/?utm_campaign=organic_shopping&utm_content=&utm_source=google&utm_medium=organic&utm_term=&gclid=Cj0KCQjwntCVBhDdARIsAMEwACkGb2X-jlnPqTqaltdO49JmOLQFREfF94tp1S9dRzX6pyGRSkC0wYUaAm8hEALw_wcB). It looks like this in real life:  
+We are using multiple sensors on our device to read data on multiple things regarding the weather. We have a humidity sensor, a temperature sensor, a windspeed sensor and a winddirection sensor.  
+For the humidity and the temperature, we are using a [combined sensor module](https://elektronicavoorjou.nl/product/dht22-temp-vocht-sensor/?utm_campaign=organic_shopping&utm_content=&utm_source=google&utm_medium=organic&utm_term=&gclid=Cj0KCQjwntCVBhDdARIsAMEwACkGb2X-jlnPqTqaltdO49JmOLQFREfF94tp1S9dRzX6pyGRSkC0wYUaAm8hEALw_wcB). It looks like this in real life:  
 
 | ![Temperature and humidity sensors](Humidity_and_Temp_sensor.jpg) |
 | :-------------------------------------------: |
