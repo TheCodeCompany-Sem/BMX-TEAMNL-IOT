@@ -684,3 +684,7 @@ We also made sure the casing of the device fits, as the top part didn't fit firs
 | ![Full casing of the device](casingfull.png) |
 | :------------------------------------------: |
 |          Full casing of the device           |
+
+### Day 4 (Thursday)
+
+Today, we continued working on the documentation, as that needs to be great when the project is finished. We mostly worked on the [Final delivery document](Final_Delivery.md). Next to that, we also had a meeting with Aukje.
