@@ -24,6 +24,8 @@ We made the following pages:
 Today we prepared the presentation for our meeting with Aukje.
 We did a retrospective of what we have done so far, and made sure the documentation was up to date.
 
+we've put the first version of the design on the main branch. this consists of the splash screen, homepage and profile page
+
 ## Week 2 (9-5-2022 - 15-5-2022)
 
 ### Day 1 (Monday)
@@ -249,6 +251,7 @@ ul {
   }
 ```
 
+
 ### Day 4 (Tuesday)
 
 Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can receive data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
@@ -293,6 +296,48 @@ After tha, we fixed a problem on the webpage due to which we couldn't get the we
 It would only appear as Object object and not access the actual data.
 We also worked on styling and added the fonts that our client sent us.
 
+
+we have made small adjustments to the splash screen so that it is ready.
+
+CSS change:
+
+```
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 5em;
+}
+  .logo{
+
+.logo{
+    background-image: url("src/woordbeeld_TeamNL_Wit_RGB.png");
+
+  }
+  width: 10%;
+  height: 10%;
+}
+
+
+.loading-text:before {
+
+
+```
+HTML change: 
+
+```
+<div class="app-splash-content">
+
+    <div class="logo"></div>
+
+    <img src="woordbeeld_TeamNL_Wit_RGB.png" alt="logo" width="750" >
+    
+    <div data-text="Loading ..." class="loading-text">Loading ...
+    </div>
+  </div>
+
+
+```
+
+
+
 ### Day 2 (Tuesday)
 
 The weather station arrived today, so we decided to go test it out and make sure it is working.  
@@ -326,6 +371,12 @@ We also figured out how the pinout from the rj11 connector works.
 |                    RJ11 pinout weahter station wind direction and speed meter                     |
 
 We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
+
+We styled the homepage today. We've added an orange background to the header. The teamnl logo has also been added to the homescreen. We looked up how to center css images.
+
+
+
+
 
 ### Day 3 (Wednesday)
 
@@ -426,6 +477,14 @@ Today, we started with applying the feedback we got during the meeting with the 
 | :------------------------------------------------: |
 |               Personal page redesign               |
 
+we looked up how to create tables using html. 
+
+- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables 
+
+en gebruik gemaakt van deze link:
+
+- https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+
 ### Day 2 (Tuesday)
 
 Today, we worked on the design of the personal page again, as it was still to bland, so we made a final version for the design of the personal page:  
@@ -440,6 +499,7 @@ After that we also worked on the other documentation files, for example:
 
 - [Web application](Web%20application/Web-Application.md)
 - [Web design](Web%20application/Website-Design.md)
+
 
 ### Day 3 (Wednesday)
 
@@ -490,6 +550,11 @@ sp: 3ffffe90 end: 3fffffc0 offset: 0000
 ```
 
 We will try to fix it as soon as possible, but no success for now. So we will try again during the next workday.
+
+Today we looked at a suitable background for the homepage, this because it is currently white and makes for a less professional. Here are some examples we found:
+
+ ![Example background for homepage](Backgroundexample1.png) 
+ ![Example background for homepage](backgroundexample2.png) 
 
 ## Week 5 (30-5-2022 - 5-6-2022)
 
