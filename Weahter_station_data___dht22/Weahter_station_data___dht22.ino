@@ -37,8 +37,8 @@ unsigned int windcnt = 0;
 unsigned int raincnt = 0;
 unsigned long lastSend;
 
-const char* ssid = "OnePlus 8";
-const char* password = "r5gc6x4d";
+const char* ssid = "AFBLIJVEN";
+const char* password = "Kaas012!!";
 //////////////// Functions //////////////////////////////////////////
 
 void setup_wifi() {
