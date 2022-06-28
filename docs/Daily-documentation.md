@@ -251,7 +251,6 @@ ul {
   }
 ```
 
-
 ### Day 4 (Tuesday)
 
 Today, we made progress on the connection between the back-end and the front-end of the website. Now the front-end can receive data from the back-end regarding the data of the players, but it can't get data from the timings set by these players yet. The front-end code regarding this looks like this:  
@@ -296,12 +295,11 @@ After tha, we fixed a problem on the webpage due to which we couldn't get the we
 It would only appear as Object object and not access the actual data.
 We also worked on styling and added the fonts that our client sent us.
 
-
 we have made small adjustments to the splash screen so that it is ready.
 
 CSS change:
 
-```
+```css
   color: rgba(0, 0, 0, 0.3);
   font-size: 5em;
 }
@@ -317,12 +315,11 @@ CSS change:
 
 
 .loading-text:before {
-
-
 ```
-HTML change: 
 
-```
+HTML change:
+
+```html
 <div class="app-splash-content">
 
     <div class="logo"></div>
@@ -332,11 +329,7 @@ HTML change:
     <div data-text="Loading ..." class="loading-text">Loading ...
     </div>
   </div>
-
-
 ```
-
-
 
 ### Day 2 (Tuesday)
 
@@ -373,10 +366,6 @@ We also figured out how the pinout from the rj11 connector works.
 We also talked to our client, discussing the current progress. She was pretty positive about it, and we now have a great idea of how to progress during the next sprint.
 
 We styled the homepage today. We've added an orange background to the header. The teamnl logo has also been added to the homescreen. We looked up how to center css images.
-
-
-
-
 
 ### Day 3 (Wednesday)
 
@@ -477,13 +466,10 @@ Today, we started with applying the feedback we got during the meeting with the 
 | :------------------------------------------------: |
 |               Personal page redesign               |
 
-we looked up how to create tables using html. 
+we looked up how to create tables using html.
 
-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables 
-
-en gebruik gemaakt van deze link:
-
-- https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+- [Tutorial 1](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables)
+- [Tutorial 2](https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l)
 
 ### Day 2 (Tuesday)
 
@@ -499,7 +485,6 @@ After that we also worked on the other documentation files, for example:
 
 - [Web application](Web%20application/Web-Application.md)
 - [Web design](Web%20application/Website-Design.md)
-
 
 ### Day 3 (Wednesday)
 
@@ -551,10 +536,15 @@ sp: 3ffffe90 end: 3fffffc0 offset: 0000
 
 We will try to fix it as soon as possible, but no success for now. So we will try again during the next workday.
 
-Today we looked at a suitable background for the homepage, this because it is currently white and makes for a less professional. Here are some examples we found:
+Today we looked at a suitable background for the homepage, this because it is currently white and makes for a less professional look. Here are some examples we found:
 
- ![Example background for homepage](Backgroundexample1.png) 
- ![Example background for homepage](backgroundexample2.png) 
+ | ![Example background for homepage](Backgroundexample1.png) |
+ | :--------------------------------------------------------: |
+ |              Example background for homepage               |
+
+ | ![Example background for homepage 2](backgroundexample2.png) |
+ | :----------------------------------------------------------: |
+ |              Example background for homepage 2               |
 
 ## Week 5 (30-5-2022 - 5-6-2022)
 
@@ -766,8 +756,10 @@ We went to the location of our client today to test our product. Firstly, we had
 
 | ![grouppicture on the track](grouppicture_on_track.png) |
 | :-----------------------------------------------------: |
-|                grouppicture on the track                |  
+|                grouppicture on the track                |
 
 We in the end we got great results and now know what is left to do during the last week. As we now completely understand what data is coming through and how we need to read that and combine it with the data the sensors collect.
 
 ### Day 2 (Tuesday)
+
+We started the day by reflecting on the last sprint through the retrospective, we did a lot this sprint, a lot went well but there was some stuff which did not go so well. We wanted to figure out how we were gonna prevent these issues next time. Next to that we also started putting the wemos device into the casing, to make sure the device cannot break and is protected from the weather. Lastly, we also had a meeting with Bas on how our project is going and reflecting on the project as a whole, we are happy with the result we predict that we will be able to present this friday.
