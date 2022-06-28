@@ -684,3 +684,4 @@ We also made sure the casing of the device fits, as the top part didn't fit firs
 | ![Full casing of the device](casingfull.png) |
 | :------------------------------------------: |
 |          Full casing of the device           |
+

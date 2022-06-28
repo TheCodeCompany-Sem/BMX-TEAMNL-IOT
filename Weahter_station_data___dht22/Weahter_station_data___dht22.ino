@@ -102,7 +102,7 @@ void getAndSendTemperatureAndHumidityData()
   float r = (raincnt / 2) * 0.2794;
   raincnt = 0;
   // get wind direction
-  float dirpin = analogRead(windDirPin) * (3.3 / 1023.0);
+  float dirpin = analogRead(windDirPin) * (3.3 / 1023.0); // mapping to 0-3.3V
   String wd = "other";
 
   if (dirpin > 2.60 &&  dirpin < 2.70 ) {
@@ -193,7 +193,7 @@ ICACHE_RAM_ATTR void  cntWindSpeed(void) {
 }
 void Timer_ISR (void) {                                                       // Timer reached zero, now re-load it to repeat
   timer0_write(ESP.getCycleCount() + 80000000L);                              // Reset the timer, do this first for timing accuracy
-  WindSpeed = Event_Counter * 2.5 / 2;
+  WindSpeed = Event_Counter * 2.5 / 2; // conversion from spins/sec to km/h
   Event_Counter = 0;
 }
 
