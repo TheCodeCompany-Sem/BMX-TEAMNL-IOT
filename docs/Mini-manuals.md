@@ -182,16 +182,17 @@ Childcontroller.class
 
 Install al these libraries:
 
-include <DHT.h>\
-include <DNSServer.h>\
-include <ESP8266WebServer.h>\
-include <ESP8266HTTPClient.h>\
-include <ArduinoJson.h>\
-include <NTPClient.h>\
-include <WiFiClient.h>\
-include "WiFiUdp.h"
+- DHT.h
+- DNSServer.h
+- ESP8266WebServer.h
+- ESP8266HTTPClient.h
+- ArduinoJson.h
+- NTPClient.h
+- WiFiClient.h
+- "WiFiUdp.h"
 
-If you have installed al the libraries you can run this code:\
+If you have installed al the libraries you can run this code:
+
 [HTTP GET and POST code](https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/ESP8266/HTTP/ESP8266_HTTP_GET_Update.ino)
 
 
