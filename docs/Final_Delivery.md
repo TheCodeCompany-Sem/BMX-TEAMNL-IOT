@@ -64,6 +64,13 @@ Here is the refernce for the wiring from the weatherstation cable:
 
 ### Wemos configuration
 
+You will find these lines of codes in the Weather_station_data file and you just need to change the values to connect to the right wifi.
+```c++
+const char* ssid = "AFBLIJVEN"; <- change this to your ssid
+const char* password = "Kaas012!!"; <- change this to your wifi password
+```
+
+
 ## Bill of materials
 
 The following materials are needed to recreate our product:
