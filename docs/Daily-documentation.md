@@ -763,3 +763,13 @@ We in the end we got great results and now know what is left to do during the la
 ### Day 2 (Tuesday)
 
 We started the day by reflecting on the last sprint through the retrospective, we did a lot this sprint, a lot went well but there was some stuff which did not go so well. We wanted to figure out how we were gonna prevent these issues next time. Next to that we also started putting the wemos device into the casing, to make sure the device cannot break and is protected from the weather. Lastly, we also had a meeting with Bas on how our project is going and reflecting on the project as a whole, we are happy with the result we predict that we will be able to present this friday.
+
+### Day 3 (Wednesday)
+
+Today, we started to continue the documentation. We improved the following documents:
+
+- [Homepage](index.md)
+- [Final delivery](Final_Delivery.md)
+- [Web application](Web%20application/Web-Application.md)
+
+We also made a video for our homepage and for the final event as an introduction to our project. Next to that, we made sure the 2nd pair of sensors also works so we can use them on friday during the event.
