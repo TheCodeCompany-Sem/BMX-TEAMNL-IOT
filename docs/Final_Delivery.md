@@ -50,4 +50,19 @@ We are also using a combined sensor module for the windspeed and winddirection s
 
 ### Wiring
 
+The sensors are connecting to the Wemos in the following way:
+
+|         ![Wemos reading weather data code](Fritzing%20wemos.png)          |
+| :-----------------------------------------------------------------------: |
+| Connecting schema weather station + DHT22 temperature and humidity sensor |
+
+Here is the refernce for the wiring from the weatherstation cable:
+
+| ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg) |
+| :-----------------------------------------------------------------------------------------------: |
+|                    RJ11 pinout weahter station wind direction and speed meter                     |
+
+
+
+
 ### Wemos configuration
