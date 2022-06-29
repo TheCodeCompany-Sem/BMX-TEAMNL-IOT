@@ -22,9 +22,19 @@ If the time between sending and receiving the data on the webpage is less than 3
 
 ## To do
 
-- Step 1: put up the sensors on the right place.
+- Step 1: put up the sensors at the right place.
 - Step 2: connect the device to a power supply.
 - Step 3: Open the webpage.
 - Step 4: Let the drivers start their practice.
 - Step 5: Refresh the webpage and check whether data has been received.
 - Step 6: repeat step 4 and 5 until we have collected 60 minutes worth of data.
+
+## Results
+
+We tested our product at the BMX-track. We set up the sensors at the right place.
+
+| ![testing the sensors on the track](sensors_on_track.png) |
+| :-------------------------------------------------------: |
+|             testing the sensors on the track              |  
+
+After that, we tested in and checked whether it would pair with data from the drivers. The data was received by the webpage and could easily be seen. We did this for an hour, due to the data coming in succesfully and being shown on the webpage, we conclude this test as succesful.
