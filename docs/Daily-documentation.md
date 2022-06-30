@@ -22,17 +22,13 @@ We made the following pages:
 ### Day 3 (Wednesday)
 
 Today we prepared the presentation for our meeting with Aukje.
-We did a retrospective of what we have done so far, and made sure the documentation was up to date.
-
-we've put the first version of the design on the main branch. this consists of the splash screen, homepage and profile page
+We did a retrospective of what we have done so far, and made sure the documentation was up to date. We've also made the first version of the design. this consists of the splash screen, homepage and profile page
 
 ## Week 2 (9-5-2022 - 15-5-2022)
 
 ### Day 1 (Monday)
 
-Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms.
-
-For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
+Today we prepared the performance reviews for our meeting with Bas in the afternoon. We talked about our project and the way we fill in our forms. For the backend, we laid the foundation for our models, repositories and controllers. We also searched for tutorials on making relations between our models.
 
 [Backend tutorial link](https://www.baeldung.com/hibernate-one-to-many)
 
@@ -1002,4 +998,4 @@ Today, we started to continue the documentation. We improved the following docum
 
 We also made a video for our homepage and for the final event as an introduction to our project. Next to that, we made sure the 2nd pair of sensors also works so we can use them on friday during the event.
 
-![BMX_TEAMNL_VIDEO](https://gitlab.fdmci.hva.nl/IoT/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/-/raw/main/docs/BMX_TEAMNL.mp4)
+![BMX_TEAMNL_VIDEO](BMX_TEAMNL.mp4)
