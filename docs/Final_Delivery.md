@@ -78,6 +78,8 @@ const char* ssid = "AFBLIJVEN"; <- change this to your ssid
 const char* password = "Kaas012!!"; <- change this to your wifi password
 ```
 
+For more information regarding wemos configuration visit [this page](embedded_device.md).
+
 
 ## Bill of materials
 
