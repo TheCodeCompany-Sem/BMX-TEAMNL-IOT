@@ -998,4 +998,4 @@ Today, we started to continue the documentation. We improved the following docum
 
 We also made a video for our homepage and for the final event as an introduction to our project. Next to that, we made sure the 2nd pair of sensors also works so we can use them on friday during the event.
 
-![BMX_TEAMNL_VIDEO TEST](../docs/BMX_TEAMNL.mp4)
+![BMX_TEAMNL_VIDEO TEST](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/BMX_TEAMNL.mp4)
