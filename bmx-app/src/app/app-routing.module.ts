@@ -8,6 +8,8 @@ const routes: Routes = [
   {path: '' , component: SplashComponent },
 
 
+
+
   { path: 'homepage' , component: HomepageComponent },
 
   { path: 'profile' , component: ProfileComponent},
