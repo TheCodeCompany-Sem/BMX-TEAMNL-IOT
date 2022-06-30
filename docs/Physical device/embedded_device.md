@@ -25,8 +25,7 @@ void setup_wifi() {
 
 ```
 
-(the ssid and password are static variables)  
-It can perform GET requests:  
+(the ssid and password are static variables)   
 
 
 This is the POST Request function:  
