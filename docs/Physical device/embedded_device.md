@@ -28,30 +28,6 @@ void setup_wifi() {
 (the ssid and password are static variables)  
 It can perform GET requests:  
 
-```cpp
-int httpGETRequest(const char* serverName, JsonObject& json) {
-  WiFiClient client;
-  HTTPClient http;
-  http.useHTTP10(true);
-  http.begin(client, serverName);
-  int errcode = http.GET();
-  if (errcode) {
-    String err = http.errorToString(errcode);
-    Serial.print("error get request for url: ");
-    Serial.println(serverName);
-    return -1;
-  } else {
-    // Parse response
-    DynamicJsonDocument doc(2048);
-    deserializeJson(doc, http.getStream());
-    json = doc["data"];
-    // Disconnect
-    http.end();
-  }
-
-}
-
-```
 
 This is the POST Request function:  
 
