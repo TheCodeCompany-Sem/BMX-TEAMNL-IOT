@@ -26,6 +26,15 @@ The personal page is a page which can be navigated to through the main page. Eve
 |          Profilepage           | 
 
 ### Back-end
+The back-end was made in spring-boot which is a framework used to make enterprise level back-end applications.
+
+We use MVC(model view controller) to structure our back-end. In the models reside the entities that are going to be generated using JPA
+when you start the back-end in your IDE. In the views reside how the data is going to be sent and retrieved. Lastly in the controllers resides most of the logic that is going to be used to process http requests.
+
+
+Below you can see the general architecture of the entire product, but for now we focus on the application layer where our backend-resides:
+![img_1.png](img_1.png)
+
 
 ## Physical device
 
