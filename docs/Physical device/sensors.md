@@ -97,7 +97,7 @@ It would block the  signal.
 We would count the amount of interruptions of the signal and guess the speed that way.
 To calibrate the sensor we would use a car. We'd get the device out of the window and measure the amount of rotations the wings do at certain speeds, that we can precisely identify using the car's speedometer.
 
-## Implementation
+## Chosen product and our implementation
 
 ### Weather station
 
