@@ -14,7 +14,7 @@ The front-end consists of a few pages; the loading screen, the main page and the
 | :-------------------------------------------: |
 |          Loading screen           |  
 
-The main page is the page shown after the loading screen. This screen shows the most recent data collected by the database. This looks as follows: 
+The main page is the page shown after the loading screen. This screen shows the most recent data collected by the database. This looks as follows:  
 
 | ![Loading screen](homepage.png) |
 | :-------------------------------------------: |
