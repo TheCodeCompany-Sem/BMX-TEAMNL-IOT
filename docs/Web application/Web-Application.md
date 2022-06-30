@@ -20,12 +20,18 @@ We will make sure the following functionalities will be implemented on the web-a
 The front-end currently looks as follows:  
 
 |![loading page](loadingpage_1.png)|
-| :-:|
-|Loading page|  
+| :---------------------------------------: |
+|         Loading screen          |
 
-|![main page](../mainpage.png)|
-| :-:|
-|front page|  
+|![main page](../homepage.png)|
+| :---------------------------------------: |
+|         Homepage          |
+
+|![main page](../profilepage.png)|
+| :---------------------------------------: |
+|         Profilepage          |
+
+
 
 it gathers data from the back-end, to fill the table with data. It gather this data through this code:  
 
@@ -55,6 +61,14 @@ restGetAthletes(): Observable<Athlete[]>{
       );
   }
 ```
+
+
+##### installation guide to start the web page:
+
+1. Go to the terminal in intellij IDEA
+2. in the terminal write cd bmx app
+3. write in the terminal ng serve
+4. press the blue link to go to the page.
 
 ## Back-end
 
