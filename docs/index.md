@@ -6,6 +6,8 @@ In that sport the start is an important factor towards victory.
 During training the conditions greatly influence their performance coming down the ramp.
 The goal would be to homogenize their times in relation to the weather.
 
+![BMX_TEAMNL_VIDEO](BMX_TEAMNL.mp4)
+
 ## Team composition
 
 ### Mortada M’Rabet
