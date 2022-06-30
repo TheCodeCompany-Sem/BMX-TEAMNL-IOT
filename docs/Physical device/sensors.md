@@ -97,13 +97,13 @@ It would block the  signal.
 We would count the amount of interruptions of the signal and guess the speed that way.
 To calibrate the sensor we would use a car. We'd get the device out of the window and measure the amount of rotations the wings do at certain speeds, that we can precisely identify using the car's speedometer.
 
-## Implementation
+## Chosen product and our implementation
 
 ### Weather station
 
 |![Weather Station](../weather_station_we_choosed_with_customer.png)|
 | :-:|
-|[Weahter station we choosed with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
+|[Weahter station we chose with our customer](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)|
 
 | ![RJ11 pinout weahter station wind direction and speed meter](../Weather_station_connector_rj11.jpg)|
 | :-------------------------------------------------------: |

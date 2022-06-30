@@ -573,6 +573,10 @@ At the end of the day nearly everything worked except for the windsspeed sensor.
 - [ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
 - [ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
 
+Today we watched a basic video about angular to understand the basics. This is the video that we watched:
+
+- [angular basics](https://www.youtube.com/watch?v=k5E2AVpwsko&t=5881s)
+
 ### Day 5 (Friday)
 
 Today we started with deploying our webpage to our "own" domain.
@@ -624,7 +628,74 @@ deploy_fe:
         - git branch -D splitting-staging-fe
 ```
 
-However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached its concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.
+However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached its concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.  
+
+The profile page has been set up. The time service has also been set up.  
+the code for the profile page is as follows:
+
+```html
+<body>
+
+<app-navbar></app-navbar>
+
+<img src="assets/images/TeamNL_Logo_Olympisch_RGB_WitKader.jpg" class="center">
+
+<table id="customers">
+  <tr>
+    <th>Time</th>
+    <th>Date</th>
+    <th>Temperature (C)</th>
+    <th>Wind</th>
+    <th>Winddirection</th>
+
+  </tr>
+  <tr *ngFor="let time of time; let i= index">
+    <th>{{time.id}}</th>
+    <th>{{time.recordedValue}}</th>
+    <th>{{time.recordedTime}}</th>
+    <th>{{time.trackTimeRecords[0].windSpeed}}</th>
+    <th>{{time.trackTimeRecords[0].recordedValue}}</th>
+    <th>{{time.trackTimeRecords[0].recordedTime}}</th>
+  </tr>
+</table>
+</body>
+```
+
+```css
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 7%;
+}
+```
+
+```ts
+@@ -1,4 +1,6 @@
+import { Component, OnInit } from '@angular/core';
+import {TrackTimeRecord} from "../../models/tracktimerecord";
+import {Athlete} from "../../models/athlete";
+
+@Component({
+  selector: 'app-profile',
+@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
+})
+export class ProfileComponent implements OnInit {
+
+  constructor(
+
+    private trackTimeService : TrackTimeRecord
+  ) { }
+
+
+  get time(): TrackTimeRecord[] {
+    return this.trackTimeService.findAll();
+  }
+
+  ngOnInit(): void {
+  }
+```
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
@@ -644,7 +715,79 @@ Here is the wire scheme for reading the sensors:
 
 |         ![Wemos reading weather data code](Fritzing%20wemos.png)          |
 | :-----------------------------------------------------------------------: |
-| Connecting schema weather station + DHT22 temperature and humidity sensor |
+| Connecting schema weather station + DHT22 temperature and humidity sensor |  
+
+The time service method required for the profile page has been completed. The code for the time service is as follows:
+
+```ts
+export class TimeService {
+
+  private tracktimerecord : TrackTimeRecord[] = []
+
+  constructor(private httpClient: HttpClient) {
+
+    this.restGetTrackTime().subscribe(
+      responseData => this.tracktimerecord = responseData,
+      error => ErrorHandler.apply(error) )
+  }
+
+  //Work in progress
+  restGetTrackTime(): Observable<TrackTimeRecord[]>{
+    return this.httpClient.get<TrackTimeRecord[]>(`http://localhost:808/TrackTimeRecord`)
+      .pipe(
+        map(responseData => {
+          const trackArray: TrackTimeRecord[] = [];
+          for(const key in responseData){
+            responseData[key].recordedTime;
+            trackArray.push(responseData[key])
+          }
+          console.log("initial list", trackArray)
+          return trackArray
+        })
+      );
+  }
+}
+```
+
+Minor improvements have been made to the profile page so that the correct Findall method is called to retrieve all data. It looks like this:
+
+```ts
+@@ -2,6 +2,7 @@ import {ErrorHandler, Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {TrackTimeRecord} from "../models/tracktimerecord";
+import {map, Observable} from "rxjs";
+import {Athlete} from "../models/athlete";
+
+@Injectable({
+  providedIn: 'root'
+@@ -33,6 +34,9 @@ export class TimeService {
+        })
+      );
+  }
+  findAll(): TrackTimeRecord[]{
+    return this.tracktimerecord;
+  }
+}
+```
+
+```ts
+@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+import {TrackTimeRecord} from "../../models/tracktimerecord";
+import {Athlete} from "../../models/athlete";
+import {TimeService} from "../../services/time.service";
+
+@Component({
+  selector: 'app-profile',
+@@ -10,8 +11,7 @@ import {Athlete} from "../../models/athlete";
+export class ProfileComponent implements OnInit {
+
+  constructor(
+
+    private trackTimeService : TrackTimeRecord
+    private trackTimeService : TimeService
+  ) { }
+```
 
 ### Day 3 (Thursday)
 
@@ -691,6 +834,47 @@ Next to that, we worked on a testing plan to follow on location on thursdays dur
 
 Today, we worked hard to try and fix the problem with receiving data from the MyLaps system, we got our back-end fully live and functional. However, we sadly did not see any data coming in from our client. Next to that, we also got problems again with the Wemos, we couldn't update its software, as we got a weird error. However, after just waiting a while and trying it again, we removed the wire on the 5V pin and everything was working again, with this we could succesfully send data to the back-end, which was not in the correct formatting, so we changed that to make it fully work. Finally we also worked on the final part of our casing. We went to the makerslab to get it printed there, as it is a really long print, thus we cannot do it at our usual location. However, the 3d printers at the makerslab were all occupied. So we decided to use the [UPrinter](https://support.stratasys.com/en/printers/fdm-legacy/uprint), which is way different than regular 3d printing, but still works fine for us. But due to it taking so long we could not get the 3d print yet, so we will retrieve it tomorrow.
 
+Today the styling has been finalized for the profile page:
+
+```css
+@@ -5,3 +5,38 @@
+  width: 7%;
+
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: orangered;
+  color: white;
+}
+
+body{
+
+  height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 0.6;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #f4872e55, #f4872e );
+  margin: 0;
+}
+```
+
 ### Day 4 (Thursday)
 
 Today we finally got the 201 HTTP response from the back-end. The problem was that we were accessing the back-end through HTTPS, removing the S solved the issue.
@@ -713,6 +897,8 @@ We also made a diagram of the software part of the product:
 ![Software diagram](application_diagram.png)
 Lastly, we also started importing the CSV file from Mylaps into our database as we can't get the data directly, as the program is running locally to avoid any tempering on the times.
 This means adding new columns and finding a smart way to add all the data without having to do it by hand.
+
+Today we decided that for the webpage we would make the homepage only the id, name and a button to see all the details of the player only on the profile page. Also, an attempt was made to repair the router as it currently loads all components instead of just the selected component.
 
 ### Day 2 (Tuesday)
 
@@ -740,6 +926,48 @@ We also made sure the casing of the device fits, as the top part didn't fit firs
 | :------------------------------------------: |
 |          Full casing of the device           |
 
+Today we managed to get the button to navigate to the profile page with the help of a method. The method is as follows:
+
+```html
+@@ -12,7 +12,7 @@
+  <tr *ngFor="let athlete of athletes; let i= index">
+    <th> {{athlete.id}}</th>
+    <th>{{athlete.firstName}} {{athlete.surname}}</th>
+    <button (click)="goToPage('profile')" class="btn btn-outline-primary">Profile</button>
+  </tr>
+```
+
+```ts
+@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
+import { SplashScreenStateService } from "../../services/splash-screen.service";
+import { AthleteService } from "../../services/athlete.service";
+import { Athlete } from "../../models/athlete";
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-homepage',
+@@ -12,9 +13,11 @@ export class HomepageComponent implements OnInit {
+
+  constructor(
+    private splashScreenStateService: SplashScreenStateService,
+    private athleteService: AthleteService
+    private athleteService: AthleteService,
+    private router: Router
+  ) {
+  }
+    get athletes(): Athlete[] {
+      // let trackTimeRecords = this.athleteService.findAll().map(obj => ({humidity: obj.trackTimeRecords.humidity}));
+@@ -27,5 +30,11 @@ export class HomepageComponent implements OnInit {
+        this.splashScreenStateService.stop();
+      }, 5000);
+    }
+
+  goToPage(pageName: string) : void {
+    this.router.navigate([`${pageName}`])
+  }
+}
+```
+
 ### Day 4 (Thursday)
 
 Today, we continued working on the documentation, as that needs to be great when the project is finished. We mostly worked on the [Final delivery document](Final_Delivery.md). Next to that, we also had a meeting with our client. We talked about the current situation and decided that we would definitely meet her at her location this monday, to test our product and so they know how our product works.
@@ -763,3 +991,13 @@ We in the end we got great results and now know what is left to do during the la
 ### Day 2 (Tuesday)
 
 We started the day by reflecting on the last sprint through the retrospective, we did a lot this sprint, a lot went well but there was some stuff which did not go so well. We wanted to figure out how we were gonna prevent these issues next time. Next to that we also started putting the wemos device into the casing, to make sure the device cannot break and is protected from the weather. Lastly, we also had a meeting with Bas on how our project is going and reflecting on the project as a whole, we are happy with the result we predict that we will be able to present this friday.
+
+### Day 3 (Wednesday)
+
+Today, we started to continue the documentation. We improved the following documents:
+
+- [Homepage](index.md)
+- [Final delivery](Final_Delivery.md)
+- [Web application](Web%20application/Web-Application.md)
+
+We also made a video for our homepage and for the final event as an introduction to our project. Next to that, we made sure the 2nd pair of sensors also works so we can use them on friday during the event.
