@@ -1,1 +1,29 @@
-<p>profile works!</p>
+
+<body>
+
+<app-navbar></app-navbar>
+
+<img src="assets/images/TeamNL_Logo_Olympisch_RGB_WitKader.jpg" class="center">
+
+<table id="customers">
+  <tr>
+    <th>Time</th>
+    <th>Date</th>
+    <th>Temperature (C)</th>
+    <th>Wind</th>
+    <th>Winddirection</th>
+
+  </tr>
+  <tr *ngFor="let time of time; let i= index">
+    <th>{{time.id}}</th>
+    <th>{{time.humidity}}</th>
+    <th>{{time.recordedTime}}</th>
+    <th>{{time.windSpeed}}</th>
+    <th>{{time.windDirection}}</th>
+    <th>{{time.temperature}}</th>
+  </tr>
+
+
+</table>
+
+</body>

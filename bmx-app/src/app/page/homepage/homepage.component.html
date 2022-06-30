@@ -1,7 +1,5 @@
 
 <body>
-
-
 <app-header></app-header>
 <app-navbar></app-navbar>
 <h1 class="center">Players</h1>
@@ -9,16 +7,14 @@
   <tr>
     <th>ID</th>
     <th>Name</th>
-    <th>Windspeed (km/h)</th>
-    <th>Winddirection</th>
-    <th>Time</th>
+    <th>More Info</th>
   </tr>
   <tr *ngFor="let athlete of athletes; let i= index">
-    <th>{{athlete.id}}</th>
+    <th> {{athlete.id}}</th>
     <th>{{athlete.firstName}} {{athlete.surname}}</th>
-    <th>{{athlete.trackTimeRecords[0].windSpeed}}</th>
-    <th>{{athlete.trackTimeRecords[0].recordedValue}}</th>
-    <th>{{athlete.trackTimeRecords[0].recordedTime}}</th>
+    <button (click)="goToPage('profile')" class="btn btn-outline-primary">Profile</button>
+
+
   </tr>
 </table>
 

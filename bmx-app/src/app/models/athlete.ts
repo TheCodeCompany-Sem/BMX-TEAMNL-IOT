@@ -1,16 +1,15 @@
-import {TrackTimeRecord} from "./tracktimerecord";
+import {TrackTimeRecords} from "./trackTimeRecords";
 
 export class Athlete{
   private _id: number;
   private _firstName: string;
   private _surname: string;
-  private _trackTimeRecords?: TrackTimeRecord;
+  private _trackTimeRecords?: TrackTimeRecords;
 
-
-  constructor(id: number, firstName: string, surname: string, trackTimeRecords: TrackTimeRecord) {
-    this._id = id;
-    this._firstName = firstName;
-    this._surname = surname;
+  constructor(id?: number, firstName?: string, surname?: string, trackTimeRecords?: TrackTimeRecords) {
+    this._id = id!;
+    this._firstName = firstName!;
+    this._surname = surname!;
     this._trackTimeRecords = trackTimeRecords;
   }
 
@@ -38,13 +37,17 @@ export class Athlete{
     this._surname = value;
   }
 
-  get trackTimeRecords(): TrackTimeRecord {
-    return this._trackTimeRecords;
+  get trackTimeRecords(): TrackTimeRecords {
+    return this._trackTimeRecords!;
   }
 
-  set trackTimeRecords(value: TrackTimeRecord) {
+  set trackTimeRecords(value: TrackTimeRecords) {
     this._trackTimeRecords = value;
   }
+  public toString =() : string =>{
+    return `id : ${this._id}, firstName: ${this._firstName}, lastName: ${this._surname}, trackTimeRecords${this._trackTimeRecords}`;
+  }
+
 }
 
 

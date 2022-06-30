@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.aspectj.apache.bcel.generic.TargetLostException;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author: Mortada M'Rabet
@@ -32,19 +34,14 @@ public class Athlete {
 
     @OneToMany(mappedBy = "athlete")
     @JsonManagedReference(value = "trackTimeRecords")
-    private List<TrackTimeRecord> trackTimeRecords;
+    private Set<TrackTimeRecord> trackTimeRecords = new HashSet<>();
 
-    @OneToMany(mappedBy = "athlete")
-    @JsonManagedReference(value = "transponderMeasurements")
-    private List<TransponderMeasurement> transponderMeasurements;
-
-    public Athlete(int id, String firstName, String surname, Coach coach, List<TrackTimeRecord> trackTimeRecords, List<TransponderMeasurement> transponderMeasurements) {
+    public Athlete(int id, String firstName, String surname, Coach coach, Set<TrackTimeRecord> trackTimeRecords) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
         this.coach = coach;
         this.trackTimeRecords = trackTimeRecords;
-        this.transponderMeasurements = transponderMeasurements;
     }
 
     public Athlete() {
@@ -82,19 +79,11 @@ public class Athlete {
         this.coach = coach;
     }
 
-    public List<TrackTimeRecord> getTrackTimeRecords() {
+    public Set<TrackTimeRecord> getTrackTimeRecords() {
         return trackTimeRecords;
     }
 
-    public void setTrackTimeRecords(List<TrackTimeRecord> trackTimeRecords) {
+    public void setTrackTimeRecords(Set<TrackTimeRecord> trackTimeRecords) {
         this.trackTimeRecords = trackTimeRecords;
-    }
-
-    public List<TransponderMeasurement> getTransponderMeasurements() {
-        return transponderMeasurements;
-    }
-
-    public void setTransponderMeasurements(List<TransponderMeasurement> transponderMeasurements) {
-        this.transponderMeasurements = transponderMeasurements;
     }
 }

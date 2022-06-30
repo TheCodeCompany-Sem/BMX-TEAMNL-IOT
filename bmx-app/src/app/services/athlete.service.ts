@@ -12,8 +12,7 @@ export class AthleteService {
   private athletes: Athlete[] = []
   constructor(private httpClient: HttpClient) {
     this.restGetAthletes().subscribe(
-      responseData => this.athletes = responseData,
-      error => ErrorHandler.apply(error)
+      responseData => this.athletes = responseData
     )
   }
 
@@ -24,7 +23,7 @@ export class AthleteService {
         map(responseData => {
         const athleteArray: Athlete[] = [];
         for(const key in responseData){
-          responseData[key].trackTimeRecords;
+          responseData[key].trackTimeRecords = responseData[key]["trackTimeRecords"];
           athleteArray.push(responseData[key])
         }
         console.log("initial list", athleteArray)
@@ -37,5 +36,9 @@ export class AthleteService {
     return this.athletes;
   }
 
+  findById(id: number): Athlete {
+    console.log(id)
+    return this.athletes.find(athlete => athlete.id == id)
+  }
 
 }
