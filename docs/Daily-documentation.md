@@ -573,9 +573,9 @@ At the end of the day nearly everything worked except for the windsspeed sensor.
 - [ESP8266 Combined timer and pin interrupts to measure wind speed sensors](https://www.youtube.com/watch?v=FnTtv6ozW90)
 - [ESP_Anenometer_SH1106_OLED_03.ino](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVJJQmxwRWxOcmd2b3BqRUZRZ1ZfSVZkZFFOUXxBQ3Jtc0tuM0d4LW9FaUNQeE9xdWExMEY4bUVFTGJZLUxMVU1zUlh0bWZqRmlXcUFHZk1ub2dtTlFOQTRWWXhDcEhEZ2trQ3k1OVVFZkNQVmRkU0tYME94M2xzQlo2SFdKVHNiRmpER1lpQ2tZenlfN0ptejhIaw&q=https%3A%2F%2Fgithub.com%2FG6EJD%2FESP_Interrupt_Examples&v=FnTtv6ozW90)
 
-today we watched basic video about angular to understand the basics. These is the video that were watched: 
+Today we watched a basic video about angular to understand the basics. This is the video that we watched:
 
-- https://www.youtube.com/watch?v=k5E2AVpwsko&t=5881s
+- [angular basics](https://www.youtube.com/watch?v=k5E2AVpwsko&t=5881s)
 
 ### Day 5 (Friday)
 
@@ -584,7 +584,6 @@ We followed [this guide](https://gitlab.fdmci.hva.nl/se-ewa/deployment-workshop/
 to deploy our website using heroku, which we did successfully. A link to the website can be found [here](https://bmx-nl-app-staging.herokuapp.com).
 
 At this point, the only way to deploy something to our staging environment is by manually making a commit using heroku git. Which is really annoying, as it would take way longer to test and make us spend a lot of time waiting for it. This is why we also started working on automating this part using a pipeline, that way we don't have to wait that long to test the website.
-
 
 ### Day 6 (Saturday)
 
@@ -629,15 +628,12 @@ deploy_fe:
         - git branch -D splitting-staging-fe
 ```
 
-However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached its concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.
+However, this did not fully fix it already. As we got errors with Heroku, saying that our account had reached its concurrend build limit. Due to this we had to reset our Heroku website, to remove some of the concurrend builds. After we had done this, the front-end fixed itself and is now automatically working, however the back-end, is not yet working. We will continue to work on this next week.  
 
-
-The profile page has been set up. The time service has also been set up. 
-
+The profile page has been set up. The time service has also been set up.  
 the code for the profile page is as follows:
 
-HTML:
-```
+```html
 <body>
 
 <app-navbar></app-navbar>
@@ -661,32 +657,21 @@ HTML:
     <th>{{time.trackTimeRecords[0].recordedValue}}</th>
     <th>{{time.trackTimeRecords[0].recordedTime}}</th>
   </tr>
-
-
 </table>
-
 </body>
-
-
 ```
 
-CSS: 
-
-```
+```css
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 7%;
-
 }
-
 ```
 
-TS:
-
-```
+```ts
 @@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TrackTimeRecord} from "../../models/tracktimerecord";
@@ -710,9 +695,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 ```
-
 
 ## Week 6 (6-6-2022 - 12-6-2022)
 
@@ -732,16 +715,11 @@ Here is the wire scheme for reading the sensors:
 
 |         ![Wemos reading weather data code](Fritzing%20wemos.png)          |
 | :-----------------------------------------------------------------------: |
-| Connecting schema weather station + DHT22 temperature and humidity sensor |
+| Connecting schema weather station + DHT22 temperature and humidity sensor |  
 
+The time service method required for the profile page has been completed. The code for the time service is as follows:
 
-The time service method required for the profile page has been completed.
-
-
-the code for the time service is as follows:
-
-
-```
+```ts
 export class TimeService {
 
   private tracktimerecord : TrackTimeRecord[] = []
@@ -751,7 +729,6 @@ export class TimeService {
     this.restGetTrackTime().subscribe(
       responseData => this.tracktimerecord = responseData,
       error => ErrorHandler.apply(error) )
-
   }
 
   //Work in progress
@@ -770,14 +747,11 @@ export class TimeService {
       );
   }
 }
-
-
 ```
 
-Minor improvements have been made to the profile page so that the correct Findall method is called to retrieve all data.
+Minor improvements have been made to the profile page so that the correct Findall method is called to retrieve all data. It looks like this:
 
-time.service.ts: 
-```
+```ts
 @@ -2,6 +2,7 @@ import {ErrorHandler, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {TrackTimeRecord} from "../models/tracktimerecord";
@@ -795,9 +769,8 @@ import {Athlete} from "../models/athlete";
   }
 }
 ```
-profile.component.ts: 
 
-```
+```ts
 @@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TrackTimeRecord} from "../../models/tracktimerecord";
@@ -814,8 +787,6 @@ export class ProfileComponent implements OnInit {
     private trackTimeService : TrackTimeRecord
     private trackTimeService : TimeService
   ) { }
-
-
 ```
 
 ### Day 3 (Thursday)
@@ -863,9 +834,9 @@ Next to that, we worked on a testing plan to follow on location on thursdays dur
 
 Today, we worked hard to try and fix the problem with receiving data from the MyLaps system, we got our back-end fully live and functional. However, we sadly did not see any data coming in from our client. Next to that, we also got problems again with the Wemos, we couldn't update its software, as we got a weird error. However, after just waiting a while and trying it again, we removed the wire on the 5V pin and everything was working again, with this we could succesfully send data to the back-end, which was not in the correct formatting, so we changed that to make it fully work. Finally we also worked on the final part of our casing. We went to the makerslab to get it printed there, as it is a really long print, thus we cannot do it at our usual location. However, the 3d printers at the makerslab were all occupied. So we decided to use the [UPrinter](https://support.stratasys.com/en/printers/fdm-legacy/uprint), which is way different than regular 3d printing, but still works fine for us. But due to it taking so long we could not get the 3d print yet, so we will retrieve it tomorrow.
 
-Today the CSS has been finalized for the profile page:
+Today the styling has been finalized for the profile page:
 
-```
+```css
 @@ -5,3 +5,38 @@
   width: 7%;
 
@@ -900,12 +871,8 @@ body{
   background-color: #e5e5f7;
   opacity: 0.6;
   background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #f4872e55, #f4872e );
-
   margin: 0;
-
 }
-
-
 ```
 
 ### Day 4 (Thursday)
@@ -961,21 +928,16 @@ We also made sure the casing of the device fits, as the top part didn't fit firs
 
 Today we managed to get the button to navigate to the profile page with the help of a method. The method is as follows:
 
-homepage.component.html
-
-```
+```html
 @@ -12,7 +12,7 @@
   <tr *ngFor="let athlete of athletes; let i= index">
     <th> {{athlete.id}}</th>
     <th>{{athlete.firstName}} {{athlete.surname}}</th>
     <button (click)="goToPage('profile')" class="btn btn-outline-primary">Profile</button>
-
-
   </tr>
 ```
-homepage.component.ts
 
-```
+```ts
 @@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SplashScreenStateService } from "../../services/splash-screen.service";
 import { AthleteService } from "../../services/athlete.service";
@@ -992,8 +954,6 @@ import {Router} from "@angular/router";
     private athleteService: AthleteService,
     private router: Router
   ) {
-
-
   }
     get athletes(): Athlete[] {
       // let trackTimeRecords = this.athleteService.findAll().map(obj => ({humidity: obj.trackTimeRecords.humidity}));
@@ -1002,15 +962,11 @@ import {Router} from "@angular/router";
       }, 5000);
     }
 
-
   goToPage(pageName: string) : void {
     this.router.navigate([`${pageName}`])
-
   }
 }
-
 ```
-
 
 ### Day 4 (Thursday)
 
