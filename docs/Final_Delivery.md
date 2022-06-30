@@ -58,4 +58,33 @@ We are also using a combined sensor module for the windspeed and winddirection s
 
 ### Wiring
 
+The sensors are connecting to the Wemos in the following way:
+
+|         ![Wemos reading weather data code](Fritzing%20wemos.png)          |
+| :-----------------------------------------------------------------------: |
+| Connecting schema weather station + DHT22 temperature and humidity sensor |
+
+Here is the refernce for the wiring from the weatherstation cable:
+
+| ![RJ11 pinout weahter station wind direction and speed meter](Weather_station_connector_rj11.jpg) |
+| :-----------------------------------------------------------------------------------------------: |
+|                    RJ11 pinout weahter station wind direction and speed meter                     |
+
 ### Wemos configuration
+
+You will find these lines of codes in the Weather_station_data file and you just need to change the values to connect to the right wifi.
+```c++
+const char* ssid = "AFBLIJVEN"; <- change this to your ssid
+const char* password = "Kaas012!!"; <- change this to your wifi password
+```
+
+
+## Bill of materials
+
+The following materials are needed to recreate our product:
+
+- [Combination of windspeed and winddirection sensors (and rainspeed sensors)](https://www.robotshop.com/nl/nl/sparkfun-weermeterset.html)
+- [Humidity and temperature sensor](https://elektronicavoorjou.nl/product/dht22-temp-vocht-sensor/?utm_campaign=organic_shopping&utm_content=&utm_source=google&utm_medium=organic&utm_term=&gclid=Cj0KCQjwntCVBhDdARIsAMEwACkGb2X-jlnPqTqaltdO49JmOLQFREfF94tp1S9dRzX6pyGRSkC0wYUaAm8hEALw_wcB)
+- [Wemos d1 mini pro v2.0](https://www.reichelt.nl/nl/nl/d1-mini-esp8266-v2-0-d1-mini-p253978.html?PROVID=2809&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLN1xLTCpVC0Wklr6kpkGidXt02jjd6Pnowqp3iYpxYQitq4FHLvUFoaAnEnEALw_wcB)
+- A soldering kit, [this one](https://nl.rs-online.com/web/p/soldering-stations/4310367?cm_mmc=NL-PLA-DS3A-_-google-_-CSS_NL_NL_Power_Tools_%26_Soldering_%26_Welding_Whoop-_-(NL:Whoop!)+Soldering+Stations-_-4310367&matchtype=&aud-826607888587:pla-322411145756&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLNdPkYiuYJw4LzC_cj1FHub7cORzBCIlOWYXGI6zRtSYCJBDYCcZjwaAk_GEALw_wcB&gclsrc=aw.ds) for example.
+- A 3d printer, like [this one](https://www.bol.com/nl/nl/p/creality-3d-ender-3-pro-3d-printer/9200000104863827/?Referrer=ADVNLGOO002013-G-123000383400-S-1077204641435-9200000104863827&gclid=Cj0KCQjw8O-VBhCpARIsACMvVLN37_tz3NV-8HA5qnp7RjS0cgxXUmUQr1LgNN4y3NS6Rq-QCqG1Wg4aAuebEALw_wcB)

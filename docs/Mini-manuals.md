@@ -160,6 +160,49 @@ Childcontroller.class
 
 ![](ESP8266-NodeMCU-HTTP-GET-HTTP-POST-with-Arduino-IDE-JSON-URL-Encoded-Text.jpeg)
 
-## install the get en post library
+## Installing the library's
+
+### Download these libraries
+
+
 
 [Arduin json library](https://github.com/arduino-libraries/Arduino_JSON)
+
+
+### Installing libraries
+
+| ![Installing the librarys](Arduino library installing.png) |
+|:----------------------------------------------------------:|
+|                 Going to manage libraries                  |
+
+
+| ![Screenshot Json library](Screenshot 2022-06-20 at 13.37.41.png) |
+|:-----------------------------------------------------------------:|
+|                          Library screen                           |
+
+Install al these libraries:
+
+- DHT.h
+- DNSServer.h
+- ESP8266WebServer.h
+- ESP8266HTTPClient.h
+- ArduinoJson.h
+- NTPClient.h
+- WiFiClient.h
+- "WiFiUdp.h"
+
+If you have installed al the libraries you can run this code:
+
+[HTTP GET and POST code](https://raw.githubusercontent.com/RuiSantosdotme/Random-Nerd-Tutorials/master/Projects/ESP8266/HTTP/ESP8266_HTTP_GET_Update.ino)
+
+
+
+
+
+
+
+
+
+
+
+

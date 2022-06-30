@@ -68,3 +68,20 @@ And run this command to see if it created a remote: git remote -v
 This is an error you get when you didn't set your SDK properly in your IDE
 
 Fix: make sure to check whether you have the correct SDK set in your IDE and in your pom.xml
+
+### SQL Error 0, SQLState 08S01 Communications link failure
+
+This error occurs when the communication line between the driver and the datasource to which the driver was connected failed before it was completely processed
+
+The 2 reasons why the error occurred are the following:
+- Network errors
+- Database corruption
+
+Luckily there is quite some information to find regarding this error and how to solve it.
+
+I will link the following thread were more can be read on the issue [here](https://stackoverflow.com/questions/6865538/solving-a-communications-link-failure-with-jdbc-and-mysql), where we tried most of the solution given there.
+
+After some concluding and thinking, there was also the realisation that this error might have occurred due to limitation of the oege database.
+Since some settings can't be accessed without admin rights needed to for example changes variables like wait_timeout.
+
+
