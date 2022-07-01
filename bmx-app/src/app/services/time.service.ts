@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {TrackTimeRecords} from "../models/trackTimeRecords";
 import {map, Observable} from "rxjs";
 import {Athlete} from "../models/athlete";
+import {environment} from "../../environments/environment.staging";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class TimeService {
   }
   //Work in progress
   restGetTrackTime(): Observable<TrackTimeRecords[]>{
-    return this.httpClient.get<TrackTimeRecords[]>(`http://localhost:8080/TrackTimeRecord`)
+    return this.httpClient.get<TrackTimeRecords[]>(`${environment.apiUrl}TrackTimeRecord`)
       .pipe(
         map(responseData => {
           const trackArray: TrackTimeRecords[] = [];
