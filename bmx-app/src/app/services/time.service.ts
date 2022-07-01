@@ -17,7 +17,7 @@ export class TimeService {
   }
   //Work in progress
   restGetTrackTime(): Observable<TrackTimeRecords[]>{
-    return this.httpClient.get<TrackTimeRecords[]>(`http://localhost:808/TrackTimeRecord`)
+    return this.httpClient.get<TrackTimeRecords[]>(`http://localhost:8080/TrackTimeRecord`)
       .pipe(
         map(responseData => {
           const trackArray: TrackTimeRecords[] = [];
