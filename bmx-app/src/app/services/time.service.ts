@@ -3,7 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {TrackTimeRecords} from "../models/trackTimeRecords";
 import {map, Observable} from "rxjs";
 import {Athlete} from "../models/athlete";
-import {environment} from "../../environments/environment.staging";
+import {environment} from "../../environments/environment";
+
 
 @Injectable({
   providedIn: 'root'
