@@ -883,6 +883,8 @@ Next to that we also had another meeting with our client. We were planning to go
 
 ### Day 5 (Friday)
 
+Today we tried to solve the issue with the mylaps system permanently. We tried sloving the issue by using teamviewer on their computer, this way we get access to the mylaps system so that we can try to configure the mysql JDBC string. However this didnt work as we recieved the following error: mysql error code 08s01. After testing multiple solution we eventually came to the conclusion that it couldn't be solved due to outside factors that were out of our reach, more on why it didn't work can be found [here](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/Web%20application/Deploy-Website/#sql-error-0-sqlstate-08s01-communications-link-failure). We did find a solution with Finn, the person who gave us access to the computer with mylaps installed. We decided to use a CSV file that the transponders generate and insert them manually into the database. This way we got the real data, however not automated as intented.
+
 ## Week 8 (20-6-2022 - 24-6-2022)
 
 ### Day 1 (Monday)
