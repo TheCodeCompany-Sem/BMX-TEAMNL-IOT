@@ -999,3 +999,25 @@ Today, we started to continue the documentation. We improved the following docum
 We also made a video for our homepage and for the final event as an introduction to our project. Next to that, we made sure the 2nd pair of sensors also works so we can use them on friday during the event.
 
 ![BMX_TEAMNL_VIDEO TEST](https://iot.dev.hihva.nl/2021-2022-feb-jun/group-project/teamnl-bmx-windspeed-logging/iot-bmx-team-nl/BMX_TEAMNL.mp4)
+
+### Day 4 (Thursday)
+
+Today is the last day before the end of the project, so we set out finalizing everything and making sure everything works fine. We mostly worked on documentation, the [Final delivery](Final_Delivery.md) is now fully finished. Next to that, we tweaked some other pages here and there to make them look better, for example:  
+
+- [Web application](Web%20application/Web-Application.md)
+- [Mini manuals](Mini-manuals.md)
+- [Testing plan](Testing-plan.md)  
+
+Next to that, we also had a meeting with our client, discussing the complete product. We reflected on our work, what went well and what could've gone better and how.We all agreed we had some parts where we could've done something different, but this is all discussing afterwards. overall we could all agree we did well.
+
+### Day 5 (Friday)
+
+Today was the day of the final event. All other project of all other minors were also present showing their work of the past semester. We set up our project so people could try it out. We set up two monitors each with a device connected to them, with this we could let people blow into the windspeed sensor and they could check how fast they were blowing, hoping to set the record. This turned out to be pretty successful and a lot of people came to test it out!  
+
+| ![setting up the project](settingup_event.png) |
+| :-----------------------------------------------------: |
+|                setting up the project                |  
+
+| ![people checking out our stand!](stand_in_action.png) |
+| :-----------------------------------------------------: |
+|                people checking out our stand!                |
