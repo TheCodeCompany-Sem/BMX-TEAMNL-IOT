@@ -16,17 +16,17 @@ This project will be used by Team-NL for their BMX team.
 
 ## Authors and acknowledgment
 
-### Mortada M’Rabet
-
-500823653  
-+31619714353  
-m.mrabet2002@hotmail.com/mortada.mrabet@hva.nl  
-
 ### Sem Huits
 
 500829952  
 +31618976106  
-sem.huits@hva.nl  
+sem.huits@hva.nl
+
+### Mortada M’Rabet
+
+500823653  
++31619714353  
+m.mrabet2002@hotmail.com/mortada.mrabet@hva.nl
 
 ### Zakaria Mssaadi
 
