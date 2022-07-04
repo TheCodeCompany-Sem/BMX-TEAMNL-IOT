@@ -6,7 +6,7 @@ copyright: Copyright 2022 IoT Team-NL BMX - Creative Commons Attribution Non Com
 
 site_url: https://localhost:8000/
   
-theme: jekyll-theme-minimal
+theme:
   name: material
   palette:
     # try other colors https://squidfunk.github.io/mkdocs-material/getting-started/#primary-colors
