@@ -19,8 +19,6 @@ test:
 
 pages:
   stage: deploy
-  tags:
-    - hva
   variables:
     ENABLED_GIT_REVISION_DATE: "true"
     GIT_DEPTH: 1000
