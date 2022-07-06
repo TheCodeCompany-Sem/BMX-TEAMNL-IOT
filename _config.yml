@@ -43,3 +43,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+theme: jekyll-theme-cayman
